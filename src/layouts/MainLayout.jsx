@@ -10,9 +10,9 @@ const routes = [
 const MainLayout = () => {
   return (
     <div>
-      <Header routes={routes} />
+      {/* <Header routes={routes} /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
