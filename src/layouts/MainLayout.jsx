@@ -1,5 +1,8 @@
 import { Outlet } from "react-router-dom";
 
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 const routes = [
   {
     path: "/",
@@ -10,9 +13,9 @@ const routes = [
 const MainLayout = () => {
   return (
     <div>
-      {/* <Header routes={routes} /> */}
+      <Header routes={routes} />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
