@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Toaster } from "sonner";
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
+import ListLayout from "../layouts/ListLayout";
 import HomePage from "../pages/HomePage";
 import LoginRegister from "../pages/LoginRegister";
 import About from "../pages/AboutUs";
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     element: <div>Routes Tidak Ditemukan!</div>,
   },
   {
-    // Main Layout
+    // Main Layout -> Navbar Normal
     element: <MainLayout />,
     children: [
       {
@@ -24,19 +25,25 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
-      {
-        path: "/list",
-        element: <ListProduct />,
-      },
     ],
   },
   {
-    // Main Layout
+    // Auth Layout -> Ga pake navbar
     element: <AuthLayout />,
     children: [
       {
         path: "/login",
         element: <LoginRegister />,
+      },
+    ],
+  },
+  {
+    // List Layout -> Beda Navbarnya
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "/list",
+        element: <ListProduct />,
       },
     ],
   },
