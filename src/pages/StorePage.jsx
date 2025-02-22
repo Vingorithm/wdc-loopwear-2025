@@ -7,7 +7,7 @@ import Image3 from '../assets/images/tshirt.png';
 import Image4 from '../assets/images/pants.png';
 
 
-const ListProduct = () => {
+const StorePage = () => {
   const products = [
     { id: 1, name: "Phone Case", price: 6.2, image: Image1 },
     { id: 2, name: "Hoodie Sweatshirt", price: 90.3, image: Image2, oldPrice: 129 },
@@ -54,7 +54,7 @@ const ListProduct = () => {
   );
 };
 
-export default ListProduct;
+export default StorePage;
 
 const styles = `
   .product-card {

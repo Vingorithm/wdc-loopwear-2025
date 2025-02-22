@@ -2,11 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Toaster } from "sonner";
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
-import ListLayout from "../layouts/ListLayout";
+import StoreLayout from "../layouts/StoreLayout";
 import HomePage from "../pages/HomePage";
 import LoginRegister from "../pages/LoginRegister";
 import About from "../pages/AboutUs";
-import ListProduct from "../pages/ListProduct";
+import StorePage from "../pages/StorePage";
 
 const router = createBrowserRouter([
   {
@@ -39,11 +39,11 @@ const router = createBrowserRouter([
   },
   {
     // List Layout -> Beda Navbarnya
-    element: <AuthLayout />,
+    element: <StoreLayout />,
     children: [
       {
         path: "/list",
-        element: <ListProduct />,
+        element: <StorePage />,
       },
     ],
   },

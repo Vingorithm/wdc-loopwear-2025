@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Footer from '../components/Footer';
-import Header from '../components/HeaderList';
+import Header from '../components/HeaderStore';
 
 const routes = [
   {
@@ -9,7 +9,7 @@ const routes = [
   },
 ];
 
-const ListLayout = () => {
+const StoreLayout = () => {
   return (
     <div>
       <Header routes={routes} />
@@ -20,4 +20,4 @@ const ListLayout = () => {
 };
 
 
-export default ListLayout;
+export default StoreLayout;
