@@ -25,22 +25,22 @@ const Header = () => {
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">Home</a>
+              <a className="nav-link fs-4 mx-3" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">About Us</a>
+              <a className="nav-link fs-4 mx-3" href="/aboutus">About Us</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Store</a>
+              <a className="nav-link fs-4 mx-3" href="/store">Store</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Article</a>
+              <a className="nav-link fs-4 mx-3" href="/articles">Articles</a>
             </li>
           </ul>
         </div>
-        <button className="btn btn-outline-dark" onClick={toggleDarkMode} style={styles.toggleBtn}>
+        {/* <button className="btn btn-outline-dark" onClick={toggleDarkMode} style={styles.toggleBtn}>
           {darkMode ? "Light" : "Dark"}
-        </button>
+        </button> */}
       </div>
     </nav>
   );
@@ -48,9 +48,9 @@ const Header = () => {
 
 const styles = {
   navbar: {
-    backgroundColor: "#fff",
+    backgroundColor: "#FCFBF0",
     borderBottom: "2px solid #ddd",
-    padding: "10px 20px"
+    padding: "15px 30px"
   },
   logo: {
     fontSize: "1.5rem",

@@ -1,12 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Toaster } from "sonner";
+
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import StoreLayout from "../layouts/StoreLayout";
-import HomePage from "../pages/HomePage";
+
 import LoginRegister from "../pages/LoginRegister";
-import About from "../pages/AboutUs";
+
+import HomePage from "../pages/HomePage";
+import AboutUs from "../pages/AboutUs";
 import StorePage from "../pages/StorePage";
+import Articles from "../pages/Articles";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +26,12 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/aboutus",
+        element: <AboutUs />,
+      },
+      {
+        path: "/articles",
+        element: <Articles />,
       },
     ],
   },
@@ -41,6 +49,10 @@ const router = createBrowserRouter([
     // List Layout -> Beda Navbarnya
     element: <StoreLayout />,
     children: [
+      {
+        path: "/store",
+        element: <StorePage />,
+      },
       {
         path: "/list",
         element: <StorePage />,

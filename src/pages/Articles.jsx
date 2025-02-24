@@ -1,11 +1,11 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const AboutUs = () => {
+const Articles = () => {
     return (
         <>
             <section className='min-vh-100' style={styles.section}>
-                <h1>Ini halaman about</h1>
+                <h1>Ini halaman articles</h1>
             </section>
         </>
     );
@@ -17,4 +17,4 @@ const styles = {
     }
 }
 
-export default AboutUs;
+export default Articles;
