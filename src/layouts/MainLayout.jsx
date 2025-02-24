@@ -6,7 +6,19 @@ import Footer from '../components/Footer';
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "HomePage",
+  },
+  {
+    path: "/aboutus",
+    name: "AboutUs",
+  },
+  {
+    path: "/store",
+    name: "Store",
+  },
+  {
+    path: "/articles",
+    name: "Articles",
   },
 ];
 

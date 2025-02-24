@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "react-bootstrap";
+
 import Image1 from '../assets/images/cap.png';
 import Image2 from '../assets/images/jeans.png';
 import Image3 from '../assets/images/tshirt.png';
@@ -16,6 +17,7 @@ const StorePage = () => {
   ];
 
   return (
+    
     <div className="container mt-5">
       <Carousel>
         <Carousel.Item>
