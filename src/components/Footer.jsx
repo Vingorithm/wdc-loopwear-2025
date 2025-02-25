@@ -40,7 +40,7 @@ const Footer = () => {
             <h5 className="footer-title">Contact</h5>
             <ul className="footer-list">
               <li><FaEnvelope /> support@loopwear.com</li>
-              <li><FaPhone /> +1 (123) 456-7890</li>
+              <li><FaPhone /> +62 (123) 456-7890</li>
               <li><FaMapMarkerAlt /> Store Locations</li>
             </ul>
             <div className="social-icons">

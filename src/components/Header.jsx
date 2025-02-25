@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Logo from "../assets/images/logo.svg";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -13,7 +14,9 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg" style={styles.navbar}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="#" style={styles.logo}>Loop Wear</a>
+        <a className="navbar-brand" href="#" style={styles.logoContainer}>
+          <img src={Logo} alt="Loop Wear Logo" style={styles.logo} />
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -38,9 +41,6 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        {/* <button className="btn btn-outline-dark" onClick={toggleDarkMode} style={styles.toggleBtn}>
-          {darkMode ? "Light" : "Dark"}
-        </button> */}
       </div>
     </nav>
   );
@@ -50,15 +50,19 @@ const styles = {
   navbar: {
     backgroundColor: "#FCFBF0",
     borderBottom: "2px solid #ddd",
-    padding: "15px 30px"
+    padding: "15px 30px",
+  },
+  logoContainer: {
+    display: "flex",
+    alignItems: "center",
   },
   logo: {
-    fontSize: "1.5rem",
-    fontWeight: "bold"
+    height: "50px",
+    transform: "scale(5)",
+    transformOrigin: "center", 
+    marginLeft: "30px",
+    marginTop: "3px",
   },
-  toggleBtn: {
-    marginRight: "20px"
-  }
 };
 
 export default Header;
