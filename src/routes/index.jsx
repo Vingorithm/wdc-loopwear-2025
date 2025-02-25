@@ -11,6 +11,7 @@ import HomePage from "../pages/HomePage";
 import AboutUs from "../pages/AboutUs";
 import StorePage from "../pages/StorePage";
 import Articles from "../pages/Articles";
+import Profile from "../pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/list",
         element: <StorePage />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
     ],
   },
