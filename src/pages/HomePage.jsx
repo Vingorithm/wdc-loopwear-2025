@@ -1,9 +1,9 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Carousel1 from '../assets/images/carousel1.jpg';
-import Carousel2 from '../assets/images/carousel2.jpg';
-import Carousel3 from '../assets/images/carousel3.jpg';
+import Carousel1 from '../assets/images/carousel/carousel1.jpg';
+import Carousel2 from '../assets/images/carousel/carousel2.jpg';
+import Carousel3 from '../assets/images/carousel/carousel3.jpg';
 
 const HomePage = () => {
     return (
