@@ -6,3 +6,28 @@
 #userProfile:hover {
     filter: brightness(0.8);
 }
+
+Button.light-btn {
+    background-color: #FCFBF0;
+    color: #39754B;
+}
+
+Button.light-btn:hover {
+    background-color: #39754B;
+    color: #FCFBF0;
+}
+
+Button.dark-btn {
+    background-color: #39754B;
+    color: #FCFBF0;
+}
+
+Button.dark-btn:hover {
+    background-color: #39754B;
+    color: #FCFBF0;
+    filter: brightness(0.8);
+}
+
+p.darkGreenText {
+    color: #39754B;
+}

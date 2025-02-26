@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import profilePicture from "../assets/images/profile-picture.jpg";
+import profilePicture from "../assets/images/profpic/profile-picture.jpg";
 import Logo from "../assets/images/logo.svg";
 
 const HeaderStore = () => {
