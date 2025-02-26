@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+
+// asset logo
 import Logo from "../assets/images/logo.svg";
+
+// inline style
+import style from '../inline-styles/style.js';
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);

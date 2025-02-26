@@ -1,12 +1,23 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
+
+// asset profile
 import profilePicture from "../assets/images/profpic/profile-picture.jpg";
+
+// asset language
 import languagePicture from "../assets/images/flag/english.webp"
+
+// asset payment
 import paypal from '../assets/images/payment/paypal.png';
-import gopay from '../assets/images/payment/gopay.webp';
+import gopay from '../assets/images/payment/gopay.jpg';
 import dana from '../assets/images/payment/dana.png';
 
+// inline style
+// import style from '../inline-styles/style.js';
+
 const Profile = () => {
+  // const styles = style();
+
   return (
     <section style={styles.bgColor}>
       <Container className="py-4" style={{ minHeight: '100vh' }}>
@@ -21,10 +32,10 @@ const Profile = () => {
                   variant="outline-dark" 
                   className="light-btn rounded-0"
                   style={{ 
-                    width: '140px'
+                    width: '80%'
                   }}
                 >
-                  Edit
+                  Edit <i class="bi bi-pencil-square"></i>
                 </Button>
               </Col>
               
@@ -37,7 +48,7 @@ const Profile = () => {
                       </Form.Label>
                       <Form.Control 
                         className="rounded-0 border-2" 
-                        style={{ borderColor: '#39754B' }}
+                        style={ styles.form }
                         type="text" 
                       />
                     </Col>
@@ -48,7 +59,7 @@ const Profile = () => {
                       </Form.Label>
                       <Form.Control 
                         className="rounded-0 border-2" 
-                        style={{ borderColor: '#39754B' }}
+                        style={ styles.form }
                         type="email" 
                       />
                     </Col>
@@ -60,8 +71,8 @@ const Profile = () => {
                         Phone Number
                       </Form.Label>
                       <Form.Control 
-                        className="rounded-0 border-2" 
-                        style={{ borderColor: '#39754B' }}
+                        className="form-control rounded-0 border-2" 
+                        style={ styles.form }
                         type="tel" 
                       />
                     </Col>
@@ -72,7 +83,7 @@ const Profile = () => {
                       </Form.Label>
                       <Form.Control 
                         className="rounded-0 border-2" 
-                        style={{ borderColor: '#39754B' }}
+                        style={ styles.form }
                         type="text" 
                       />
                     </Col>
@@ -86,7 +97,7 @@ const Profile = () => {
                       as="textarea" 
                       rows={3} 
                       className="rounded-0 border-2" 
-                      style={{ borderColor: '#39754B' }}
+                      style={ styles.form }
                     />
                   </Form.Group>
 
@@ -115,16 +126,14 @@ const Profile = () => {
                 <Col md={2} className="d-flex justify-content-center">
                   <img src={payment.img} alt={payment.name} style={styles.paymentLogo} />
                 </Col>
-                <Col className='align-items-center' md={7}>
-                  <p className='fw-bold darkGreenText text-start'>{payment.name}</p>
+                <Col className='d-flex align-items-center' md={8}>
+                  <p className='fw-bold darkGreenText fs-4 my-auto'>{payment.name}</p>
                 </Col>
-                <Col md={3} className="d-flex justify-content-end">
+                <Col md={2} className="d-flex justify-content-end">
                   <Button 
                     variant="outline-dark" 
-                    className="rounded-0 text-uppercase"
+                    className="rounded-0 text-uppercase light-btn"
                     style={{ 
-                      borderColor: '#39754B',
-                      color: '#39754B',
                       width: '100%'
                     }}
                   >
@@ -147,11 +156,10 @@ const Profile = () => {
               <Col md={10}>
                 <Form.Select 
                   className="rounded-0 border-2" 
-                  style={{ borderColor: '#39754B' }}
-                  defaultValue="English"
+                  style={ styles.form }
                 >
                   <option>Select Language</option>
-                  <option value="English">English</option>
+                  <option value="English" selected>English</option>
                   <option value="Indonesia">Indonesia</option>
                   <option value="Chinese">Chinese</option>
                 </Form.Select>
@@ -164,10 +172,11 @@ const Profile = () => {
   );
 };
 
-const styles = {
+const styles =  {
   bgColor: {
       backgroundColor: "#FCFBF0",
   },
+
   profilePicture: {
     borderRadius: "100%",
     objectFit: "cover",
@@ -180,20 +189,25 @@ const styles = {
     color: '#666',
     border: '2px solid #39754B',
   },
+
   languageFlag: {
     width: '50px', 
     height: '50px', 
     backgroundColor: '#eee', 
     border: '2px solid #39754B'
   },
+
   paymentLogo: {
-    objectFit: "cover",
+    width: "80%",
+    aspectRatio: "2.3/1",
     objectPosition: "center",
-    width: '60px', 
-    height: '40px', 
-    backgroundColor: '#eee', 
     border: '2px solid #39754B'
-  }
+  },
+
+  form: {
+    borderColor: "#39754B",
+    backgroundColor: "#FCFBF0"
+  },
 }
 
 export default Profile;

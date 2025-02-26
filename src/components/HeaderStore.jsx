@@ -13,7 +13,7 @@ const HeaderStore = () => {
         </a>
 
         {/* Search Form */}
-        <form className="d-flex mx-auto" role="search">
+        <form className="d-flex mx-auto" role="search" action="/listproduct">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
           <button className="btn btn-outline-success" type="submit">Search</button>
         </form>
