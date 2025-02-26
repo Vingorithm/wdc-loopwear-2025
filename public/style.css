@@ -1,3 +1,7 @@
+.form-control {
+    background-color: #FCFBF0;
+}
+
 .nav-item a:hover {
     font-weight: bold;
     box-shadow: 0px 1px black;
@@ -30,4 +34,23 @@ Button.dark-btn:hover {
 
 p.darkGreenText {
     color: #39754B;
+}
+
+.item-category {
+    color: #1A1816;
+}
+
+.item-category:hover {
+    background-color: #1A1816;
+    color: #FCFBF0;
+}
+
+ul.pagination * {
+    background-color: #FCFBF0;
+    color: #1A1816;
+}
+
+a.detail-product-link {
+    color: #1A1816;
+    text-decoration: none;
 }
