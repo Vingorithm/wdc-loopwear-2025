@@ -10,17 +10,13 @@ const Profile = () => {
   return (
     <section style={styles.bgColor}>
       <Container className="py-4" style={{ minHeight: '100vh' }}>
-        {/* Profile Header Card */}
-        <h2 h2 className="mt-5 text-uppercase">Profile</h2>
+        <h3 h3 className="mt-3 text-uppercase">Profile</h3>
 
-        {/* Main Profile Card */}
         <Card className="mt-3 rounded-0 shadow-sm" style={styles.bgColor}>
           <Card.Body className="p-4">
             <Row>
               <Col md={3} className="d-flex flex-column align-items-center">
-
                 <img className="mb-3" src={profilePicture} alt="profile-picture" style={styles.profilePicture} />
-
                 <Button 
                   variant="outline-dark" 
                   className="light-btn rounded-0"
@@ -110,40 +106,40 @@ const Profile = () => {
         </Card>
 
         {/* Payment Methods Card */}
+        <h3 h2 className="mt-5 text-uppercase">Payment Methods</h3>
         <Card className="mt-4 rounded-0 shadow-sm" style={styles.bgColor}>
           <Card.Body className="p-4">
-            <h5 className="mb-4 fw-bold text-uppercase" style={{ color: '#39754B' }}>Payment Methods</h5>
-            <Row className="align-items-center mb-3">
-              <Col md={2} className="d-flex justify-content-center">
-                <div 
-                  className="rounded-0" 
-                  style={styles.paymentLogo}
-                ></div>
-              </Col>
-              <Col className='align-items-center' md={7}>
-                <p className='fw-bold darkGreenText text-start'>Gopay</p>
-              </Col>
-              <Col md={3} className="d-flex justify-content-end">
-                <Button 
-                  variant="outline-dark" 
-                  className="rounded-0 text-uppercase"
-                  style={{ 
-                    borderColor: '#39754B',
-                    color: '#39754B',
-                    width: '100%'
-                  }}
-                >
-                  Connect
-                </Button>
-              </Col>
-            </Row>
+            
+            {[{ img: gopay, name: 'Gopay' }, { img: paypal, name: 'Paypal' }, { img: dana, name: 'Dana' }].map((payment, index) => (
+              <Row className="align-items-center mb-3" key={index}>
+                <Col md={2} className="d-flex justify-content-center">
+                  <img src={payment.img} alt={payment.name} style={styles.paymentLogo} />
+                </Col>
+                <Col className='align-items-center' md={7}>
+                  <p className='fw-bold darkGreenText text-start'>{payment.name}</p>
+                </Col>
+                <Col md={3} className="d-flex justify-content-end">
+                  <Button 
+                    variant="outline-dark" 
+                    className="rounded-0 text-uppercase"
+                    style={{ 
+                      borderColor: '#39754B',
+                      color: '#39754B',
+                      width: '100%'
+                    }}
+                  >
+                    Connect
+                  </Button>
+                </Col>
+              </Row>
+            ))}
           </Card.Body>
         </Card>
 
         {/* Language Settings Card */}
+        <h3 h2 className="mt-5 text-uppercase">Language Preferences</h3>
         <Card className="mt-4 rounded-0 shadow-sm mb-4" style={styles.bgColor}>
           <Card.Body className="p-4">
-            <h5 className="mb-4 fw-bold text-uppercase" style={{ color: '#39754B' }}>Language Preferences</h5>
             <Row className="align-items-center">
               <Col md={2} className="d-flex justify-content-center">
                 <img src={languagePicture} alt="language picture" className="rounded-circle" style={styles.languageFlag} />
@@ -152,6 +148,7 @@ const Profile = () => {
                 <Form.Select 
                   className="rounded-0 border-2" 
                   style={{ borderColor: '#39754B' }}
+                  defaultValue="English"
                 >
                   <option>Select Language</option>
                   <option value="English">English</option>
