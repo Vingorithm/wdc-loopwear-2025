@@ -8,15 +8,11 @@ const AboutUs = () => {
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active" data-bs-interval="2000">
-                        {/* Wrapper untuk Overlay */}
                         <div className="position-relative">
-                            {/* Gambar Carousel */}
                             <img src={CarouselImage} className="d-block w-100" alt="image-carousel-1" style={styles.imgCarousel} />
                             
-                            {/* Overlay Gelap */}
                             <div style={styles.overlay}></div>
                             
-                            {/* Teks dan Button */}
                             <div style={styles.contentWrapper} className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                                 <div className="container px-4">
                                     <div className="row justify-content-center">
@@ -137,7 +133,6 @@ const AboutUs = () => {
                     </div>
                     
                     <div className="row">
-                        {/* Team Member 1 */}
                         <div className="col-md-4 mb-4 mb-md-0">
                             <div className="card border-0" style={styles.teamCard}>
                                 <div className="text-center p-3">
@@ -165,7 +160,6 @@ const AboutUs = () => {
                             </div>
                         </div>
                         
-                        {/* Team Member 2 */}
                         <div className="col-md-4 mb-4 mb-md-0">
                             <div className="card border-0" style={styles.teamCard}>
                                 <div className="text-center p-3">
@@ -193,7 +187,6 @@ const AboutUs = () => {
                             </div>
                         </div>
                         
-                        {/* Team Member 3 */}
                         <div className="col-md-4">
                             <div className="card border-0" style={styles.teamCard}>
                                 <div className="text-center p-3">
@@ -239,11 +232,11 @@ const styles = {
         left: 0,
         width: "100%",
         height: "100%",
-        backgroundColor: "rgba(0, 0, 0, 0.5)", // Overlay lebih gelap (0.5 opacity)
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
         zIndex: 1
     },
     contentWrapper: {
-        zIndex: 2, // Pastikan konten berada di atas overlay
+        zIndex: 2,
         padding: "0 20px"
     },
     section: {
