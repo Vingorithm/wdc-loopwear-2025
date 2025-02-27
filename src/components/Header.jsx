@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg" style={styles.navbar}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="#" style={styles.logoContainer}>
+        <a className="navbar-brand" href="/" style={styles.logoContainer}>
           <img src={Logo} alt="Loop Wear Logo" style={styles.logo} />
         </a>
         <button

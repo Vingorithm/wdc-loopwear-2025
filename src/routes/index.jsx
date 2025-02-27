@@ -13,6 +13,7 @@ import StorePage from "../pages/StorePage";
 import Articles from "../pages/Articles";
 import Profile from "../pages/Profile";
 import ListProduct from "../pages/ListProduct";
+import DetailProduct from "../pages/DetailProduct";
 
 const router = createBrowserRouter([
   {
@@ -61,7 +62,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/detailproduct",
-        element: <StorePage />,
+        element: <DetailProduct />,
       },
       {
         path: "/profile",
