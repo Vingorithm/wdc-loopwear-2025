@@ -32,45 +32,47 @@ const ListProduct = () => {
               <div class="row align-items-start mb-2">
                 <div className="col d-grid">
                   <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
+                    Location
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Yogyakarta</a></li>
+                    <li><a class="dropdown-item" href="#">Jakarta</a></li>
+                    <li><a class="dropdown-item" href="#">Surabaya</a></li>
                   </ul>
                 </div>
 
                 <div className="col d-grid">
                   <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
+                    Shop Status
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Verified</a></li>
+                    <li><a class="dropdown-item" href="#">Top</a></li>
+                    <li><a class="dropdown-item" href="#">Normal</a></li>
                   </ul>
                 </div>
 
                 <div className="col d-grid">
                   <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
+                    Discount
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Free Delivery</a></li>
+                    <li><a class="dropdown-item" href="#">Cashback</a></li>
+                    <li><a class="dropdown-item" href="#">Big Sale</a></li>
                   </ul>
                 </div>
 
                 <div className="col d-grid">
                   <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
+                    Rating
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">5</a></li>
+                    <li><a class="dropdown-item" href="#">4</a></li>
+                    <li><a class="dropdown-item" href="#">3</a></li>
+                    <li><a class="dropdown-item" href="#">2</a></li>
+                    <li><a class="dropdown-item" href="#">1</a></li>
                   </ul>
                 </div>
               </div>

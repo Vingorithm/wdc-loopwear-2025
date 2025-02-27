@@ -27,10 +27,13 @@ const Profile = () => {
           <Card.Body className="p-4">
             <Row>
               <Col md={3} className="d-flex flex-column align-items-center">
-                <img className="mb-3" src={profilePicture} alt="profile-picture" style={styles.profilePicture} />
+                <Form.Label className="fw-bold text-uppercase text-secondary mt-1 mb-3" style={{ fontSize: '0.8rem' }}>
+                  Profile Picture
+                </Form.Label>
+                <img className="mb-4" src={profilePicture} alt="profile-picture" style={styles.profilePicture} />
                 <Button 
                   variant="outline-dark" 
-                  className="light-btn rounded-0"
+                  className="green-light-btn rounded-0 mb-3"
                   style={{ 
                     width: '80%'
                   }}
@@ -102,7 +105,7 @@ const Profile = () => {
                   </Form.Group>
 
                   <Button 
-                    className="dark-btn w-100 rounded-0 py-3 text-uppercase fw-bold" 
+                    className="green-dark-btn w-100 rounded-0 py-3 text-uppercase fw-bold" 
                     style={{ 
                       border: 'none',
                       fontSize: '0.9rem'
@@ -127,12 +130,12 @@ const Profile = () => {
                   <img src={payment.img} alt={payment.name} style={styles.paymentLogo} />
                 </Col>
                 <Col className='d-flex align-items-center' md={8}>
-                  <p className='fw-bold darkGreenText fs-4 my-auto'>{payment.name}</p>
+                  <p className='fw-bold darkGreenText fs-4 my-3 my-sm-0 mx-auto mx-sm-0'>{payment.name}</p>
                 </Col>
                 <Col md={2} className="d-flex justify-content-end">
                   <Button 
                     variant="outline-dark" 
-                    className="rounded-0 text-uppercase light-btn"
+                    className="rounded-0 text-uppercase green-light-btn mb-4 mb-sm-0"
                     style={{ 
                       width: '100%'
                     }}
@@ -151,7 +154,7 @@ const Profile = () => {
           <Card.Body className="p-4">
             <Row className="align-items-center">
               <Col md={2} className="d-flex justify-content-center">
-                <img src={languagePicture} alt="language picture" className="rounded-circle" style={styles.languageFlag} />
+                <img src={languagePicture} alt="language picture" className="rounded-circle mb-4 mb-sm-0" style={styles.languageFlag} />
               </Col>
               <Col md={10}>
                 <Form.Select 
@@ -194,7 +197,7 @@ const styles =  {
     width: '50px', 
     height: '50px', 
     backgroundColor: '#eee', 
-    border: '2px solid #39754B'
+    border: '2px solid #39754B',
   },
 
   paymentLogo: {
