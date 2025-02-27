@@ -5,6 +5,15 @@ import Image3 from "../assets/images/tshirt.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Item from '../components/Item';
 
+// asset product
+import Img1 from '../assets/images/product/1.jpeg';
+import Img2 from '../assets/images/product/2.webp';
+import Img3 from '../assets/images/product/3.webp';
+import Img4 from '../assets/images/product/4.webp';
+import Img5 from '../assets/images/product/5.jpeg';
+import Img6 from '../assets/images/product/6.jpg';
+import Img7 from '../assets/images/product/7.jpg';
+
 const styles = {
   image: {
     aspectRatio: "1/1.5",
@@ -18,9 +27,9 @@ const styles = {
   },
   mainImage: {
     width: "100%",
-    height: "400px",
     objectFit: "cover",
-    objectPosition: "center"
+    objectPosition: "center",
+    aspectRatio: "1/0.78",
   },
   modelImage: {
     height: "150px",
@@ -30,6 +39,7 @@ const styles = {
 
 const DetailProduct = () => {
   const [selectedSize, setSelectedSize] = useState('M');
+  const [selectedPhoto, setSelectedPhoto] = useState(Img2);
   
   // Mock data for the product
   const product = {
@@ -64,33 +74,27 @@ const DetailProduct = () => {
           <div className="col-md-7">
             <div className="row">
               <div className="col-12 mb-4">
-                <div style={{ padding: '20px', display: 'flex', justifyContent: 'center' }}>
+                <div style={{ padding: '20px', display: 'flex', justifyContent: 'center' }} >
                   <img 
-                    src={Image1} 
+                    className='main-image-product'
+                    src={selectedPhoto} 
                     alt="Hoodie Sweatshirt" 
                     style={styles.mainImage}
                   />
                 </div>
               </div>
               <div className="col-12">
-                <div style={{ padding: '20px', display: 'flex', alignItems: 'center' }}>
-                  <img 
-                    src={Image1} 
-                    alt="Model wearing Hoodie" 
-                    style={styles.modelImage} 
-                    className="me-3"
-                  />
+                <div className='overflow-y-scroll' style={{ padding: '20px', display: 'flex', alignItems: 'center'}}>
                   <div className="d-flex">
-                    {['#FCFBF0', '#F8A14C', '#B5B5B5', '#1A1816'].map((color, index) => (
-                      <div 
-                        key={index} 
-                        style={{ 
-                          backgroundColor: color, 
-                          width: '50px', 
-                          height: '100px', 
-                          marginRight: '10px' 
-                        }} 
-                      />
+                    {[Img2, Img1, Img3, Img4, Img5, Img6, Img7].map((source, index) => (
+                      <a href="#" onClick={() => setSelectedPhoto(source)}>
+                        <img 
+                          src={source} 
+                          alt="Model wearing Hoodie" 
+                          style={styles.modelImage} 
+                          className="me-3"
+                        />
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -149,10 +153,8 @@ const DetailProduct = () => {
               </div>
 
               <div className="d-flex my-3">
-                <button 
+                <button className='light-btn'
                   style={{ 
-                    border: '1px solid #1A1816', 
-                    backgroundColor: 'transparent',
                     width: '50px',
                     height: '50px',
                     display: 'flex',
@@ -161,13 +163,10 @@ const DetailProduct = () => {
                     marginRight: '10px'
                   }}
                 >
-                  ♡
+                  <i class="bi bi-heart"></i>
                 </button>
-                <button 
+                <button className='dark-btn'
                   style={{ 
-                    border: 'none', 
-                    backgroundColor: '#1A1816',
-                    color: '#FCFBF0',
                     padding: '0 30px',
                     flex: 1,
                     height: '50px',
@@ -176,6 +175,32 @@ const DetailProduct = () => {
                 >
                   Add to cart
                 </button>
+              </div>
+
+              <div className="d-flex my-3">
+                <button className='dark-btn'
+                    style={{ 
+                      padding: '0 30px',
+                      flex: 1,
+                      height: '50px',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    Buy
+                  </button>
+              </div>
+
+              <div className="d-flex my-3">
+                <button className='dark-btn'
+                    style={{ 
+                      padding: '0 30px',
+                      flex: 1,
+                      height: '50px',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    Swap
+                  </button>
               </div>
 
               <div className="mt-3">
