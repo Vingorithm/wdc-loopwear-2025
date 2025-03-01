@@ -17,15 +17,15 @@ const AboutUs = () => {
                                 <div className="container px-4">
                                     <div className="row justify-content-center">
                                         <div className="col-12 col-md-10 col-lg-8 text-center">
-                                            <h2 className="fw-bold text-white mb-3">Extending Fashion's Lifespan for a Sustainable Future</h2>
-                                            <p className="text-white">
+                                            <h2 style={styles.carouselHeading}>Extending Fashion's Lifespan for a Sustainable Future</h2>
+                                            <p style={styles.carouselText}>
                                                 Millions of tons of textile waste are discarded in Indonesia each year, and without action, 
                                                 the numbers will only grow. Clothes are worn, tossed aside, and forgotten therefore harming 
-                                                the environment. Loopwear is here to extend the lifespan of clothing and make sustainable 
+                                                the environment. Loop Wear is here to extend the lifespan of clothing and make sustainable 
                                                 choices easier, empowering individuals to minimize their environmental impact and embrace 
                                                 a more eco-friendly future.
                                             </p>
-                                            <button className="btn btn-success mt-3">LEARN MORE</button>
+                                            <button style={styles.carouselButton} className="btn mt-4">LEARN MORE</button>
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@ const AboutUs = () => {
                             <h4 style={styles.subHeading}>OUR MISSION</h4>
                             <h3 style={styles.columnHeading}>We Make Fashion Circular for a Sustainable Future</h3>
                             <p style={styles.text}>
-                                Loopwear main service is extending the life cycle of fashion items through our circular 
+                                Loop Wear main service is extending the life cycle of fashion items through our circular 
                                 system. We collect, restore, and redistribute clothing to reduce textile waste and promote 
                                 sustainable consumption habits. By keeping clothes in circulation longer, we help reduce 
                                 the environmental impact of the fashion industry.
@@ -62,7 +62,7 @@ const AboutUs = () => {
                             <h4 style={styles.subHeading}>OUR VISION</h4>
                             <h3 style={styles.columnHeading}>We Ensure Educational Impact That Drives Change</h3>
                             <p style={styles.text}>
-                                Loopwear aims to educate consumers about the environmental impact of fashion choices 
+                                Loop Wear aims to educate consumers about the environmental impact of fashion choices 
                                 and empower them with sustainable alternatives. Through workshops, content, and community 
                                 engagement, we're building awareness about circular fashion and inspiring individuals to 
                                 make more conscious decisions about their clothing.
@@ -123,7 +123,7 @@ const AboutUs = () => {
                 <div className="container py-5">
                     <div className="row mb-5">
                         <div className="col-12 text-center">
-                            <h3 className="text-uppercase" style={styles.sectionHeading}>THE PEOPLE BEHIND LOOPWEAR</h3>
+                            <h3 className="text-uppercase" style={styles.sectionHeading}>THE PEOPLE BEHIND Loop Wear</h3>
                             <h2 style={styles.mainHeading}>Our Team</h2>
                             <p className="text-center mb-5" style={styles.text}>
                                 Meet the passionate individuals driving our mission to make fashion more sustainable.
@@ -232,21 +232,49 @@ const styles = {
         left: 0,
         width: "100%",
         height: "100%",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
         zIndex: 1
     },
     contentWrapper: {
         zIndex: 2,
         padding: "0 20px"
     },
+    carouselHeading: {
+        color: "#FCFBF0",
+        fontSize: "3.2rem",
+        fontWeight: 700,
+        marginBottom: "1.5rem",
+        textShadow: "0 2px 4px rgba(0,0,0,0.3)"
+    },
+    carouselText: {
+        color: "#FCFBF0",
+        fontSize: "1.25rem",
+        lineHeight: 1.7,
+        maxWidth: "900px",
+        margin: "0 auto",
+        textShadow: "0 1px 2px rgba(0,0,0,0.2)"
+    },
+    carouselButton: {
+        backgroundColor: "#39754B",
+        color: "#FCFBF0",
+        fontWeight: 600,
+        fontSize: "1rem",
+        padding: "12px 30px",
+        border: "none",
+        borderRadius: "6px",
+        letterSpacing: "1px",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
+        transition: "all 0.3s ease"
+    },
     section: {
         backgroundColor: "#FCFBF0",
     },
     sectionHeading: {
-        color: "#E5A04D",
+        color: "#93A588",
         fontSize: "1rem",
         fontWeight: 600,
-        marginBottom: "0.5rem"
+        marginBottom: "0.5rem",
+        letterSpacing: "1px"
     },
     mainHeading: {
         color: "#39754B",
@@ -255,19 +283,20 @@ const styles = {
         marginBottom: "2rem"
     },
     subHeading: {
-        color: "#E5A04D",
+        color: "#93A588",
         fontSize: "0.9rem",
         fontWeight: 600,
-        marginBottom: "0.5rem"
+        marginBottom: "0.5rem",
+        letterSpacing: "1px"
     },
     columnHeading: {
-        color: "#2B6A4D",
+        color: "#39754B",
         fontSize: "1.5rem",
         fontWeight: 600,
         marginBottom: "1rem"
     },
     text: {
-        color: "#555",
+        color: "#1A1816",
         lineHeight: 1.6
     },
     educationBox: {
@@ -276,18 +305,19 @@ const styles = {
         borderRadius: "8px"
     },
     educationHeading: {
-        color: "#2B6A4D",
+        color: "#39754B",
         fontWeight: 600
     },
     iconCircle: {
-        backgroundColor: "#E8F5E9",
+        backgroundColor: "#93A588",
+        opacity: 0.3,
         width: "80px",
         height: "80px",
         borderRadius: "50%"
     },
     icon: {
         fontSize: "2rem",
-        color: "#2B6A4D"
+        color: "#39754B" 
     },
     // Team Section Styles
     teamCard: {
@@ -303,26 +333,27 @@ const styles = {
         height: "150px",
         margin: "0 auto",
         borderRadius: "50%",
-        backgroundColor: "#E8F5E9",
+        backgroundColor: "#93A588",
+        opacity: 0.3,
         padding: "5px"
     },
     memberImage: {
         width: "100%",
         height: "100%",
         borderRadius: "50%",
-        backgroundColor: "#ccc", // Placeholder for actual image
+        backgroundColor: "#ccc",
         backgroundPosition: "center",
         backgroundSize: "cover"
     },
     memberName: {
-        color: "#2B6A4D",
+        color: "#39754B",
         fontSize: "1.25rem",
         fontWeight: 600,
         marginBottom: "0.5rem",
         marginTop: "1rem"
     },
     memberPosition: {
-        color: "#E5A04D",
+        color: "#93A588",
         fontSize: "0.9rem",
         fontWeight: 500,
         marginBottom: "1rem"
@@ -334,8 +365,9 @@ const styles = {
         width: "36px",
         height: "36px",
         borderRadius: "50%",
-        backgroundColor: "#E8F5E9",
-        color: "#2B6A4D",
+        backgroundColor: "#93A588",
+        opacity: 0.3,
+        color: "#39754B",
         fontSize: "1rem",
         textDecoration: "none",
         transition: "background-color 0.3s ease",
