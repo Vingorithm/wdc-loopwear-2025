@@ -2,6 +2,16 @@
     background-color: #FCFBF0;
 }
 
+input.search-input {
+    background-color: #FCFBF0;
+    border: 1px solid #1A1816;
+}
+
+input.search-input:focus {
+    background-color: #FCFBF0;
+    border: 1px solid #1A1816;
+}
+
 .nav-item a:hover {
     font-weight: bold;
     box-shadow: 0px 1px black;
@@ -11,22 +21,23 @@
     filter: brightness(0.8);
 }
 
-Button.light-btn {
+Button.green-light-btn {
     background-color: #FCFBF0;
     color: #39754B;
+    border: 1px solid #39754B;
 }
 
-Button.light-btn:hover {
+Button.green-light-btn:hover {
     background-color: #39754B;
     color: #FCFBF0;
 }
 
-Button.dark-btn {
+Button.green-dark-btn {
     background-color: #39754B;
     color: #FCFBF0;
 }
 
-Button.dark-btn:hover {
+Button.green-dark-btn:hover {
     background-color: #39754B;
     color: #FCFBF0;
     filter: brightness(0.8);
@@ -45,12 +56,88 @@ p.darkGreenText {
     color: #FCFBF0;
 }
 
+ul.pagination {
+    border-radius: 0%;
+}
+
 ul.pagination * {
     background-color: #FCFBF0;
     color: #1A1816;
+    border: none;
 }
 
 a.detail-product-link {
     color: #1A1816;
     text-decoration: none;
+}
+
+button.btn-search {
+    border: 1px solid #1A1816;
+}
+
+button.btn-search:hover {
+    border: none;
+    background-color: #1A1816;
+    color: #FCFBF0;
+}
+
+ul.dropdown-menu {
+    background-color: #FCFBF0;
+}
+
+ul.dropdown-menu li {
+    background-color: #FCFBF0;
+    text-align: center;
+}
+
+button.search-toggler {
+    border: 1px solid #1A1816;
+}
+
+button.dark-btn {
+    border: 1px solid #1A1816;
+    background-color: #1A1816;
+    color: #FCFBF0;
+}
+
+button.dark-btn:hover {
+    border: 1px solid #1A1816;
+    color: #1A1816;
+    background-color: #FCFBF0;
+}
+
+button.light-btn {
+    border: 1px solid #1A1816;
+    color: #1A1816;
+    background-color: #FCFBF0;
+}
+
+button.light-btn:hover {
+    /* border: 1px solid #1A1816;
+    background-color: #1A1816;
+    color: #FCFBF0; */
+    filter: brightness(0.8);
+}
+
+ul.dropdown-search li a:active {
+    border: 1px solid #1A1816;
+    background-color: #1A1816;
+    color: #FCFBF0;
+}
+
+.shop-profile {
+    border: 1px solid #1A1816;
+}
+
+.shop-picture {
+    border-radius: 100%;
+    border: 1px solid #1A1816;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+
+.shop-info {
+    border: 1px solid #1A1816;
 }
