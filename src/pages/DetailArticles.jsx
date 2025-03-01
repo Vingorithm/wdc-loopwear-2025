@@ -3,16 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Image1 from "../assets/images/carousel/carousel6.webp";
 import Image2 from "../assets/images/carousel/carousel2.jpg";
+import Image3 from "../assets/images/carousel/carousel3.jpg";
+import ImageHero from "../assets/images/detailArticles.jpg";
 
 const DetailArticles = () => {
-  // Mock data for article details
   const [article, setArticle] = useState({
     title: "The Complete Guide to Clothing Care",
     category: "Clothing Care",
     date: "March 1, 2025",
     readTime: "8 min read",
     author: {
-      name: "Emma Green",
+      name: "Ivan Tjandra",
       role: "Sustainable Fashion Expert",
       avatar: Image2
     },
@@ -71,7 +72,7 @@ const DetailArticles = () => {
         text: "For more complex repairs, consider building a relationship with a local tailor or repair service. The cost of professional repairs is often far less than replacing quality garments, making it both an economically and environmentally sound choice."
       }
     ],
-    tags: ["clothing care", "sustainable fashion", "garment maintenance", "eco-friendly laundry"],
+    tags: ["clothing care", "sustainable fashion", "garment maintenance", "eco-friendly fashion"],
     relatedArticles: [
       {
         title: "Natural Stain Removal Techniques",
@@ -181,16 +182,16 @@ const DetailArticles = () => {
                 <h5 style={styles.shareTitle}>Share This Article</h5>
                 <div className="d-flex">
                   <button style={styles.socialButton} className="me-2">
-                    <span className="material-icons">facebook</span>
+                    <span className="material-icons"><i className="fab fa-facebook"></i></span>
                   </button>
                   <button style={styles.socialButton} className="me-2">
-                    <span className="material-icons">twitter</span>
+                    <span className="material-icons"><i className="fab fa-twitter"></i></span>
                   </button>
                   <button style={styles.socialButton} className="me-2">
-                    <span className="material-icons">email</span>
+                    <span className="material-icons"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                   </button>
                   <button style={styles.socialButton}>
-                    <span className="material-icons">link</span>
+                    <span className="material-icons"><i class="fa fa-link" aria-hidden="true"></i></span>
                   </button>
                 </div>
               </div>
@@ -214,7 +215,7 @@ const DetailArticles = () => {
               <div className="col-md-4" key={index}>
                 <div className="card h-100 border-0" style={styles.card}>
                   <img 
-                    src={index % 2 === 0 ? Image2 : Image1} 
+                    src={index % 3 === 0 ? Image1 : index % 3 === 1 ? Image2 : Image3} 
                     className="card-img-top" 
                     alt={related.title} 
                   />
@@ -280,7 +281,7 @@ const styles = {
   },
   
   // Hero styles
-  heroDetail: {
+  heroDetail: { 
     backgroundColor: "#39754B",
     color: "#FCFBF0",
     padding: "60px 0"

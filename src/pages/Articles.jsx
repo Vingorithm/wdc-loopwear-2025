@@ -3,10 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Image1 from "../assets/images/carousel/carousel6.webp";
 import Image2 from "../assets/images/carousel/carousel2.jpg";
+import Image3 from "../assets/images/carousel/carousel3.jpg";
 
 const Articles = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const carouselImages = [Image1, Image2];
+  const carouselImages = [Image1, Image2, Image3];
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,7 +19,6 @@ const Articles = () => {
 
   return (
     <div style={styles.body}>
-      {/* Hero Section with Carousel */}
       <section style={styles.hero}>
         <div style={styles.carouselContainer}>
           <div style={styles.carouselOverlay}></div>
@@ -73,7 +73,7 @@ const Articles = () => {
                       <p style={styles.cardText}>
                         Discover essential techniques to extend your garments' lifespan. From washing methods to storage solutions, learn how proper care can reduce your fashion footprint while preserving your favorite pieces for years to come.
                       </p>
-                      <button style={styles.button} className="btn mt-3">Read More</button>
+                      <button style={styles.button} className="btn mt-3" onClick={() => window.location.href = "/detailarticles"}>Read More</button>
                     </div>
                   </div>
                 </div>
@@ -107,7 +107,7 @@ const Articles = () => {
                     <h3 style={styles.cardTitle}>{article.title}</h3>
                     <p className="text-muted mb-2">{article.date} • {article.readTime}</p>
                     <p style={styles.cardText}>{article.excerpt}</p>
-                    <button style={styles.textButton} className="btn p-0 mt-2">Read More</button>
+                    <button style={styles.textButton} className="btn p-0 mt-2" onClick={() => window.location.href = "/detailarticles"}>Read More</button>
                   </div>
                 </div>
               </div>
