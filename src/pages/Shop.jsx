@@ -1,126 +1,272 @@
+import React from "react";
+import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import ShopProfile from '../assets/images/shop/shop.webp';
 
 // component item
 import Item from '../components/Item';
 
-// asset product
+// assets
 import Image1 from '../assets/images/cap.png';
 import Image2 from '../assets/images/jeans.png';
 import Image3 from '../assets/images/tshirt.png';
 import Image4 from '../assets/images/pants.png';
 
 const Shop = () => {
-    const products = [
-        { id: 1, name: "Phone Case", price: 6.2, image: Image1 },
-        { id: 2, name: "Hoodie Sweatshirt", price: 90.3, image: Image2, oldPrice: 129 },
-        { id: 3, name: "Basic T-Shirt", price: 27.54, image: Image3 },
-        { id: 4, name: "Baseball Cap", price: 19.2, image: Image4 },
-      ];
+    // data product
+    const [products, setProducts] = useState([
+        { id: 1, name: "MLB Cap", price: 6.2, image: Image1, category: "Accessories", sold: 120, uploadedAt: "2024-02-20" },
+        { id: 2, name: "Men's Jeans", price: 90.3, image: Image2, category: "Jeans", sold: 45, uploadedAt: "2024-02-22" },
+        { id: 3, name: "Basic T-Shirt", price: 27.54, image: Image3, category: "T-Shirt", sold: 87, uploadedAt: "2024-02-18" },
+        { id: 4, name: "Pants", price: 19.2, image: Image4, category: "Clothing", sold: 65, uploadedAt: "2024-02-25" },
+    ]);
 
-    return(
+    const [category, setCategory] = useState("All Categories");
+    const [filter, setFilter] = useState("Newest First");
+
+    return (
         <>
-            <section style={styles.section}>
+            <section className="pt-5" style={{ backgroundColor: "#FCFBF0" }}>
+                {/* Store Information & Details Container  */}
+                <section className="container d-flex align-items-center mb-4" style={styles.storeProfileContainer}>
+                    <div className="row m-0 d-flex justify-content-between align-items-center w-100">
+                        <div className="col-auto d-flex align-items-center p-0">
+                            {/* Store Profile */}
+                            <img
+                                id="shop-picture"
+                                src={ShopProfile}
+                                alt="Shop Picture"
+                                className="img-fluid me-3"
+                                style={styles.profilePicture}
+                            />
 
-                <div className="container pt-5">
-                    <div className="shop-profile row">
-                        <div className="col">
-                            <img className='shop-picture' src={ShopProfile} alt="shop picture" />
-                        </div>
-                        <div className="col">
-                            <div className="row">
-                                <div className="col"><p className='fw-bold fs-2'><i class="bi bi-patch-check-fill" style={{ color: "#39754B" }}></i> LoopWearer</p></div>
-                            </div>
-                            <div className="row">
-                                <p className='fw-light fs-5'>Yogyakarta</p>
-                            </div>
-                            <div className="row">
-                                <div className="col"><button className='dark-btn w-100'>Follow</button></div>
-                                <div className="col"><button className='dark-btn w-100'>Chat</button></div>
+                            {/* Store Details */}
+                            <div className="text-start d-flex flex-column">
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <i class="bi bi-patch-check-fill fs-4" style={styles.tierStore}></i>
+                                        <h3 className="m-0 me-3" style={styles.storeName}>LoopWearer</h3>
+                                        <span style={styles.storeStatus}>● Online</span>
+                                </div>
+
+                                <span className="mb-2" style={styles.storeLocation}>Yogyakarta</span>
+                                {/* <span className="mb-2" style={styles.storeDescription}>Senantiasa hadir memenuhi kebutuhan Anda!</span> */}
+
+                                <button className="btn btn-outline-success" >
+                                    <i className="bi bi-share"></i>
+                                </button>
                             </div>
                         </div>
 
-                        <div className="col">
-                            <p className='fw-bold fs-2'><i class="bi bi-star-fill text-warning"></i> 4.9</p>
-                            <p>Rating & Review</p>
-                        </div>
-                        <div className="col">
-                            <p className='fw-bold fs-2'>± 1 Hours</p>
-                            <p>Seller Response</p>
-                        </div>
-                        <div className="col">
-                            <p className='fw-bold fs-2'>24/7</p>
-                            <p>Shop Open</p>
+                        <div className="col-auto d-flex align-items-center gap-4">
+                            <div className="text-center mr-4">
+                                <p className="m-0" style={styles.storeInfoStatus}><i className="fas fa-star rating-icon"></i> 4.9</p>
+                                <p className="m-0" style={styles.storeInfoDetails}>Rating & Reviews</p>
+                            </div>
+
+                            {/* <div className="vertical-divider"></div> */}
+
+                            <div className="text-center mr-4">
+                                <p className="m-0" style={styles.storeInfoStatus}>± 3 hours</p>
+                                <p className="m-0" style={styles.storeInfoDetails}>Seller Response Time</p>
+                            </div>
+
+                            {/* <div className="vertical-divider"></div> */}
+
+                            <div className="text-center">
+                                <p className="m-0" style={styles.storeInfoStatus}>24/7</p>
+                                <p className="m-0" style={styles.storeInfoDetails}>Store Operating Hours</p>
+                            </div>
                         </div>
                     </div>
+                </section>
 
-                    <div className="row">
-                        <div className="col">
-                            <form class="d-flex mx-auto w-100 my-2 " role="search">
-                                <input class="search-input form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            </form>
-                        </div>
-                        <div className="col">
-                        <div class="row align-items-start mb-2">
-                        <div className="col d-grid">
-                  <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
-                    Location
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Yogyakarta</a></li>
-                    <li><a class="dropdown-item" href="#">Jakarta</a></li>
-                    <li><a class="dropdown-item" href="#">Surabaya</a></li>
-                  </ul>
-                </div>
+                {/* Search Bar, Dropdowns, Add item, etc. */}
+                <section className="container align-items-center py-4">
+                    <div className="row align-items-center flex-column flex-md-row">
+                        <div className="col-md-9 p-0 px-3 px-md-0">
+                            <div className="d-flex flex-column flex-md-row align-items-center justify-content-start gap-3">
+                                {/* Search Bar */}
+                                <div className="position-relative flex-grow-1 w-100 w-md-auto" style={{ minWidth: "200px" }}>
+                                    <input
+                                        type="text"
+                                        className="form-control ps-4 py-2"
+                                        placeholder="Search products..."
+                                        aria-label="Search"
+                                    />
+                                </div>
 
-                <div className="col d-grid">
-                  <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
-                    Shop Status
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Verified</a></li>
-                    <li><a class="dropdown-item" href="#">Top</a></li>
-                    <li><a class="dropdown-item" href="#">Normal</a></li>
-                  </ul>
-                </div>
+                                {/* Category Dropdown */}
+                                <div className="dropdown w-100 w-md-auto">
+                                    <button
+                                        className="btn btn-outline-success dropdown-toggle py-2 w-100 w-md-auto"
+                                        type="button"
+                                        id="categoryDropdown"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        {category}
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="categoryDropdown">
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setCategory("All Categories")}>
+                                                All Categories
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setCategory("Clothing")}>
+                                                Clothing
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setCategory("Jacket")}>
+                                                Jacket
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setCategory("Jeans")}>
+                                                Jeans
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setCategory("T-Shirt")}>
+                                                T-Shirt
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setCategory("Accessories")}>
+                                                Accessories
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                {/* Filter Dropdown */}
+                                <div className="dropdown w-100 w-md-auto">
+                                    <button
+                                        className="btn btn-outline-success dropdown-toggle py-2 w-100 w-md-auto"
+                                        type="button"
+                                        id="filterDropdown"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        {filter}
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="filterDropdown">
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setFilter("Newest First")}>
+                                                Newest First
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setFilter("Price: Low to High")}>
+                                                Price: Low to High
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setFilter("Price: High to Low")}>
+                                                Price: High to Low
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" onClick={() => setFilter("Best Selling")}>
+                                                Best Selling
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="d-flex flex-grow-1"></div>
+                            </div>
                         </div>
-                        </div>
-                        <div className="col">
-                            <button className="dark-btn">Add Product</button>
+                        <div className="col-md-3 p-0 px-3 px-md-0 ps-md-5 justify-content-center justify-content-md-end d-flex">
+                            {/* Add Item Button */}
+                            <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto">
+                                <span>Add Item</span>
+                            </button>
                         </div>
                     </div>
+                </section>
 
-                    <div className="row">
-                        <p className='fw-bold fs-2'>Products</p>
-                        <div className="row justify-content-between">
-                            {products.map((product) => (
-                            <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                {/* Product List */}
+                <section className="container p-0">
+                    <div className="row justify-content-between p-0">
+                        {products
+                            .filter((product) => {
+                                if (category !== "All Categories") {
+                                    return product.category === category;
+                                }
+                                return true;
+                            })
+                            .sort((a, b) => {
+                                if (filter === "Newest First") {
+                                    return new Date(b.uploadDate) - new Date(a.uploadDate);
+                                } else if (filter === "Price: Low to High") {
+                                    return a.price - b.price;
+                                } else if (filter === "Price: High to Low") {
+                                    return b.price - a.price;
+                                } else if (filter === "Best Selling") {
+                                    return b.sold - a.sold;
+                                }
+                                return 0;
+                            })
+                            .map((product) => (
+                                <>
+                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                                </>
                             ))}
-                            {products.map((product) => (
-                            <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-                            ))}
-                            {products.map((product) => (
-                            <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-                            ))}
-                            {products.map((product) => (
-                            <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-                            ))}
-                            {products.map((product) => (
-                            <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-                            ))}
-                        </div>
                     </div>
-                </div>
-
+                </section>
             </section>
         </>
     );
-}
+
+};
 
 const styles = {
-    section: {
-        backgroundColor: "#FCFBF0",
-        minHeight: '90vh'
-    }
-}
+    storeProfileContainer: {
+        padding: "15px",
+        border: "0.8px solid rgba(46, 49, 55, 0.12)",
+        borderRadius: "8px",
+    },
+    storeName: {
+        fontSize: "25px",
+        fontWeight: "bold",
+    },
+    storeStatus: {
+        fontSize: "14px",
+        color: "#39754B",
+        fontWeight: "bold",
+
+    },
+    storeLocation: {
+        fontSize: "14px",
+        color: "#6c757d",
+    },
+    storeDescription: {
+        fontSize: "14px",
+        color: "#6c757d",
+    },
+    storeInfoStatus: {
+        fontWeight: "bold",
+    },
+    storeInfoDetails: {
+        // color: "#6c757d",
+    },
+    profilePicture: {
+        borderRadius: "100%",
+        width: "60px",
+        height: "60px",
+        border: "1px solid black",
+        objectFit: "cover",
+        objectPosition: "center",
+    },
+    tierStore: {
+        borderRadius: "100%",
+        width: "35px",
+        height: "35px",
+        objectFit: "cover",
+        objectPosition: "center",
+        color: "#39754B",
+    },
+};
 
 export default Shop;
