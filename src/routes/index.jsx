@@ -14,6 +14,7 @@ import Articles from "../pages/Articles";
 import Profile from "../pages/Profile";
 import ListProduct from "../pages/ListProduct";
 import DetailProduct from "../pages/DetailProduct";
+import DetailArticles from "../pages/DetailArticles";
 import Shop from "../pages/Shop";
 import Cart from "../pages/Cart";
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/articles",
         element: <Articles />,
+      },
+      {
+        path: "/detailarticles",
+        element: <DetailArticles />,
       },
     ],
   },
