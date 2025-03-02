@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Image1 from "../assets/images/carousel/carousel6.webp";
 import Image2 from "../assets/images/carousel/carousel2.jpg";
@@ -10,6 +12,14 @@ const Articles = () => {
   const carouselImages = [Image1, Image2, Image3];
   
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: false,
+    });
+    
+    AOS.refresh();
+    
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % carouselImages.length);
     }, 5000);
@@ -30,8 +40,8 @@ const Articles = () => {
           <div className="container" style={styles.heroContent}>
             <div className="row align-items-center">
               <div className="col-md-8 mx-auto text-center">
-                <h1 style={styles.heroTitle}>Sustainable Fashion Insights</h1>
-                <p style={styles.heroSubtitle}>Learn how to extend your clothing's lifespan, reduce waste, and create a sustainable future.</p>
+                <h1 style={styles.heroTitle} data-aos="fade-down" data-aos-delay="200">Sustainable Fashion Insights</h1>
+                <p style={styles.heroSubtitle} data-aos="fade-up" data-aos-delay="400">Learn how to extend your clothing's lifespan, reduce waste, and create a sustainable future.</p>
               </div>
             </div>
           </div>
@@ -55,7 +65,7 @@ const Articles = () => {
         <div className="container">
           <div className="row mb-4">
             <div className="col-12">
-              <div className="card border-0" style={styles.featuredCard}>
+              <div className="card border-0" style={styles.featuredCard} data-aos="fade-up">
                 <div className="row g-0">
                   <div className="col-md-6">
                     <img 
@@ -67,13 +77,13 @@ const Articles = () => {
                   </div>
                   <div className="col-md-6">
                     <div className="card-body p-4">
-                      <span style={styles.featuredBadge}>Featured</span>
-                      <h2 style={styles.cardTitle}>The Complete Guide to Clothing Care</h2>
-                      <p className="text-muted mb-2">March 1, 2025 • 8 min read</p>
-                      <p style={styles.cardText}>
+                      <span style={styles.featuredBadge} data-aos="fade-right" data-aos-delay="200">Featured</span>
+                      <h2 style={styles.cardTitle} data-aos="fade-right" data-aos-delay="300">The Complete Guide to Clothing Care</h2>
+                      <p className="text-muted mb-2" data-aos="fade-right" data-aos-delay="400">March 1, 2025 • 8 min read</p>
+                      <p style={styles.cardText} data-aos="fade-right" data-aos-delay="500">
                         Discover essential techniques to extend your garments' lifespan. From washing methods to storage solutions, learn how proper care can reduce your fashion footprint while preserving your favorite pieces for years to come.
                       </p>
-                      <button style={styles.button} className="btn mt-3" onClick={() => window.location.href = "/detailarticles"}>Read More</button>
+                      <button style={styles.button} className="btn mt-3" onClick={() => window.location.href = "/detailarticles"} data-aos="fade-up" data-aos-delay="600">Read More</button>
                     </div>
                   </div>
                 </div>
@@ -87,7 +97,7 @@ const Articles = () => {
       <section style={styles.altSection} className="py-5">
         <div className="container">
           <div className="row mb-4">
-            <div className="col-12">
+            <div className="col-12" data-aos="fade-up">
               <h2 style={styles.sectionTitle}>Latest Articles</h2>
               <p style={styles.sectionSubtitle}>Stay informed with our latest insights on sustainable fashion</p>
             </div>
@@ -95,7 +105,7 @@ const Articles = () => {
           
           <div className="row g-4">
             {recentArticles.map((article, index) => (
-              <div className="col-md-4" key={index}>
+              <div className="col-md-4" key={index} data-aos="zoom-in" data-aos-delay={200 + (index * 100)}>
                 <div className="card h-100 border-0" style={styles.card}>
                   <img 
                     src={index === 0 ? Image2 : Image1} 
@@ -120,7 +130,7 @@ const Articles = () => {
       <section style={styles.section} className="py-5">
         <div className="container">
           <div className="row mb-4">
-            <div className="col-12">
+            <div className="col-12" data-aos="fade-up">
               <h2 style={styles.sectionTitle}>Browse by Category</h2>
               <p style={styles.sectionSubtitle}>Explore sustainable fashion topics that interest you most</p>
             </div>
@@ -128,8 +138,29 @@ const Articles = () => {
           
           <div className="row g-4">
             {categories.map((category, index) => (
-              <div className="col-md-3 col-6" key={index}>
-                <div className="card h-100 border-0" style={styles.categoryCard}>
+              <div className="col-md-3 col-6" key={index} data-aos="flip-up" data-aos-delay={100 * index}>
+                <div 
+                  className="card h-100 border-0" 
+                  style={styles.categoryCard}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+                    const iconElement = e.currentTarget.querySelector('[style*="categoryIcon"]');
+                    if (iconElement) {
+                      iconElement.style.backgroundColor = '#39754B';
+                      iconElement.style.color = '#FCFBF0';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.05)';
+                    const iconElement = e.currentTarget.querySelector('[style*="categoryIcon"]');
+                    if (iconElement) {
+                      iconElement.style.backgroundColor = '#e9f2ee';
+                      iconElement.style.color = '#39754B';
+                    }
+                  }}
+                >
                   <div className="card-body text-center">
                     <div style={styles.categoryIcon}>
                       <span className="material-icons">{category.icon}</span>
@@ -148,11 +179,11 @@ const Articles = () => {
       <section style={styles.altSection} className="py-5">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-md-8 text-center">
+            <div className="col-md-8 text-center" data-aos="fade-up">
               <h2 style={styles.sectionTitle}>Join Our Newsletter</h2>
               <p style={styles.sectionSubtitle}>Get sustainable fashion tips and exclusive content delivered to your inbox</p>
               
-              <div className="input-group mt-4 mb-3 w-75 mx-auto">
+              <div className="input-group mt-4 mb-3 w-75 mx-auto" data-aos="fade-up" data-aos-delay="200">
                 <input 
                   type="email" 
                   className="form-control" 
@@ -167,7 +198,7 @@ const Articles = () => {
                   Subscribe
                 </button>
               </div>
-              <p style={styles.smallText}>We respect your privacy and will never share your information</p>
+              <p style={styles.smallText} data-aos="fade-up" data-aos-delay="300">We respect your privacy and will never share your information</p>
             </div>
           </div>
         </div>
@@ -201,14 +232,10 @@ const recentArticles = [
 ];
 
 const categories = [
-  { title: "Clothing Care", icon: "eco", count: 18 },
-  { title: "Upcycling", icon: "refresh", count: 12 },
-  { title: "Sustainable Brands", icon: "verified", count: 15 },
-  { title: "Minimalist Wardrobe", icon: "style", count: 9 },
-  { title: "Ethical Production", icon: "handshake", count: 11 },
-  { title: "Repair Guides", icon: "build", count: 14 },
-  { title: "Second-Hand Tips", icon: "recycling", count: 8 },
-  { title: "Fabric Knowledge", icon: "layers", count: 13 }
+  { title: "Clothing Care", icon: <i className="fa-solid fa-shirt"></i>, count: 18 },
+  { title: "Upcycling", icon: <i className="fa-solid fa-recycle"></i>, count: 12 },
+  { title: "Repair Guides", icon: <i className="fa-solid fa-screwdriver-wrench"></i>, count: 14 },
+  { title: "Second-Hand Tips", icon: <i className="fa-solid fa-handshake"></i>, count: 8 },
 ];
 
 // Styles
@@ -321,7 +348,8 @@ const styles = {
     backgroundColor: "#FCFBF0",
     boxShadow: "0 4px 16px rgba(0,0,0,0.05)",
     borderRadius: "12px",
-    transition: "all 0.3s ease"
+    transition: "all 0.3s ease",
+    cursor: "pointer"
   },
   cardTitle: {
     color: "#1A1816",
@@ -385,7 +413,8 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto 16px auto",
-    color: "#39754B"
+    color: "#39754B",
+    transition: "all 0.3s ease"
   },
   categoryTitle: {
     color: "#1A1816",

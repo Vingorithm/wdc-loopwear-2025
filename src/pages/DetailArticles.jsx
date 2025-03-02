@@ -398,7 +398,6 @@ const styles = {
     transition: "all 0.2s ease"
   },
   
-  // Related articles styles
   sectionTitle: {
     color: "#39754B",
     fontWeight: "600",
@@ -445,7 +444,6 @@ const styles = {
     transition: "all 0.2s ease"
   },
   
-  // Newsletter styles
   input: {
     backgroundColor: "#FCFBF0",
     border: "1px solid #ddd",
