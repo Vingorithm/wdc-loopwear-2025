@@ -35,7 +35,7 @@ const AboutUs = () => {
                                                 choices easier, empowering individuals to minimize their environmental impact and embrace 
                                                 a more eco-friendly future.
                                             </p>
-                                            <button style={styles.carouselButton} className="btn mt-4">LEARN MORE</button>
+                                            <button style={styles.carouselButton} className="btn mt-4" onClick={() => window.location.href = "/articles"}>LEARN MORE</button>
                                         </div>
                                     </div>
                                 </div>
