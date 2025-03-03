@@ -141,3 +141,9 @@ ul.dropdown-search li a:active {
 .shop-info {
     border: 1px solid #1A1816;
 }
+
+.shop-account {
+    background-color: #FCFBF0;
+    border: 1px solid #1A1816;
+    height: 10;
+}

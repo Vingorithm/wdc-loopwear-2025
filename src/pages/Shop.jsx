@@ -57,7 +57,7 @@ const Shop = () => {
                             </div>
                         </div>
 
-                        <div className="col-auto d-flex align-items-center gap-4">
+                        <div className="col-auto d-flex align-items-center gap-4 mt-4 mt-lg-0">
                             <div className="text-center mr-4">
                                 <p className="m-0" style={styles.storeInfoStatus}><i className="fas fa-star rating-icon"></i> 4.9</p>
                                 <p className="m-0" style={styles.storeInfoDetails}>Rating & Reviews</p>
