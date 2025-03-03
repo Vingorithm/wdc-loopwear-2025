@@ -14,7 +14,7 @@ const Item = ({ picture, name, oldPrice, price }) => {
                                 style={styles.image}
                             />
                             <div className="hover-overlay">
-                                <div className="quick-view-btn">Quick View</div>
+                                <div className="quick-view-btn">View Details</div>
                             </div>
                         </div>
                         <p className="text-muted fs-5 text-start ms-2 mb-0 product-name">{name}</p>
