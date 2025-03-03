@@ -14,6 +14,8 @@ import Img5 from '../assets/images/product/5.jpeg';
 import Img6 from '../assets/images/product/6.jpg';
 import Img7 from '../assets/images/product/7.jpg';
 
+import shop from '../assets/images/shop/shop.webp';
+
 const styles = {
   image: {
     aspectRatio: "1/1.5",
@@ -29,7 +31,7 @@ const styles = {
     width: "100%",
     objectFit: "cover",
     objectPosition: "center",
-    aspectRatio: "1/0.78",
+    aspectRatio: "1/1.05",
   },
   modelImage: {
     height: "150px",
@@ -205,6 +207,37 @@ const DetailProduct = () => {
 
               <div className="mt-3">
                 <p>Delivery: {product.delivery}</p>
+              </div>
+
+              <div className="d-flex my-3">
+                <a href="/shop" style={{ 
+                  width: "100%",
+                  height: "100%",
+                  margin: "0",
+                  padding: "0",
+                  display: "flex",
+                  textDecoration: 'none',
+                }}>
+                  <button className='shop-account'>
+                    <div className="row align-items-center">
+                      <div className="col-3">
+                      <img src={shop} alt="shop-icon" style={{
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        borderRadius: '100%',
+                        width: '100%',
+                      }}  />
+                      </div>
+                      <div className="col-7">
+                        <div className="row text-start align-items-center"><p className="fs-3 fw-bold">LoopWear</p></div>
+                        <div className="row text-start align-items-center" ><p style={{
+                          color: '#39754B',
+                          fontWeight: 'bold',
+                        }}>online</p></div>
+                      </div>
+                    </div>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
