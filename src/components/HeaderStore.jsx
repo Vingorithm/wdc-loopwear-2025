@@ -8,6 +8,7 @@ const HeaderStore = () => {
   const [searchCategory, setSearchCategory] = useState('Barang');
   const [searchQuery, setSearchQuery] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+  const [isProfileHovered, setIsProfileHovered] = useState(false);
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -27,14 +28,14 @@ const HeaderStore = () => {
         </a>
 
         {/* Search Form */}
-        <button 
-          onClick={() => setIsSearchOpen(!isSearchOpen)} 
-          className="navbar-toggler order-1 order-lg-0 search-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarSupportedContent" 
-          aria-controls="navbarSupportedContent" 
-          aria-expanded="false" 
+        <button
+          onClick={() => setIsSearchOpen(!isSearchOpen)}
+          className="navbar-toggler order-1 order-lg-0 search-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
           aria-label="Toggle navigation"
           style={styles.searchToggler}
         >
@@ -44,10 +45,10 @@ const HeaderStore = () => {
         </button>
 
         <div className="collapse navbar-collapse order-3 order-lg-1" id="navbarSupportedContent">
-          <form 
-            className="d-flex mx-auto w-75 w-sm-100 my-2" 
-            role="search" 
-            action="/listproduct"
+          <form
+            className="d-flex mx-auto w-75 w-sm-100 my-2"
+            role="search"
+            action={searchCategory == 'Barang' ? "/productlist" : "/servicelist"}
             style={styles.searchForm}
           >
 
@@ -55,9 +56,9 @@ const HeaderStore = () => {
               <div style={styles.searchIconLeft}>
                 <i className="bi bi-search"></i>
               </div>
-              <input 
-                className="search-input form-control" 
-                type="search" 
+              <input
+                className="search-input form-control"
+                type="search"
                 placeholder={`Search for ${searchCategory.toLowerCase()}...`}
                 aria-label="Search"
                 value={searchQuery}
@@ -71,23 +72,23 @@ const HeaderStore = () => {
                 }}
               />
               <div className="position-absolute top-0 end-0">
-                <button 
-                  className="btn dropdown-toggle" 
-                  type="button" 
-                  data-bs-toggle="dropdown" 
+                <button
+                  className="btn dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
                   aria-expanded="false"
                   style={styles.categoryButton}
                 >
                   {searchCategory}
                 </button>
-                <ul 
+                <ul
                   className="dropdown-menu dropdown-menu-end"
                   style={styles.dropdownMenu}
                 >
                   <li>
-                    <a 
-                      className="dropdown-item" 
-                      href="#" 
+                    <a
+                      className="dropdown-item"
+                      href="#"
                       onClick={() => handleCategorySelect('Barang')}
                       style={searchCategory === 'Barang' ? styles.activeDropdownItem : {}}
                     >
@@ -95,9 +96,9 @@ const HeaderStore = () => {
                     </a>
                   </li>
                   <li>
-                    <a 
-                      className="dropdown-item" 
-                      href="#" 
+                    <a
+                      className="dropdown-item"
+                      href="#"
                       onClick={() => handleCategorySelect('Jasa')}
                       style={searchCategory === 'Jasa' ? styles.activeDropdownItem : {}}
                     >
@@ -107,8 +108,8 @@ const HeaderStore = () => {
                 </ul>
               </div>
             </div>
-            <button 
-              className="btn ms-2" 
+            <button
+              className="btn btn-search ms-2 hoverable-item"
               type="submit"
               style={styles.searchButton}
             >
@@ -118,10 +119,53 @@ const HeaderStore = () => {
         </div>
 
         {/* Profile Picture */}
-        <a className="order-2 order-lg-2" href="/profile" style={styles.profileLink}>
+        {/* <a className="order-2 order-lg-2" href="/profile" style={styles.profileLink}>
           <img id="userProfile" src={profilePicture} alt="Profile" style={styles.profilePicture} />
-        </a>
-        
+        </a> */}
+
+        <div
+          className="order-2 order-lg-2 position-relative"
+          onMouseEnter={() => setIsProfileHovered(true)}
+          onMouseLeave={() => setIsProfileHovered(false)}
+          style={styles.profileContainer}
+        >
+          <a href="#" style={styles.profileLink}>
+            <img id="userProfile" src={profilePicture} alt="Profile" style={styles.profilePicture} />
+          </a>
+          {/* Dropdown Menu */}
+          {isProfileHovered && (
+            <div style={styles.dropdownProfile}>
+              <ul style={styles.dropdownProfileList}>
+                <li style={styles.dropdownProfileItem} className='hoverable-item'>
+                  <a href="/profile" style={styles.dropdownProfileLink}>
+                    <i className="bi bi-person me-2"></i>Profile
+                  </a>
+                </li>
+                <li style={styles.dropdownProfileItem} className='hoverable-item'>
+                  <a href="/cart" style={styles.dropdownProfileLink}>
+                    <i class="bi bi-cart me-2"></i>Cart & Wishlist
+                  </a>
+                </li>
+                <li style={styles.dropdownProfileItem} className='hoverable-item'>
+                  <a href="/cart" style={styles.dropdownProfileLink}>
+                    <i class="bi bi-ticket-detailed me-2"></i>Discount
+                  </a>
+                </li>
+                <li style={styles.dropdownProfileItem} className='hoverable-item'>
+                  <a href="/historyorder" style={styles.dropdownProfileLink}>
+                    <i class="bi bi-clock-history me-2"></i>History
+                  </a>
+                </li>
+                <li style={styles.dropdownProfileItem} className='hoverable-item'>
+                  <a href="/login" style={styles.dropdownProfileLink}>
+                    <i className="bi bi-box-arrow-right me-2"></i>Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
+        </div>
+
       </div>
     </nav>
   );
@@ -141,7 +185,7 @@ const styles = {
   logo: {
     height: "50px",
     transform: "scale(5)",
-    transformOrigin: "center", 
+    transformOrigin: "center",
     marginLeft: "30px",
     marginTop: "3px",
   },
@@ -213,6 +257,24 @@ const styles = {
     backgroundColor: "#f8f9fa",
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
   },
+  // profileLink: {
+  //   transition: "transform 0.2s ease",
+  //   display: "inline-block",
+  // },
+  // profilePicture: {
+  //   borderRadius: "100%",
+  //   width: "45px",
+  //   height: "45px",
+  //   border: "2px solid #212529",
+  //   objectFit: "cover",
+  //   objectPosition: "center",
+  //   boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+  //   transition: "all 0.2s ease",
+  // },
+
+  profileContainer: {
+    position: "relative",
+  },
   profileLink: {
     transition: "transform 0.2s ease",
     display: "inline-block",
@@ -226,6 +288,38 @@ const styles = {
     objectPosition: "center",
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
     transition: "all 0.2s ease",
+  },
+  dropdownProfile: {
+    position: "absolute",
+    top: "100%",
+    right: "0",
+    borderRadius: "12px",
+    boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)",
+    padding: "8px 0",
+    zIndex: 1000,
+    minWidth: "160px",
+    backgroundColor: '#FCFBF0',
+    color: "#1A1816",
+  },
+  dropdownProfileList: {
+    listStyle: "none",
+    margin: "0",
+    padding: "0",
+    backgroundColor: '#FCFBF0',
+    color: "#1A1816",
+  },
+  dropdownProfileItem: {
+    backgroundColor: '#FCFBF0',
+    color: "#1A1816",
+    padding: "8px 16px",
+  },
+  dropdownProfileLink: {
+    backgroundColor: '#FCFBF0',
+    color: "#1A1816",
+    textDecoration: "none",
+    display: "flex",
+    alignItems: "center",
+    fontSize: "14px",
   },
 };
 

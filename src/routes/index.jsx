@@ -18,6 +18,7 @@ import DetailArticles from "../pages/DetailArticles";
 import Shop from "../pages/Shop";
 import Cart from "../pages/Cart";
 import HistoryOrder from "../pages/HistoryOrder";
+import ListService from "../pages/ListService";
 
 const router = createBrowserRouter([
   {
@@ -65,8 +66,12 @@ const router = createBrowserRouter([
         element: <StorePage />,
       },
       {
-        path: "/listproduct",
+        path: "/productlist",
         element: <ListProduct />,
+      },
+      {
+        path: "/servicelist",
+        element: <ListService />,
       },
       {
         path: "/detailproduct",

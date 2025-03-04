@@ -225,7 +225,8 @@ const DetailProduct = () => {
                         objectFit: 'cover',
                         objectPosition: 'center',
                         borderRadius: '100%',
-                        width: '100%',
+                        width: '70%',
+                        border: "1px solid #1A1816"
                       }}  />
                       </div>
                       <div className="col-7">
