@@ -35,9 +35,9 @@ const ListProduct = () => {
                     Location
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Yogyakarta</a></li>
-                    <li><a class="dropdown-item" href="#">Jakarta</a></li>
-                    <li><a class="dropdown-item" href="#">Surabaya</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">Yogyakarta</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">Jakarta</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">Surabaya</a></li>
                   </ul>
                 </div>
 
@@ -46,9 +46,9 @@ const ListProduct = () => {
                     Shop Status
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Verified</a></li>
-                    <li><a class="dropdown-item" href="#">Top</a></li>
-                    <li><a class="dropdown-item" href="#">Normal</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">Verified</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">Top</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">Normal</a></li>
                   </ul>
                 </div>
 
@@ -57,9 +57,9 @@ const ListProduct = () => {
                     Discount
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Free Delivery</a></li>
-                    <li><a class="dropdown-item" href="#">Cashback</a></li>
-                    <li><a class="dropdown-item" href="#">Big Sale</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">Free Delivery</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">Cashback</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">Big Sale</a></li>
                   </ul>
                 </div>
 
@@ -68,11 +68,11 @@ const ListProduct = () => {
                     Rating
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">5</a></li>
-                    <li><a class="dropdown-item" href="#">4</a></li>
-                    <li><a class="dropdown-item" href="#">3</a></li>
-                    <li><a class="dropdown-item" href="#">2</a></li>
-                    <li><a class="dropdown-item" href="#">1</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">5</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">4</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">3</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">2</a></li>
+                    <li className='hoverable-item'><a class="dropdown-item" href="#">1</a></li>
                   </ul>
                 </div>
               </div>

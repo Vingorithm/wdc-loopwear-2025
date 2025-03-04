@@ -47,6 +47,10 @@ p.darkGreenText {
     color: #39754B;
 }
 
+.darkGreenText {
+    color: #39754B;
+}
+
 .item-category {
     color: #1A1816;
 }
@@ -146,4 +150,16 @@ ul.dropdown-search li a:active {
     background-color: #FCFBF0;
     border: 1px solid #1A1816;
     height: 10;
+}
+
+.shop-account:hover {
+    filter: brightness(0.8);
+}
+
+.styled-text {
+    text-shadow: 0 0 10px #1A1816;
+}
+
+.hoverable-item:hover {
+    filter: brightness(0.95);
 }
