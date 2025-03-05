@@ -52,12 +52,13 @@ p.darkGreenText {
 }
 
 .item-category {
-    color: #1A1816;
+    background-color: #1A1816;
+    color: #FCFBF0;
 }
 
 .item-category:hover {
-    background-color: #1A1816;
-    color: #FCFBF0;
+    color: #1A1816;
+    background-color: #FCFBF0;
 }
 
 ul.pagination {
