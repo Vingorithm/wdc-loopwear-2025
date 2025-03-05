@@ -12,7 +12,7 @@ import Image2 from '../assets/images/jeans.png';
 import Image3 from '../assets/images/tshirt.png';
 import Image4 from '../assets/images/pants.png';
 
-const Shop = () => {
+const Shop = ({ isUser }) => {
     // data product
     const [products, setProducts] = useState([
         { id: 1, name: "MLB Cap", price: 6.2, image: Image1, category: "Accessories", sold: 120, uploadedAt: "2024-02-20" },
@@ -51,9 +51,32 @@ const Shop = () => {
                                 <span className="mb-2" style={styles.storeLocation}>Yogyakarta</span>
                                 {/* <span className="mb-2" style={styles.storeDescription}>Senantiasa hadir memenuhi kebutuhan Anda!</span> */}
 
-                                <button className="btn btn-outline-success" >
-                                    <i className="bi bi-share"></i>
-                                </button>
+                                {
+                                    isUser ? 
+                                    <button className="btn btn-outline-success" >
+                                        <i className="bi bi-share"></i>
+                                    </button>
+                                    :
+                                    <div className="row">
+                                        <div className="col">
+                                            <button className="btn btn-outline-success" >
+                                                <p className="fw-bold m-0">chat</p>
+                                            </button>
+                                        </div>
+                                        <div className="col">
+                                            <button className="btn btn-outline-success" >
+                                                <p className="fw-bold m-0">Follow</p>
+                                            </button>
+                                        </div>
+                                        <div className="col">
+                                            <button className="btn btn-outline-success" >
+                                                <i className="bi bi-share"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                }
+
+                                
                             </div>
                         </div>
 
@@ -178,10 +201,14 @@ const Shop = () => {
                             </div>
                         </div>
                         <div className="col-md-3 p-0 px-3 px-md-0 ps-md-5 justify-content-center justify-content-md-end d-flex">
-                            {/* Add Item Button */}
-                            <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto">
-                                <span>Add Item</span>
-                            </button>
+                            {
+                                isUser ?
+                                <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto">
+                                    <span>Add Item</span>
+                                </button> 
+                                : 
+                                <></>
+                            }
                         </div>
                     </div>
                 </section>
