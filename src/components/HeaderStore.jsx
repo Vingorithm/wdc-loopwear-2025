@@ -157,6 +157,11 @@ const HeaderStore = () => {
                   </a>
                 </li>
                 <li style={styles.dropdownProfileItem} className='hoverable-item'>
+                  <a href="/myshop" style={styles.dropdownProfileLink}>
+                    <i class="bi bi-shop me-2"></i>My Shop
+                  </a>
+                </li>
+                <li style={styles.dropdownProfileItem} className='hoverable-item'>
                   <a href="/login" style={styles.dropdownProfileLink}>
                     <i className="bi bi-box-arrow-right me-2"></i>Logout
                   </a>
