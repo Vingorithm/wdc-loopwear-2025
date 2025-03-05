@@ -75,8 +75,6 @@ const Shop = ({ isUser }) => {
                                         </div>
                                     </div>
                                 }
-
-                                
                             </div>
                         </div>
 
@@ -197,7 +195,11 @@ const Shop = ({ isUser }) => {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="d-flex flex-grow-1"></div>
+
+                                <button className="btn btn-outline-success py-2 w-100 w-md-auto">
+                                    Order Service
+                                </button>
+                                
                             </div>
                         </div>
                         <div className="col-md-3 p-0 px-3 px-md-0 ps-md-5 justify-content-center justify-content-md-end d-flex">
