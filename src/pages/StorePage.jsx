@@ -81,20 +81,20 @@ const StorePage = () => {
 
           <div className="row">
             <div class="container my-4">
-                  <div class="row align-items-start ms-2">
-                    <div class="item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
-                      Chlotes
-                    </div>
-                    <div class="item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
-                      Jacket
-                    </div>
-                    <div class="item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
-                      Jeans
-                    </div>
-                    <div class="item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
-                      T-Shirt
-                    </div>
-                  </div>
+              <div class="row align-items-start ms-2">
+                <a href="#" className="text-decoration-none item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
+                  Chlotes
+                </a>
+                <a href="#" className="text-decoration-none item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
+                  Jacket
+                </a>
+                <a href="#" className="text-decoration-none item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
+                  Jeans
+                </a>
+                <a href="#" className="text-decoration-none item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
+                  T-shirt
+                </a>
+              </div>
             </div>
           </div>
 
