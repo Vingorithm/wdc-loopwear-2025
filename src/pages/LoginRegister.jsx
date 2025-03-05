@@ -56,7 +56,7 @@ const LoginRegister = () => {
             }
 
             .page-login body {
-                background-color: white;
+                background-color: #FCFBF0;
                 height: 100%;
                 width: 100%;
                 margin: 0;
@@ -79,11 +79,11 @@ const LoginRegister = () => {
                 width: 100%;
                 max-width: 768px;
                 min-height: 480px;
-                background: white;
+                background: #FCFBF0;
                 border-radius: 10px;
                 overflow: hidden;
-                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-                    0 10px 10px rgba(0, 0, 0, 0.22);
+                box-shadow: 0 14px 28px rgba(57, 117, 75, 0.25),
+                    0 10px 10px rgba(57, 117, 75, 0.22);
             }
 
             .page-login .sign-up,
@@ -118,7 +118,7 @@ const LoginRegister = () => {
             }
 
             .page-login form {
-                background: white;
+                background: #FCFBF0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -129,14 +129,14 @@ const LoginRegister = () => {
             }
 
             .page-login h1 {
-                font-weight: bold;
+                font-weight: #FCFBF0;
                 margin: 0;
                 color: white;
                 z-index: 5;
             }
 
             .page-login .heder {
-                color: black;
+                color: #1A1816;
                 font-weight: 900;
                 font-family: Roboto;
             }
@@ -147,36 +147,41 @@ const LoginRegister = () => {
                 line-height: 10px;
                 letter-spacing: 0.5px;
                 margin: 5px 0 10px;
-                color: black;
+                color: #1A1816;
             }
 
             .page-login input {
-                background: #eee;
+                background: #FCFBF0;
                 padding: 12px 15px;
                 width: 100%;
                 margin: 8px 15px;
                 border-radius: 5px;
-                border: none;
+                border: 1px solid #39754B;
                 outline: none;
+                color: #1A1816;
+            }
+
+            .page-login input::placeholder {
+                color: #1A1816;
+                opacity: 0.7;
             }
 
             .page-login a {
-                color: #333;
+                color: #1A1816;
                 font-size: 14px;
                 text-decoration: none;
                 margin: 15px 0;
-
             }
 
             .page-login button {
-                color: #fff;
-                background: black;
+                color: #FCFBF0;
+                background: #1A1816;
                 font-size: 12px;
                 font-weight: bold;
                 padding: 12px 55px;
                 margin: 20px;
                 border-radius: 4px;
-                border: 1px solid white;
+                border: 1px solid #1A1816;
                 outline: none;
                 letter-spacing: 1px;
                 text-transform: uppercase;
@@ -191,12 +196,10 @@ const LoginRegister = () => {
 
             .page-login #signup,
             .page-login #login {
-                background: black;
-                border: 2px solid #fff;
-                color: white;
+                background: #39754B;
+                border: 2px solid #FCFBF0;
+                color: #FCFBF0;
             }
-
-
 
             .page-login .container-overlay {
                 position: absolute;
@@ -215,7 +218,7 @@ const LoginRegister = () => {
 
             .page-login .overlay {
                 position: relative;
-                background: black;
+                background: #39754B;
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -238,7 +241,7 @@ const LoginRegister = () => {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(26, 24, 22, 0.5);
                 z-index: 1;
             }
 
@@ -296,12 +299,12 @@ const LoginRegister = () => {
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                border: 1px solid #ccc;
+                border: 1px solid #39754B;
                 border-radius: 50%;
             }
 
             .page-login .fix a {
-                color: white;
+                color: #FCFBF0;
             }
         `}
       </style>
