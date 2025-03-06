@@ -5,7 +5,7 @@ import Logo from "../assets/images/logo.svg";
 
 const HeaderStore = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchCategory, setSearchCategory] = useState('Barang');
+  const [searchCategory, setSearchCategory] = useState('Product');
   const [searchQuery, setSearchQuery] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const [isProfileHovered, setIsProfileHovered] = useState(false);
@@ -48,7 +48,7 @@ const HeaderStore = () => {
           <form
             className="d-flex mx-auto w-75 w-sm-100 my-2"
             role="search"
-            action={searchCategory == 'Barang' ? "/productlist" : "/servicelist"}
+            action={searchCategory == 'Product' ? "/productlist" : "/servicelist"}
             style={styles.searchForm}
           >
 
@@ -89,20 +89,20 @@ const HeaderStore = () => {
                     <a
                       className="dropdown-item"
                       href="#"
-                      onClick={() => handleCategorySelect('Barang')}
-                      style={searchCategory === 'Barang' ? styles.activeDropdownItem : {}}
+                      onClick={() => handleCategorySelect('Product')}
+                      style={searchCategory === 'Product' ? styles.activeDropdownItem : {}}
                     >
-                      <i className="bi bi-box me-2"></i>Barang
+                      <i className="bi bi-box me-2"></i>Product
                     </a>
                   </li>
                   <li>
                     <a
                       className="dropdown-item"
                       href="#"
-                      onClick={() => handleCategorySelect('Jasa')}
-                      style={searchCategory === 'Jasa' ? styles.activeDropdownItem : {}}
+                      onClick={() => handleCategorySelect('Service')}
+                      style={searchCategory === 'Service' ? styles.activeDropdownItem : {}}
                     >
-                      <i className="bi bi-gear me-2"></i>Jasa
+                      <i className="bi bi-gear me-2"></i>Service
                     </a>
                   </li>
                 </ul>

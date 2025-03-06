@@ -35,7 +35,7 @@ const Cart = () => {
 
                 <div className="container">
 
-                    <p className="fw-bold fs-2">Keranjang</p>
+                    <p className="fw-bold fs-2">Cart</p>
 
                     <div className="row overflow-y-scroll" style={{
                         height: '50vh',

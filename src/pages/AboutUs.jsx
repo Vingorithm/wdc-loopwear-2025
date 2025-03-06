@@ -93,9 +93,9 @@ const AboutUs = () => {
                     <div className="row" data-aos="fade-up">
                         <div className="col-md-4 text-center mb-4 mb-md-0">
                             <div style={styles.statCircle} className="mx-auto mb-3 d-flex align-items-center justify-content-center">
-                                <span style={styles.statNumber}>5K+</span>
+                                <span style={styles.statNumber}>5k+</span>
                             </div>
-                            <h4 style={styles.statTitle}>Garments Saved</h4>
+                            <h4 style={styles.statTitle}>Items Recycled</h4>
                             <p style={styles.text}>
                                 Over 5,000 clothing items diverted from landfills and given a new life through our circular system.
                             </p>
@@ -103,9 +103,9 @@ const AboutUs = () => {
                         
                         <div className="col-md-4 text-center mb-4 mb-md-0">
                             <div style={styles.statCircle} className="mx-auto mb-3 d-flex align-items-center justify-content-center">
-                                <span style={styles.statNumber}>20+</span>
+                                <span style={styles.statNumber}>3k+</span>
                             </div>
-                            <h4 style={styles.statTitle}>Workshops Held</h4>
+                            <h4 style={styles.statTitle}>Happy Customers</h4>
                             <p style={styles.text}>
                                 Educational workshops conducted to raise awareness about sustainable fashion practices.
                             </p>
