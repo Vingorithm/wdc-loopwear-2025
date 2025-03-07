@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -32,6 +32,11 @@ const HomePage = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [activeSlide, setActiveSlide] = useState(0);
     
+    // Create refs for each section
+    const aboutSectionRef = useRef(null);
+    const featuredProductsRef = useRef(null);
+    const sustainableMovementRef = useRef(null);
+    
     // Initialize AOS
     useEffect(() => {
         AOS.init({
@@ -39,22 +44,25 @@ const HomePage = () => {
             once: false,
             mirror: true,
         });
-        
         const handleScroll = () => {
             setScrollPosition(window.scrollY);
         };
-        
         window.addEventListener('scroll', handleScroll);
-        
         const interval = setInterval(() => {
             setActiveSlide((prev) => (prev + 1) % 3);
         }, 5000);
-        
         return () => {
             window.removeEventListener('scroll', handleScroll);
             clearInterval(interval);
         };
     }, []);
+
+    // Function to scroll to a section
+    const scrollToSection = (ref) => {
+        if (ref && ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     const carouselItems = [
         {
@@ -62,21 +70,21 @@ const HomePage = () => {
             title: "Revive Style, Reduce Waste",
             subtitle: "Discover pre-loved fashion that makes a difference.",
             buttonText: "Shop Now",
-            buttonLink: "/store"
+            scrollToRef: featuredProductsRef
         },
         {
             image: Carousel2,
             title: "Shop Sustainably",
             subtitle: "Join the movement to reduce fashion waste.",
             buttonText: "Explore Collection",
-            buttonLink: "/store"
+            scrollToRef: aboutSectionRef
         },
         {
             image: Carousel3,
             title: "Your Style, Your Impact",
             subtitle: "Every purchase helps the planet.",
-            buttonText: "Get Started",
-            buttonLink: "/store"
+            buttonText: "Learn More",
+            scrollToRef: sustainableMovementRef
         }
     ];
 
@@ -149,6 +157,7 @@ const HomePage = () => {
                                 }}
                                 onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#2c5d3b'}
                                 onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#39754B'}
+                                onClick={() => scrollToSection(item.scrollToRef)}
                             >
                                 {item.buttonText}
                             </button>
@@ -227,7 +236,7 @@ const HomePage = () => {
             </div>
 
             {/* About Section 1 */}
-            <section className='d-flex align-items-center' style={styles.section}>
+            <section ref={aboutSectionRef} className='d-flex align-items-center' style={styles.section}>
                 <div className="container-fluid">
                     <div className="row align-items-center justify-content-sm-evenly">
                         <div className="col-md-4 my-4" data-aos="fade-right">
@@ -263,7 +272,7 @@ const HomePage = () => {
             </section>
 
             {/* About Section 3 */}
-            <section className='d-flex align-items-center' style={styles.section}>
+            <section ref={sustainableMovementRef} className='d-flex align-items-center' style={styles.section}>
                 <div className="container-fluid">
                     <div className="row align-items-center justify-content-sm-evenly">
                         <div className="col-md-4 my-4" data-aos="fade-right">
@@ -281,7 +290,7 @@ const HomePage = () => {
             </section>
 
             {/* Featured Products Section */}
-            <section style={styles.featuredSection}>
+            <section ref={featuredProductsRef} style={styles.featuredSection}>
                 <div className="container py-5">
                     <h2 className="text-center mb-5" style={styles.heading} data-aos="fade-down">Featured Products</h2>
                     <div className="row g-4">
@@ -311,7 +320,7 @@ const HomePage = () => {
                     
                    <ItemArticles></ItemArticles>
                     <div className="text-center mt-5" data-aos="fade-up">
-                        <a href="/articles" className="btn btn-custom-secondary btn-lg">Explore All Articles</a>
+                        <a href="/articles" className="btn btn-custom-primary btn-lg">Explore All Articles</a>
                     </div>
                 </div>
             </section>

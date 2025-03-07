@@ -103,7 +103,7 @@ const AboutUs = () => {
                         
                         <div className="col-md-4 text-center mb-4 mb-md-0">
                             <div style={styles.statCircle} className="mx-auto mb-3 d-flex align-items-center justify-content-center">
-                                <span style={styles.statNumber}>3k+</span>
+                                <span style={styles.statNumber}>2.5k+</span>
                             </div>
                             <h4 style={styles.statTitle}>Happy Customers</h4>
                             <p style={styles.text}>
@@ -544,7 +544,7 @@ const styles = {
         height: "36px",
         borderRadius: "50%",
         backgroundColor: "#93A588",
-        opacity: 0.3,
+        opacity: 0.8,
         color: "#39754B",
         fontSize: "1rem",
         textDecoration: "none",
