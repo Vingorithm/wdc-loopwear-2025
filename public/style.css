@@ -111,13 +111,14 @@ button.dark-btn:hover {
     background-color: #FCFBF0;
 }
 
-button.light-btn {
+button.light-btn , .light-btn {
     border: 1px solid #1A1816;
     color: #1A1816;
+    /* background-color: rgba(0, 0, 0, 0); */
     background-color: #FCFBF0;
 }
 
-button.light-btn:hover {
+.light-btn:hover {
     /* border: 1px solid #1A1816;
     background-color: #1A1816;
     color: #FCFBF0; */

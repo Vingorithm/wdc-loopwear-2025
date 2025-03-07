@@ -44,36 +44,36 @@ const Shop = ({ isUser }) => {
                             <div className="text-start d-flex flex-column">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <i class="bi bi-patch-check-fill fs-4" style={styles.tierStore}></i>
-                                        <h3 className="m-0 me-3" style={styles.storeName}>LoopWearer</h3>
-                                        <span style={styles.storeStatus}>● Online</span>
+                                    <h3 className="m-0 me-3" style={styles.storeName}>LoopWearer</h3>
+                                    <span style={styles.storeStatus}>● Online</span>
                                 </div>
 
                                 <span className="mb-2" style={styles.storeLocation}>Yogyakarta</span>
                                 {/* <span className="mb-2" style={styles.storeDescription}>Senantiasa hadir memenuhi kebutuhan Anda!</span> */}
 
                                 {
-                                    isUser ? 
-                                    <button className="btn btn-outline-success" >
-                                        <i className="bi bi-share"></i>
-                                    </button>
-                                    :
-                                    <div className="row">
-                                        <div className="col">
-                                            <button className="btn btn-outline-success" >
-                                                <p className="fw-bold m-0">chat</p>
-                                            </button>
+                                    isUser ?
+                                        <button className="btn btn-outline-success" >
+                                            <i className="bi bi-share"></i>
+                                        </button>
+                                        :
+                                        <div className="row">
+                                            <div className="col">
+                                                <button className="btn btn-outline-success" >
+                                                    <p className="fw-bold m-0">chat</p>
+                                                </button>
+                                            </div>
+                                            <div className="col">
+                                                <button className="btn btn-outline-success" >
+                                                    <p className="fw-bold m-0">Follow</p>
+                                                </button>
+                                            </div>
+                                            <div className="col">
+                                                <button className="btn btn-outline-success" >
+                                                    <i className="bi bi-share"></i>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div className="col">
-                                            <button className="btn btn-outline-success" >
-                                                <p className="fw-bold m-0">Follow</p>
-                                            </button>
-                                        </div>
-                                        <div className="col">
-                                            <button className="btn btn-outline-success" >
-                                                <i className="bi bi-share"></i>
-                                            </button>
-                                        </div>
-                                    </div>
                                 }
                             </div>
                         </div>
@@ -104,7 +104,7 @@ const Shop = ({ isUser }) => {
                 {/* Search Bar, Dropdowns, Add item, etc. */}
                 <section className="container align-items-center py-4">
                     <div className="row align-items-center flex-column flex-md-row">
-                        <div className="col-md-9 p-0 px-3 px-md-0">
+                        <div className="col-md-7 p-0 px-3 px-md-0">
                             <div className="d-flex flex-column flex-md-row align-items-center justify-content-start gap-3">
                                 {/* Search Bar */}
                                 <div className="position-relative flex-grow-1 w-100 w-md-auto" style={{ minWidth: "200px" }}>
@@ -196,20 +196,43 @@ const Shop = ({ isUser }) => {
                                     </ul>
                                 </div>
 
-                                <button className="btn btn-outline-success py-2 w-100 w-md-auto">
-                                    Order Service
-                                </button>
-                                
+                                {
+                                    isUser ?
+                                        <></>
+                                        :
+                                        <button className="btn btn-outline-success py-2 w-100 w-md-auto">
+                                            Order Service
+                                        </button>
+                                }
+
                             </div>
                         </div>
-                        <div className="col-md-3 p-0 px-3 px-md-0 ps-md-5 justify-content-center justify-content-md-end d-flex">
+                        <div className="col-md-5 p-0 px-3 px-md-0 ps-md-5 justify-content-center justify-content-md-end d-flex">
                             {
                                 isUser ?
-                                <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto">
-                                    <span>Add Item</span>
-                                </button> 
-                                : 
-                                <></>
+                                    <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2">
+                                        <span>Check Order</span>
+                                    </button>
+                                    :
+                                    <></>
+                            }
+
+{
+                                isUser ?
+                                    <a className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2" href="/checkswap">
+                                        <span>Check Swap</span>
+                                    </a>
+                                    :
+                                    <></>
+                            }
+
+                            {
+                                isUser ?
+                                    <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto">
+                                        <span>Add Item</span>
+                                    </button>
+                                    :
+                                    <></>
                             }
                         </div>
                     </div>
@@ -255,6 +278,7 @@ const styles = {
         padding: "15px",
         border: "0.8px solid rgba(46, 49, 55, 0.12)",
         borderRadius: "8px",
+        backgroundColor: '#ffffff'
     },
     storeName: {
         fontSize: "25px",

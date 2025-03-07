@@ -76,9 +76,10 @@ const Cart = () => {
 
                                                     <div className="col">
                                                         <div className="row column-gap-1">
-                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item" style={styles.ammountPart}><i class="bi bi-dash"></i></div>
+                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-dash"></i></div>
                                                             <div className="col ammount d-flex justify-content-center align-items-center hoverable-item" style={styles.ammountPart}>{product.ammount}</div>
-                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item" style={styles.ammountPart}><i class="bi bi-plus-lg"></i></div>
+                                                            {/* <input type="number" className="col ammount d-flex justify-content-center align-items-center hoverable-item text-center" min='1' style={styles.ammountPart} /> */}
+                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-plus-lg"></i></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -175,6 +176,7 @@ const styles = {
     ammountPart: {
         border: '1px solid #1A1816',
         padding: '7px',
+        backgroundColor: '#FCFBF0',
     }
 }
 

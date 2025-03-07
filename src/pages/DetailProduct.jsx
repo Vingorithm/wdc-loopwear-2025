@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Item from '../components/Item';
+import Toast from '../components/Toast';
 
 // Import images
 import Image1 from "../assets/images/cap.png";
@@ -24,6 +25,7 @@ const styles = {
     objectFit: "cover",
     objectPosition: "center",
     aspectRatio: "1/1.05",
+    border: '1px solid #1A1816',
   },
   modelImage: {
     height: "150px",
@@ -268,17 +270,22 @@ const DetailProduct = () => {
                   <i className="bi bi-heart"></i>
                 </button>
                 <button 
-                  className="dark-btn"
+                  type="button"
+                  // id="liveToastBtn"
+                  className="btn dark-btn"
                   style={{ 
                     ...styles.actionButton,
                     padding: '0 30px',
-                    flex: 1
+                    flex: 1,
+                    borderRadius: 0,
                   }}
                   data-aos="zoom-in"
                   data-aos-delay="350"
                 >
                   Add to cart
                 </button>
+                {/* <Toast /> */}
+                
               </div>
 
               <div 
@@ -303,6 +310,8 @@ const DetailProduct = () => {
                 data-aos="fade-up"
                 data-aos-delay="450"
               >
+                <a href="/swap" className='d-flex w-100 text-decoration-none'>
+                
                 <button 
                   className="dark-btn"
                   style={{ 
@@ -313,6 +322,7 @@ const DetailProduct = () => {
                 >
                   Swap
                 </button>
+                </a>
               </div>
 
               <div 
