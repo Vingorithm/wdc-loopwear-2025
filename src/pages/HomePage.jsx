@@ -12,6 +12,7 @@ import ItemArticles from '../components/ItemArticles';
 import Card1 from '../assets/images/homepage/card1.jpg';
 import Card2 from '../assets/images/homepage/card2.jpg';
 import Card3 from '../assets/images/homepage/card3.jpg';
+import StatsBg from '../assets/images/carousel/carousel4.jpg';
 
 import TeamMember1 from '../assets/images/cap.png';
 import TeamMember2 from '../assets/images/cap.png';
@@ -32,12 +33,10 @@ const HomePage = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [activeSlide, setActiveSlide] = useState(0);
     
-    // Create refs for each section
     const aboutSectionRef = useRef(null);
     const featuredProductsRef = useRef(null);
     const sustainableMovementRef = useRef(null);
     
-    // Initialize AOS
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -57,7 +56,6 @@ const HomePage = () => {
         };
     }, []);
 
-    // Function to scroll to a section
     const scrollToSection = (ref) => {
         if (ref && ref.current) {
             ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -318,16 +316,36 @@ const HomePage = () => {
                         </div>
                     </div>
                     
-                   <ItemArticles></ItemArticles>
+                    <ItemArticles></ItemArticles>
                     <div className="text-center mt-5" data-aos="fade-up">
                         <a href="/articles" className="btn btn-custom-primary btn-lg">Explore All Articles</a>
                     </div>
                 </div>
             </section>
 
-            {/* Statistics Section */}
-            <section style={styles.statsSection}>
-                <div className="container py-5">
+            {/* Statistics Section - Updated with background image */}
+            <section className="position-relative" style={{ padding: '50px 0' }}>
+                {/* Background image with overlay */}
+                <div 
+                    className="position-absolute top-0 start-0 w-100 h-100" 
+                    style={{
+                        backgroundImage: `url(${StatsBg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundAttachment: 'fixed',
+                        zIndex: -2
+                    }}
+                ></div>
+                {/* Dark overlay */}
+                <div 
+                    className="position-absolute top-0 start-0 w-100 h-100" 
+                    style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                        zIndex: -1
+                    }}
+                ></div>
+                
+                <div className="container py-5 position-relative">
                     <div className="row text-center">
                         <div className="col-md-12 mb-5">
                             <h2 style={{...styles.heading, color: '#FCFBF0'}} data-aos="zoom-in">Our Impact</h2>
@@ -567,17 +585,15 @@ const styles = {
         right: "10px",
         color: "#FCFBF0"
     },
-    statsSection: {
-        backgroundColor: "#39754B",
-        padding: '50px 0',
-        color: "#FCFBF0"
-    },
     statItem: {
-        backgroundColor: "rgba(252, 251, 240, 0.1)",
+        backgroundColor: "rgba(255, 255, 255, 0.15)",
         borderRadius: "10px",
-        transition: "transform 0.3s ease",
+        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+        backdropFilter: "blur(5px)",
+        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
         "&:hover": {
-            transform: "translateY(-10px)"
+            transform: "translateY(-10px)",
+            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)"
         }
     },
     statNumber: {
