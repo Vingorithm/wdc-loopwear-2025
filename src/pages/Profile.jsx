@@ -133,7 +133,7 @@ const Profile = () => {
                 <Col md={2} className="d-flex justify-content-end">
                   <Button 
                     variant="outline-dark" 
-                    className="rounded-0 text-uppercase transition-hover"
+                    className="rounded-0 text-uppercase transition-hover green-light-btn"
                     style={styles.connectButton}
                   >
                     <i className="bi bi-link-45deg me-2"></i>Connect
@@ -290,7 +290,6 @@ const styles = {
   connectButton: { 
     width: '100%',
     borderColor: "#39754B",
-    color: "#39754B",
     transition: "all 0.3s ease",
     ":hover": {
       backgroundColor: "#39754B",

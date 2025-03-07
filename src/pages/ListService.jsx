@@ -4,11 +4,11 @@ import Shop from '../assets/images/shop/shop.webp';
 const ListService = () => {
 
     const shops = [
-        { id: 1, name: 'Loop Wear', desc: 'we are providing clothing repair and modification services', image: Shop },
-        { id: 2, name: 'Fix Wear', desc: 'damaged clothes? contact us', image: Shop },
-        { id: 3, name: 'Mod Wear', desc: 'we are experts in modifying clothes', image: Shop },
-        { id: 4, name: 'New Wear', desc: 'make your old clothes look like new clothes', image: Shop },
-        { id: 5, name: 'Repair Wear', desc: 'No matter how damaged the clothes are, we will repair them', image: Shop }
+        { id: 1, name: 'Loop Wear', desc: 'we are providing clothing repair and modification services', image: Shop, status: 'Verified' },
+        { id: 2, name: 'Fix Wear', desc: 'damaged clothes? contact us', image: Shop, status: 'Verified'},
+        { id: 3, name: 'Mod Wear', desc: 'we are experts in modifying clothes', image: Shop, status: 'Good Reviews' },
+        { id: 4, name: 'New Wear', desc: 'make your old clothes look like new clothes', image: Shop, status: 'Normal' },
+        { id: 5, name: 'Repair Wear', desc: 'No matter how damaged the clothes are, we will repair them', image: Shop, status: 'Good Reviews' }
     ];
     return (
         <>
@@ -87,7 +87,15 @@ const ListService = () => {
                                                 <div className="card-body p-4">
 
                                                     <div className="d-flex justify-content-between mb-2">
-                                                        <h2 style={styles.cardTitle}>{shop.name}</h2>
+                                                        
+                                                        <h2 style={styles.cardTitle}>
+                                                            {
+                                                                shop.status == 'Verified' ? <i class="bi bi-patch-check-fill fs-4 me-2" style={styles.tierStore}></i> : <></>
+                                                            } 
+                                                            {
+                                                                shop.status == 'Good Reviews' ? <i class="bi bi-hand-thumbs-up-fill fs-4 me-2" style={styles.tierStore}></i> : <></>
+                                                            }
+                                                            {shop.name}</h2>
                                                     </div>
                                                     <div className="row">
                                                         <div className="col-7 ms-1">
@@ -122,11 +130,14 @@ const ListService = () => {
 
 const styles = {
     featuredCard: {
-        backgroundColor: "#FCFBF0",
-        boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+        backgroundColor: "#ffffff",
+        // boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+        // padding: '0',
         borderRadius: "12px",
         overflow: "hidden",
-        padding: '0'
+        padding: "15px",
+        // background: "linear-gradient(90deg, #ffffff, #f8f7ed)",
+        boxShadow: "0 6px 12px rgba(0,0,0,0.05)",
     },
     featuredImage: {
         width: "100%",
@@ -143,6 +154,14 @@ const styles = {
     cardText: {
         color: "#1A1816",
         opacity: "0.8"
+    },
+    tierStore: {
+        borderRadius: "100%",
+        width: "35px",
+        height: "35px",
+        objectFit: "cover",
+        objectPosition: "center",
+        color: "#39754B",
     },
 }
 export default ListService;

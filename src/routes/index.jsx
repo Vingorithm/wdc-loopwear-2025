@@ -19,6 +19,7 @@ import Shop from "../pages/Shop";
 import Cart from "../pages/Cart";
 import HistoryOrder from "../pages/HistoryOrder";
 import ListService from "../pages/ListService";
+import Swap from "../pages/Swap";
 
 const router = createBrowserRouter([
   {
@@ -96,6 +97,14 @@ const router = createBrowserRouter([
       {
         path: "/historyorder",
         element: <HistoryOrder />,
+      },
+      {
+        path: "/swap",
+        element: <Swap />,
+      },
+      {
+        path: "/checkswap",
+        element: <Swap isUser='true' />,
       },
     ],
   },
