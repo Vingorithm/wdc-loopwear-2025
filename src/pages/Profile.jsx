@@ -1,117 +1,112 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 
-// asset profile
 import profilePicture from "../assets/images/profpic/profile-picture.jpg";
-
-// asset language
 import languagePicture from "../assets/images/flag/english.webp"
-
-// asset payment
 import paypal from '../assets/images/payment/paypal.png';
 import gopay from '../assets/images/payment/gopay.jpg';
 import dana from '../assets/images/payment/dana.png';
 
-// inline style
-// import style from '../inline-styles/style.js';
-
 const Profile = () => {
-  // const styles = style();
-
   return (
     <section style={styles.bgColor}>
-      <Container className="py-4" style={{ minHeight: '100vh' }}>
-        <h3 h3 className="mt-3 text-uppercase">Profile</h3>
+      <Container className="py-5" style={{ minHeight: '100vh' }}>
+        {/* Profile Section */}
+        <h3 className="mb-4 text-uppercase fw-bold" style={styles.sectionTitle}>
+          <i className="bi bi-person-circle me-2"></i>Profile
+        </h3>
 
-        <Card className="mt-3 rounded-0 shadow-sm" style={styles.bgColor}>
+        <Card className="mb-5 rounded-0 shadow" style={styles.bgColor}>
           <Card.Body className="p-4">
             <Row>
               <Col md={3} className="d-flex flex-column align-items-center">
-                <Form.Label className="fw-bold text-uppercase text-secondary mt-1 mb-3" style={{ fontSize: '0.8rem' }}>
+                <Form.Label className="fw-bold text-uppercase text-secondary mb-3" style={styles.labelText}>
                   Profile Picture
                 </Form.Label>
-                <img className="mb-4" src={profilePicture} alt="profile-picture" style={styles.profilePicture} />
+                <div style={styles.profileImageContainer}>
+                  <img src={profilePicture} alt="profile-picture" style={styles.profilePicture} />
+                </div>
                 <Button 
                   variant="outline-dark" 
-                  className="green-light-btn rounded-0 mb-3"
-                  style={{ 
-                    width: '80%'
-                  }}
+                  className="rounded-0 mt-3 transition-hover"
+                  style={styles.editButton}
                 >
-                  Edit <i class="bi bi-pencil-square"></i>
+                  <i className="bi bi-pencil-square me-2"></i> Edit
                 </Button>
               </Col>
               
               <Col md={9}>
                 <Form>
                   <Row>
-                    <Col md={6} className="mb-3">
-                      <Form.Label className="fw-bold text-uppercase text-secondary" style={{ fontSize: '0.8rem' }}>
-                        Username
+                    <Col md={6} className="mb-4">
+                      <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                        <i className="bi bi-person me-2"></i>Username
                       </Form.Label>
                       <Form.Control 
-                        className="rounded-0 border-2" 
-                        style={ styles.form }
+                        className="rounded-0 border-2 shadow-sm" 
+                        style={styles.form}
                         type="text" 
+                        placeholder="Enter your username"
                       />
                     </Col>
                     
-                    <Col md={6} className="mb-3">
-                      <Form.Label className="fw-bold text-uppercase text-secondary" style={{ fontSize: '0.8rem' }}>
-                        Email Address
+                    <Col md={6} className="mb-4">
+                      <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                        <i className="bi bi-envelope me-2"></i>Email Address
                       </Form.Label>
                       <Form.Control 
-                        className="rounded-0 border-2" 
-                        style={ styles.form }
+                        className="rounded-0 border-2 shadow-sm" 
+                        style={styles.form}
                         type="email" 
+                        placeholder="Enter your email"
                       />
                     </Col>
                   </Row>
 
                   <Row>
-                    <Col md={6} className="mb-3">
-                      <Form.Label className="fw-bold text-uppercase text-secondary" style={{ fontSize: '0.8rem' }}>
-                        Phone Number
+                    <Col md={6} className="mb-4">
+                      <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                        <i className="bi bi-telephone me-2"></i>Phone Number
                       </Form.Label>
                       <Form.Control 
-                        className="form-control rounded-0 border-2" 
-                        style={ styles.form }
+                        className="rounded-0 border-2 shadow-sm" 
+                        style={styles.form}
                         type="tel" 
+                        placeholder="Enter your phone number"
                       />
                     </Col>
                     
-                    <Col md={6} className="mb-3">
-                      <Form.Label className="fw-bold text-uppercase text-secondary" style={{ fontSize: '0.8rem' }}>
-                        City
+                    <Col md={6} className="mb-4">
+                      <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                        <i className="bi bi-geo-alt me-2"></i>City
                       </Form.Label>
                       <Form.Control 
-                        className="rounded-0 border-2" 
-                        style={ styles.form }
+                        className="rounded-0 border-2 shadow-sm" 
+                        style={styles.form}
                         type="text" 
+                        placeholder="Enter your city"
                       />
                     </Col>
                   </Row>
 
                   <Form.Group className="mb-4">
-                    <Form.Label className="fw-bold text-uppercase text-secondary" style={{ fontSize: '0.8rem' }}>
-                      Full Address
+                    <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                      <i className="bi bi-house me-2"></i>Full Address
                     </Form.Label>
                     <Form.Control 
                       as="textarea" 
                       rows={3} 
-                      className="rounded-0 border-2" 
-                      style={ styles.form }
+                      className="rounded-0 border-2 shadow-sm" 
+                      style={styles.form}
+                      placeholder="Enter your complete address"
                     />
                   </Form.Group>
 
                   <Button 
-                    className="green-dark-btn w-100 rounded-0 py-3 text-uppercase fw-bold" 
-                    style={{ 
-                      border: 'none',
-                      fontSize: '0.9rem'
-                    }}
+                    className="w-100 rounded-0 py-3 text-uppercase fw-bold transition-hover" 
+                    style={styles.saveButton}
                   >
-                    Save Profile Changes
+                    <i className="bi bi-check-circle me-2"></i> Save Profile Changes
                   </Button>
                 </Form>
               </Col>
@@ -120,27 +115,28 @@ const Profile = () => {
         </Card>
 
         {/* Payment Methods Card */}
-        <h3 h2 className="mt-5 text-uppercase">Payment Methods</h3>
-        <Card className="mt-4 rounded-0 shadow-sm" style={styles.bgColor}>
+        <h3 className="mb-4 text-uppercase fw-bold" style={styles.sectionTitle}>
+          <i className="bi bi-credit-card me-2"></i>Payment Methods
+        </h3>
+        <Card className="mb-5 rounded-0 shadow" style={styles.bgColor}>
           <Card.Body className="p-4">
-            
             {[{ img: gopay, name: 'Gopay' }, { img: paypal, name: 'Paypal' }, { img: dana, name: 'Dana' }].map((payment, index) => (
-              <Row className="align-items-center mb-3" key={index}>
+              <Row className="align-items-center mb-4 payment-method-row" key={index} style={styles.paymentRow}>
                 <Col md={2} className="d-flex justify-content-center">
-                  <img src={payment.img} alt={payment.name} style={styles.paymentLogo} />
+                  <div style={styles.paymentLogoContainer}>
+                    <img src={payment.img} alt={payment.name} style={styles.paymentLogo} />
+                  </div>
                 </Col>
                 <Col className='d-flex align-items-center' md={8}>
-                  <p className='fw-bold darkGreenText fs-4 my-3 my-sm-0 mx-auto mx-sm-0'>{payment.name}</p>
+                  <p className='fw-bold fs-4 my-0 mx-auto mx-sm-0' style={styles.paymentName}>{payment.name}</p>
                 </Col>
                 <Col md={2} className="d-flex justify-content-end">
                   <Button 
                     variant="outline-dark" 
-                    className="rounded-0 text-uppercase green-light-btn mb-4 mb-sm-0"
-                    style={{ 
-                      width: '100%'
-                    }}
+                    className="rounded-0 text-uppercase transition-hover"
+                    style={styles.connectButton}
                   >
-                    Connect
+                    <i className="bi bi-link-45deg me-2"></i>Connect
                   </Button>
                 </Col>
               </Row>
@@ -149,17 +145,22 @@ const Profile = () => {
         </Card>
 
         {/* Language Settings Card */}
-        <h3 h2 className="mt-5 text-uppercase">Language Preferences</h3>
-        <Card className="mt-4 rounded-0 shadow-sm mb-4" style={styles.bgColor}>
+        <h3 className="mb-4 text-uppercase fw-bold" style={styles.sectionTitle}>
+          <i className="bi bi-translate me-2"></i>Language Preferences
+        </h3>
+        <Card className="mb-5 rounded-0 shadow" style={styles.bgColor}>
           <Card.Body className="p-4">
             <Row className="align-items-center">
-              <Col md={2} className="d-flex justify-content-center">
-                <img src={languagePicture} alt="language picture" className="rounded-circle mb-4 mb-sm-0" style={styles.languageFlag} />
+              <Col md={2} className="d-flex justify-content-center mb-4 mb-md-0">
+                <div style={styles.languageFlagContainer}>
+                  <img src={languagePicture} alt="language picture" className="rounded-circle" style={styles.languageFlag} />
+                </div>
               </Col>
               <Col md={10}>
                 <Form.Select 
-                  className="rounded-0 border-2" 
-                  style={ styles.form }
+                  className="rounded-0 border-2 shadow-sm" 
+                  style={styles.form}
+                  aria-label="Language selector"
                 >
                   <option>Select Language</option>
                   <option value="English" selected>English</option>
@@ -175,42 +176,146 @@ const Profile = () => {
   );
 };
 
-const styles =  {
+const styles = {
   bgColor: {
-      backgroundColor: "#FCFBF0",
+    backgroundColor: "#FCFBF0",
+  },
+  
+  sectionTitle: {
+    color: "#1A1816",
+    paddingBottom: "8px",
+    letterSpacing: "1px"
+  },
+  
+  labelText: {
+    fontSize: '0.8rem',
+    letterSpacing: "0.5px"
   },
 
+  profileImageContainer: {
+    padding: "5px",
+    borderRadius: "50%",
+    boxShadow: "0 4px 12px rgba(57, 117, 75, 0.2)",
+  },
+  
   profilePicture: {
     borderRadius: "100%",
     objectFit: "cover",
     objectPosition: "center",
     width: '140px',
     height: '140px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: '#666',
-    border: '2px solid #39754B',
+    border: '3px solid #39754B',
+    transition: "all 0.3s ease",
   },
 
+  languageFlagContainer: {
+    padding: "3px",
+    borderRadius: "50%",
+    boxShadow: "0 4px 12px rgba(57, 117, 75, 0.2)",
+  },
+  
   languageFlag: {
-    width: '50px', 
-    height: '50px', 
+    width: '60px', 
+    height: '60px', 
     backgroundColor: '#eee', 
-    border: '2px solid #39754B',
+    border: '3px solid #39754B',
+    transition: "transform 0.3s ease",
   },
 
+  paymentLogoContainer: {
+    padding: "5px",
+    border: "1px solid #e0e0e0",
+    borderRadius: "4px",
+    backgroundColor: "white",
+    boxShadow: "0 2px 8px rgba(57, 117, 75, 0.1)",
+  },
+  
   paymentLogo: {
-    width: "80%",
+    width: "90%",
     aspectRatio: "2.3/1",
     objectPosition: "center",
-    border: '2px solid #39754B'
+    objectFit: "contain",
+    padding: "8px",
+  },
+  
+  paymentRow: {
+    padding: "12px 8px",
+    borderRadius: "4px",
+    transition: "background-color 0.2s ease",
+    border: "1px solid transparent",
+    ":hover": {
+      backgroundColor: "rgba(57, 117, 75, 0.05)",
+      border: "1px solid #39754B",
+    }
+  },
+  
+  paymentName: {
+    color: "#1A1816"
   },
 
   form: {
     borderColor: "#39754B",
-    backgroundColor: "#FCFBF0"
+    backgroundColor: "#FCFBF0",
+    transition: "box-shadow 0.3s ease, transform 0.2s ease",
+    ":focus": {
+      boxShadow: "0 0 0 0.2rem rgba(57, 117, 75, 0.25)",
+      transform: "translateY(-2px)",
+    }
   },
-}
+  
+  editButton: { 
+    width: '80%',
+    borderColor: "#39754B",
+    color: "#39754B",
+    backgroundColor: "transparent",
+    transition: "all 0.3s ease",
+    ":hover": {
+      backgroundColor: "#39754B",
+      color: "#FCFBF0"
+    }
+  },
+  
+  saveButton: { 
+    border: 'none',
+    fontSize: '0.9rem',
+    backgroundColor: "#39754B",
+    transition: "all 0.3s ease",
+    ":hover": {
+      backgroundColor: "#2c5a3a",
+      transform: "translateY(-2px)",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)"
+    }
+  },
+  
+  connectButton: { 
+    width: '100%',
+    borderColor: "#39754B",
+    color: "#39754B",
+    transition: "all 0.3s ease",
+    ":hover": {
+      backgroundColor: "#39754B",
+      color: "#FCFBF0"
+    }
+  }
+};
+
+const styleElement = document.createElement('style');
+styleElement.textContent = `
+  .transition-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(57, 117, 75, 0.25) !important;
+    border-color: #39754B !important;
+  }
+  
+  .payment-method-row:hover {
+    background-color: rgba(57, 117, 75, 0.05);
+    border: 1px solid #39754B !important;
+  }
+`;
+document.head.appendChild(styleElement);
 
 export default Profile;
