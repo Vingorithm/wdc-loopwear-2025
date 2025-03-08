@@ -59,7 +59,6 @@ const buyModal = () => {
 
 
                                     <p className="fw-bold">Payment Method</p>
-                                    <p className="fw-bold">Size</p>
                                     <div class="input-group mb-3">
                                         <label class="input-group-text" for="inputGroupSelect01">Options</label>
                                         <select class="form-select" id="inputGroupSelect01">
@@ -71,9 +70,13 @@ const buyModal = () => {
                                     </div>
 
                                     <p className="fw-bold">Address</p>
-
                                     <div class="input-group mb-3">
                                         <textarea name="" id="" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1"></textarea>
+                                    </div>
+
+                                    <p className="fw-bold">Notes</p>
+                                    <div class="input-group mb-3">
+                                        <textarea name="" id="" class="form-control" placeholder="Notes" aria-label="Notes" aria-describedby="basic-addon1"></textarea>
                                     </div>
                                     
                                 </div>

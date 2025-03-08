@@ -7,6 +7,9 @@ import { toast } from "sonner"
 // component item
 import Item from '../components/Item';
 import ChatModal from '../components/ChatModal';
+import AddModal from '../components/AddModal';
+import OrderServiceModal from '../components/ServiceModal';
+import OrderModal from '../components/OrderModal';
 
 // assets
 import Image1 from '../assets/images/cap.png';
@@ -220,9 +223,14 @@ const Shop = ({ isUser }) => {
                                     isUser ?
                                         <></>
                                         :
-                                        <button className="btn btn-outline-success py-2 w-100 w-md-auto">
-                                            Order Service
-                                        </button>
+                                        <>
+                                            <button className="btn btn-outline-success py-2 w-100 w-md-auto"
+                                                type="button" data-bs-toggle="modal" data-bs-target="#orderServiceModal"
+                                            >
+                                                Order Service
+                                            </button>
+                                            <OrderServiceModal />
+                                        </>
                                 }
 
                             </div>
@@ -230,9 +238,12 @@ const Shop = ({ isUser }) => {
                         <div className="col-md-5 mt-3 mt-md-0 p-0 px-3 px-md-0 ps-md-5 justify-content-center justify-content-md-end d-flex align-items-center">
                             {
                                 isUser ?
-                                    <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2">
-                                        <span>Check Order</span>
-                                    </button>
+                                    <>
+                                        <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2" type="button" data-bs-toggle="modal" data-bs-target="#checkOrderModal">
+                                            <span>Check Order</span>
+                                        </button>
+                                        <OrderModal />
+                                    </>
                                     :
                                     <></>
                             }
@@ -248,12 +259,19 @@ const Shop = ({ isUser }) => {
 
                             {
                                 isUser ?
-                                    <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto">
-                                        <span>Add Item</span>
-                                    </button>
+                                    <>
+                                        <button
+                                            className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto"
+                                            type="button" data-bs-toggle="modal" data-bs-target="#addModal">
+                                            <span>Add Item</span>
+                                        </button>
+                                        <AddModal />
+                                    </>
                                     :
                                     <></>
                             }
+
+
                         </div>
                     </div>
                 </section>
