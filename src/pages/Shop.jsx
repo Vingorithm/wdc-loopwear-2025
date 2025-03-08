@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ShopProfile from '../assets/images/shop/shop.webp';
+import { toast } from "sonner"
 
 // component item
 import Item from '../components/Item';
+import ChatModal from '../components/ChatModal';
 
 // assets
 import Image1 from '../assets/images/cap.png';
@@ -13,6 +15,9 @@ import Image3 from '../assets/images/tshirt.png';
 import Image4 from '../assets/images/pants.png';
 
 const Shop = ({ isUser }) => {
+    // status follow
+    const [isFollow, setIsFollow] = useState(false);
+
     // data product
     const [products, setProducts] = useState([
         { id: 1, name: "MLB Cap", price: 6.2, image: Image1, category: "Accessories", sold: 120, uploadedAt: "2024-02-20" },
@@ -26,7 +31,7 @@ const Shop = ({ isUser }) => {
 
     return (
         <>
-            <section className="pt-5" style={{ backgroundColor: "#FCFBF0" }}>
+            <section className="pt-5 pb-5" style={{ backgroundColor: "#FCFBF0" }}>
                 {/* Store Information & Details Container  */}
                 <section className="container d-flex align-items-center mb-4" style={styles.storeProfileContainer}>
                     <div className="row m-0 d-flex justify-content-between align-items-center w-100">
@@ -59,17 +64,25 @@ const Shop = ({ isUser }) => {
                                         :
                                         <div className="row">
                                             <div className="col">
-                                                <button className="btn btn-outline-success" >
-                                                    <p className="fw-bold m-0">chat</p>
+                                                <button className="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#chatModal" >
+                                                    <p className="fw-bold m-0">Chat</p>
+                                                </button>
+                                            </div>
+                                            <ChatModal />
+                                            <div className="col">
+                                                <button className="btn btn-outline-success" onClick={() => setIsFollow(!isFollow)}>
+                                                    <p className="fw-bold m-0">{isFollow ? 'Unfollow' : 'Follow'}</p>
                                                 </button>
                                             </div>
                                             <div className="col">
-                                                <button className="btn btn-outline-success" >
-                                                    <p className="fw-bold m-0">Follow</p>
-                                                </button>
-                                            </div>
-                                            <div className="col">
-                                                <button className="btn btn-outline-success" >
+                                                <button className="btn btn-outline-success" onClick={() => {
+                                                    return toast('Link has been copied to clipboard!', {
+                                                        cancel: {
+                                                            label: <i class="bi bi-x-lg"></i>,
+                                                            onClick: () => console.log('Cancel!'),
+                                                        },
+                                                    })
+                                                }}>
                                                     <i className="bi bi-share"></i>
                                                 </button>
                                             </div>
@@ -217,7 +230,7 @@ const Shop = ({ isUser }) => {
                                     <></>
                             }
 
-{
+                            {
                                 isUser ?
                                     <a className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2" href="/checkswap">
                                         <span>Check Swap</span>

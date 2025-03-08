@@ -4,6 +4,8 @@ import 'aos/dist/aos.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Item from '../components/Item';
 import Toast from '../components/Toast';
+import { toast } from "sonner"
+import BuyModal from '../components/BuyModal';
 
 // Import images
 import Image1 from "../assets/images/cap.png";
@@ -155,6 +157,7 @@ const DetailProduct = () => {
 
   return (
     <div style={{ backgroundColor: '#FCFBF0', color: '#1A1816', minHeight: '100vh', padding: '20px' }}>
+      <BuyModal />
       <div className="container">
         <div className="row mb-5">
           {/* Left side - Product Images */}
@@ -266,6 +269,14 @@ const DetailProduct = () => {
                     justifyContent: 'center',
                     marginRight: '10px'
                   }}
+                  onClick={() => {
+                    return toast('Product has been added to wishlist!', {
+                      cancel: {
+                        label: <i class="bi bi-x-lg"></i>,
+                        onClick: () => console.log('Cancel!'),
+                      },
+                    })
+                  }}
                 >
                   <i className="bi bi-heart"></i>
                 </button>
@@ -281,6 +292,14 @@ const DetailProduct = () => {
                   }}
                   data-aos="zoom-in"
                   data-aos-delay="350"
+                  onClick={() => {
+                    return toast('Product has been added to cart!', {
+                      cancel: {
+                        label: <i class="bi bi-x-lg"></i>,
+                        onClick: () => console.log('Cancel!'),
+                      },
+                    })
+                  }}
                 >
                   Add to cart
                 </button>
@@ -292,6 +311,7 @@ const DetailProduct = () => {
                 className="d-flex my-3"
                 data-aos="fade-up"
                 data-aos-delay="400"
+                
               >
                 <button 
                   className="dark-btn"
@@ -300,6 +320,7 @@ const DetailProduct = () => {
                     padding: '0 30px',
                     flex: 1
                   }}
+                  type="button" data-bs-toggle="modal" data-bs-target="#buyModal"
                 >
                   Buy
                 </button>
