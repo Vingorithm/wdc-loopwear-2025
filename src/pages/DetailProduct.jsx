@@ -708,7 +708,7 @@ const DetailProduct = () => {
         {/* Related Products Section */}
         <div className="mt-5">
           <h2 style={{ fontWeight: 'bold', marginBottom: '30px' }}>RELATED PRODUCTS</h2>
-          <div className="row">
+          <div className="row row-cols-2">
             {relatedProducts.map((item) => (
               <div key={item.id} className="col-md-3 mb-4">
                 <Item
