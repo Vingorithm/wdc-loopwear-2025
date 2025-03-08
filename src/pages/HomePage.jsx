@@ -33,13 +33,10 @@ const products = [
 const HomePage = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [activeSlide, setActiveSlide] = useState(0);
-    
-    // Create refs for each section
     const aboutSectionRef = useRef(null);
     const featuredProductsRef = useRef(null);
     const sustainableMovementRef = useRef(null);
     
-    // Initialize AOS
     useEffect(() => {
         AOS.init({
             duration: 1000,
