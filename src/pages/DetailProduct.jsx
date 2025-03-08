@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Item from '../components/Item';
-import Toast from '../components/Toast';
 import { toast } from "sonner";
 import BuyModal from '../components/BuyModal';
 import PictureModal from '../components/PictureModal';
@@ -97,20 +94,79 @@ const styles = {
     fontWeight: "bold",
     fontSize: "1rem",
     color: "#39754B"
+  },
+  // Review section styles
+  reviewCard: {
+    borderRadius: "3px",
+    padding: "15px",
+    background: "linear-gradient(145deg, #ffffff, #f8f7ed)",
+    boxShadow: "0 6px 12px rgba(0,0,0,0.05)",
+    transition: "all 0.3s ease",
+    border: "1px solid #eaeaea",
+    marginBottom: "15px"
+  },
+  reviewerImage: {
+    objectFit: 'cover',
+    objectPosition: 'center',
+    borderRadius: '100%',
+    width: '40px',
+    height: '40px',
+    border: "1px solid #39754B",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
+  },
+  starRating: {
+    color: '#FFC107',
+    fontSize: '0.9rem'
+  },
+  reviewHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: "10px"
+  },
+  reviewerInfo: {
+    display: "flex",
+    alignItems: "center"
+  },
+  reviewDate: {
+    fontSize: "0.8rem",
+    color: "#6c757d"
+  },
+  reviewText: {
+    fontSize: "0.95rem",
+    lineHeight: "1.5",
+    marginBottom: "10px"
+  },
+  verifiedTag: {
+    backgroundColor: "#39754B",
+    color: "white",
+    fontSize: "0.7rem",
+    padding: "2px 8px",
+    borderRadius: "10px",
+    marginLeft: "10px"
+  },
+  ratingProgressBar: {
+    height: "6px",
+    borderRadius: "3px",
+    backgroundColor: "#E9ECEF"
+  },
+  ratingProgressFill: {
+    backgroundColor: "#39754B",
+    height: "100%",
+    borderRadius: "3px"
+  },
+  reviewAction: {
+    fontSize: "0.8rem",
+    color: "#39754B",
+    cursor: "pointer",
+    marginRight: "15px"
   }
 };
 
 const DetailProduct = () => {
   const [selectedSize, setSelectedSize] = useState('M');
   const [selectedPhoto, setSelectedPhoto] = useState(Img2);
-  
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-      mirror: true
-    });
-  }, []);
+  const [activeTab, setActiveTab] = useState('all');
   
   // Product data
   const product = {
@@ -122,7 +178,9 @@ const DetailProduct = () => {
     sku: "234263",
     material: "100% cotton",
     delivery: "3-5 working days",
-    sizes: ['S', 'M', 'L', 'XL']
+    sizes: ['S', 'M', 'L', 'XL'],
+    rating: 4.7,
+    reviewCount: 124
   };
 
   // Shop data
@@ -133,6 +191,55 @@ const DetailProduct = () => {
     products: 124,
     followers: "3.2K",
     joined: "2021"
+  };
+
+  // Reviews data
+  const reviewsData = {
+    ratings: {
+      5: 98,
+      4: 15,
+      3: 7,
+      2: 3,
+      1: 1
+    },
+    reviews: [
+      {
+        id: 1,
+        user: "Alex Johnson",
+        avatar: "/api/placeholder/40/40", // Using placeholder for avatar
+        date: "February 15, 2025",
+        rating: 5,
+        verified: true,
+        text: "Excellent quality and fit! The material is soft and comfortable. I've worn it several times and it still looks new after washing. The color is exactly as shown in the photos.",
+        helpfulCount: 28,
+        size: "M",
+        color: "Blue"
+      },
+      {
+        id: 2,
+        user: "Sarah Miller",
+        avatar: "/api/placeholder/40/40", // Using placeholder for avatar
+        date: "January 29, 2025",
+        rating: 4,
+        verified: true,
+        text: "Really nice hoodie, comfortable and warm. Only reason for 4 stars is that it runs slightly larger than expected. Would recommend sizing down if you prefer a more fitted look.",
+        helpfulCount: 15,
+        size: "L",
+        color: "Blue"
+      },
+      {
+        id: 3,
+        user: "Michael Chen",
+        avatar: "/api/placeholder/40/40", // Using placeholder for avatar
+        date: "January 12, 2025",
+        rating: 5,
+        verified: true,
+        text: "Perfect for everyday wear. The material breathes well and the pocket is spacious. This has quickly become my go-to hoodie for casual outings.",
+        helpfulCount: 7,
+        size: "S",
+        color: "Blue"
+      }
+    ]
   };
 
   // Related products data
@@ -156,6 +263,31 @@ const DetailProduct = () => {
     setSelectedPhoto(image);
   };
 
+  // Handle marking review as helpful
+  const handleMarkHelpful = (reviewId) => {
+    toast('Review marked as helpful!');
+  };
+
+  // Handle review tab change
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
+  // Generate star rating component
+  const renderStarRating = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        stars.push(<i key={i} className="bi bi-star-fill" style={styles.starRating}></i>);
+      } else if (i - 0.5 <= rating) {
+        stars.push(<i key={i} className="bi bi-star-half" style={styles.starRating}></i>);
+      } else {
+        stars.push(<i key={i} className="bi bi-star" style={styles.starRating}></i>);
+      }
+    }
+    return stars;
+  };
+
   return (
     <div style={{ backgroundColor: '#FCFBF0', color: '#1A1816', minHeight: '100vh', padding: '20px' }}>
       <BuyModal />
@@ -163,7 +295,7 @@ const DetailProduct = () => {
       <div className="container">
         <div className="row mb-5">
           {/* Left side - Product Images */}
-          <div className="col-md-7" data-aos="fade-right">
+          <div className="col-md-7">
             <div className="row">
               <div className="col-12 mb-4">
                 <div style={{ padding: '20px', display: 'flex', justifyContent: 'center' }}>
@@ -172,13 +304,11 @@ const DetailProduct = () => {
                     src={selectedPhoto} 
                     alt="Hoodie Sweatshirt" 
                     style={styles.mainImage}
-                    data-aos="zoom-in"
-                    data-aos-delay="200"
                     type="button" data-bs-toggle="modal" data-bs-target="#pictureModal"
                   />
                 </div>
               </div>
-              <div className="col-12" data-aos="fade-up" data-aos-delay="300">
+              <div className="col-12">
                 <div style={{ padding: '20px', overflowX: 'auto' }}>
                   <div className="d-flex">
                     {thumbnailImages.map((image, index) => (
@@ -193,8 +323,6 @@ const DetailProduct = () => {
                         }}
                         className="me-3"
                         onClick={() => handleThumbnailClick(image)}
-                        data-aos="fade-up"
-                        data-aos-delay={100 + (index * 50)}
                       />
                     ))}
                   </div>
@@ -204,19 +332,16 @@ const DetailProduct = () => {
           </div>
 
           {/* Right side - Product Details */}
-          <div className="col-md-5" data-aos="fade-left" data-aos-delay="200">
+          <div className="col-md-5">
             <div className="py-4">
-              <h1 
-                style={{ fontWeight: 'bold', fontSize: '2.5rem' }}
-                data-aos="fade-up"
-              >
+              <h1 style={{ fontWeight: 'bold', fontSize: '2.5rem' }}>
                 {product.name}
               </h1>
-              <p className="mt-3" data-aos="fade-up" data-aos-delay="100">
+              <p className="mt-3">
                 {product.description}
               </p>
               
-              <div className="d-flex mt-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+              <div className="d-flex mt-4 mb-3">
                 <div className="me-4">
                   <span style={{ fontWeight: 'bold' }}>Color:</span> {product.color}
                 </div>
@@ -228,8 +353,8 @@ const DetailProduct = () => {
                 </div>
               </div>
 
-              <div className="d-flex align-items-center my-4" data-aos="fade-up" data-aos-delay="200">
-                {product.sizes.map((size, index) => (
+              <div className="d-flex align-items-center my-4">
+                {product.sizes.map((size) => (
                   <button 
                     key={size}
                     className="me-2"
@@ -240,19 +365,13 @@ const DetailProduct = () => {
                       color: selectedSize === size ? '#FCFBF0' : '#1A1816'
                     }}
                     onClick={() => handleSizeSelect(size)}
-                    data-aos="zoom-in"
-                    data-aos-delay={200 + (index * 50)}
                   >
                     {size}
                   </button>
                 ))}
               </div>
 
-              <div 
-                className="d-flex align-items-center mt-4 mb-4"
-                data-aos="fade-up"
-                data-aos-delay="250"
-              >
+              <div className="d-flex align-items-center mt-4 mb-4">
                 <span style={{ textDecoration: 'line-through', marginRight: '15px', fontSize: '1.2rem' }}>
                   ${product.originalPrice.toFixed(2)}
                 </span>
@@ -261,7 +380,7 @@ const DetailProduct = () => {
                 </span>
               </div>
 
-              <div className="d-flex my-3" data-aos="fade-up" data-aos-delay="300">
+              <div className="d-flex my-3">
                 <button 
                   className="light-btn"
                   style={{ 
@@ -275,7 +394,7 @@ const DetailProduct = () => {
                   onClick={() => {
                     return toast('Product has been added to wishlist!', {
                       cancel: {
-                        label: <i class="bi bi-x-lg"></i>,
+                        label: <i className="bi bi-x-lg"></i>,
                         onClick: () => console.log('Cancel!'),
                       },
                     })
@@ -285,7 +404,6 @@ const DetailProduct = () => {
                 </button>
                 <button 
                   type="button"
-                  // id="liveToastBtn"
                   className="btn dark-btn"
                   style={{ 
                     ...styles.actionButton,
@@ -293,12 +411,10 @@ const DetailProduct = () => {
                     flex: 1,
                     borderRadius: 0,
                   }}
-                  data-aos="zoom-in"
-                  data-aos-delay="350"
                   onClick={() => {
                     return toast('Product has been added to cart!', {
                       cancel: {
-                        label: <i class="bi bi-x-lg"></i>,
+                        label: <i className="bi bi-x-lg"></i>,
                         onClick: () => console.log('Cancel!'),
                       },
                     })
@@ -306,16 +422,9 @@ const DetailProduct = () => {
                 >
                   Add to cart
                 </button>
-                {/* <Toast /> */}
-                
               </div>
 
-              <div 
-                className="d-flex my-3"
-                data-aos="fade-up"
-                data-aos-delay="400"
-                
-              >
+              <div className="d-flex my-3">
                 <button 
                   className="dark-btn"
                   style={{ 
@@ -329,13 +438,8 @@ const DetailProduct = () => {
                 </button>
               </div>
 
-              <div 
-                className="d-flex my-3"
-                data-aos="fade-up"
-                data-aos-delay="450"
-              >
+              <div className="d-flex my-3">
                 <a href="/swap" className='d-flex w-100 text-decoration-none'>
-                
                 <button 
                   className="dark-btn"
                   style={{ 
@@ -349,20 +453,12 @@ const DetailProduct = () => {
                 </a>
               </div>
 
-              <div 
-                className="mt-3"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
+              <div className="mt-3">
                 <p>Delivery: {product.delivery}</p>
               </div>
 
               {/* Enhanced Shop Section */}
-              <div 
-                data-aos="fade-up"
-                data-aos-delay="550"
-                className="my-4"
-              >
+              <div className="my-4">
                 <a 
                   href="/shop" 
                   style={{ 
@@ -448,17 +544,173 @@ const DetailProduct = () => {
           </div>
         </div>
 
+        {/* Buyer Reviews Section */}
+        <div className="mt-5 mb-5">
+          <h2 style={{ fontWeight: 'bold', marginBottom: '30px' }}>CUSTOMER REVIEWS</h2>
+          
+          <div className="row">
+            {/* Rating Summary */}
+            <div className="col-md-4 mb-4">
+              <div style={styles.reviewCard}>
+                <div className="text-center mb-3">
+                  <h3 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '0' }}>{product.rating}</h3>
+                  <div className="mb-2">
+                    {renderStarRating(product.rating)}
+                  </div>
+                  <p className="mb-0">{product.reviewCount} Reviews</p>
+                </div>
+                
+                <div className="mt-4">
+                  {Object.keys(reviewsData.ratings)
+                    .sort((a, b) => b - a)
+                    .map(rating => (
+                      <div key={rating} className="d-flex align-items-center mb-2">
+                        <div style={{ width: '30px' }}>{rating}</div>
+                        <i className="bi bi-star-fill me-2" style={styles.starRating}></i>
+                        <div style={{ flex: 1 }}>
+                          <div style={styles.ratingProgressBar}>
+                            <div 
+                              style={{
+                                ...styles.ratingProgressFill,
+                                width: `${(reviewsData.ratings[rating] / product.reviewCount) * 100}%`
+                              }}
+                            ></div>
+                          </div>
+                        </div>
+                        <div style={{ width: '40px', textAlign: 'right', fontSize: '0.8rem' }}>
+                          {reviewsData.ratings[rating]}
+                        </div>
+                      </div>
+                    ))}
+                </div>
+                
+                <div className="text-center mt-4">
+                  <button 
+                    className="btn"
+                    style={{ 
+                      backgroundColor: '#39754B',
+                      color: 'white',
+                      borderRadius: '3px',
+                      fontWeight: 'bold',
+                      padding: '8px 20px'
+                    }}
+                  >
+                    Write a Review
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Reviews List */}
+            <div className="col-md-8">
+              {/* Review Tabs */}
+              <div className="mb-4 d-flex">
+                {['all', 'positive', 'critical'].map(tab => (
+                  <button
+                    key={tab}
+                    className="me-3"
+                    style={{
+                      backgroundColor: activeTab === tab ? '#39754B' : 'transparent',
+                      color: activeTab === tab ? 'white' : '#1A1816',
+                      border: activeTab === tab ? 'none' : '1px solid #1A1816',
+                      padding: '5px 15px',
+                      borderRadius: '3px',
+                      fontWeight: 'bold',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onClick={() => handleTabChange(tab)}
+                  >
+                    {tab.charAt(0).toUpperCase() + tab.slice(1)} Reviews
+                  </button>
+                ))}
+              </div>
+              
+              {/* Individual Reviews */}
+              {reviewsData.reviews.map((review) => (
+                <div 
+                  key={review.id} 
+                  style={styles.reviewCard}
+                >
+                  <div style={styles.reviewHeader}>
+                    <div style={styles.reviewerInfo}>
+                      <img 
+                        src={review.avatar} 
+                        alt={review.user} 
+                        style={styles.reviewerImage}
+                      />
+                      <div className="ms-2">
+                        <div className="d-flex align-items-center">
+                          <strong>{review.user}</strong>
+                          {review.verified && (
+                            <span style={styles.verifiedTag}>
+                              <i className="bi bi-patch-check-fill me-1" style={{ fontSize: '0.7rem' }}></i>
+                              Verified
+                            </span>
+                          )}
+                        </div>
+                        <small style={styles.reviewDate}>{review.date}</small>
+                      </div>
+                    </div>
+                    <div>
+                      {renderStarRating(review.rating)}
+                    </div>
+                  </div>
+                  
+                  <div style={styles.reviewText}>
+                    {review.text}
+                  </div>
+                  
+                  <div className="d-flex justify-content-between align-items-center mt-3">
+                    <div>
+                      <small className="me-3">
+                        <strong>Size:</strong> {review.size}
+                      </small>
+                      <small>
+                        <strong>Color:</strong> {review.color}
+                      </small>
+                    </div>
+                    <div className="d-flex">
+                      <div 
+                        style={styles.reviewAction}
+                        onClick={() => handleMarkHelpful(review.id)}
+                      >
+                        <i className="bi bi-hand-thumbs-up me-1"></i>
+                        Helpful ({review.helpfulCount})
+                      </div>
+                      <div style={styles.reviewAction}>
+                        <i className="bi bi-flag me-1"></i>
+                        Report
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              
+              {/* Load More Button */}
+              <div className="text-center mt-4">
+                <button 
+                  className="btn"
+                  style={{ 
+                    border: '1px solid #1A1816',
+                    color: '#39754B',
+                    fontWeight: 'bold',
+                    padding: '8px 30px',
+                    borderRadius: '3px'
+                  }}
+                >
+                  Load More Reviews
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Related Products Section */}
-        <div className="mt-5" data-aos="fade-up" data-aos-delay="600">
+        <div className="mt-5">
           <h2 style={{ fontWeight: 'bold', marginBottom: '30px' }}>RELATED PRODUCTS</h2>
           <div className="row">
-            {relatedProducts.map((item, index) => (
-              <div 
-                key={item.id} 
-                className="col-md-3 mb-4"
-                data-aos="fade-up"
-                data-aos-delay={600 + (index * 100)}
-              >
+            {relatedProducts.map((item) => (
+              <div key={item.id} className="col-md-3 mb-4">
                 <Item
                   picture={item.image}
                   name={item.name}
@@ -487,6 +739,11 @@ styleElement.textContent = `
   
   .shop-link:hover h3 {
     color: #39754B;
+  }
+  
+  ${styles.reviewAction}:hover {
+    color: #1A1816;
+    text-decoration: underline;
   }
 `;
 document.head.appendChild(styleElement);
