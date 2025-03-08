@@ -80,7 +80,10 @@ const ListProduct = () => {
           </div>
 
           <h2>Search Result </h2>
-          <div className="row justify-content-between mb-4">
+          <div className="row row-cols-2 justify-content-between mb-4">
+            {products.map((product) => (
+              <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+            ))}
             {products.map((product) => (
               <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
             ))}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { toast } from "sonner";
 
 // asset product
 import Image1 from '../assets/images/cap.png';
@@ -9,6 +10,8 @@ import Image4 from '../assets/images/pants.png';
 import Image0 from '../assets/images/product/2.webp';
 
 import ProfilePicture from '../assets/images/shop/shop.webp';
+
+import SwapModal from '../components/SwapModal';
 
 const Swap = ({ isUser }) => {
 
@@ -29,6 +32,7 @@ const Swap = ({ isUser }) => {
     return (
         <>
             <section className="pt-5 pb-5" style={{ backgroundColor: "#FCFBF0", minHeight: '100vh' }}>
+                <SwapModal />
                 <div className="container">
 
                     <h1 className="fw-bold mb-4">Main Product</h1>
@@ -83,7 +87,7 @@ const Swap = ({ isUser }) => {
                                 <></>
                                 :
                                 <div className="col d-flex justify-content-end align-items-center">
-                                    <button className="btn btn-success">Create Offer</button>
+                                    <button className="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#swapModal">Create Offer</button>
                                 </div>
                         }
                     </div>
@@ -130,8 +134,22 @@ const Swap = ({ isUser }) => {
                                                 {isUser ?
                                                     <div className="row justify-content-end p-0">
                                                         <div className="col text-end px-0 py-3">
-                                                            <button className="light-btn px-5 py-1 me-2" >Reject</button>
-                                                            <button className="dark-btn px-5 py-1 me-2" >Accept</button>
+                                                            <button className="light-btn px-5 py-1 me-2" onClick={() => {
+                                                                return toast('Swap request has been rejected!', {
+                                                                    cancel: {
+                                                                        label: <i class="bi bi-x-lg"></i>,
+                                                                        onClick: () => console.log('Cancel!'),
+                                                                    },
+                                                                })
+                                                            }} >Reject</button>
+                                                            <button className="dark-btn px-5 py-1 me-2" onClick={() => {
+                                                                return toast('Swap request has been accepted!', {
+                                                                    cancel: {
+                                                                        label: <i class="bi bi-x-lg"></i>,
+                                                                        onClick: () => console.log('Cancel!'),
+                                                                    },
+                                                                })
+                                                            }} >Accept</button>
                                                         </div>
                                                     </div>
                                                     :

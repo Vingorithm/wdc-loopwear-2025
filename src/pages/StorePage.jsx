@@ -55,7 +55,7 @@ const StorePage = () => {
           </div>
 
           <h2 className="mt-5 text-uppercase">Related Products</h2>
-          <div className="row mt-3">
+          <div className="row row-cols-4 mt-3">
             {/* {products.map((product) => (
               <div key={product.id} className="col-md-3 text-center">
                 <div className="product-card">
@@ -98,7 +98,10 @@ const StorePage = () => {
             </div>
           </div>
 
-          <div className="row justify-content-between">
+          <div className="row row-cols-2 justify-content-between">
+            {products.map((product) => (
+              <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+            ))}
             {products.map((product) => (
               <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
             ))}

@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "sonner"
 import { useState, useEffect } from "react";
 
 // asset product
@@ -8,6 +9,7 @@ import Image3 from '../assets/images/tshirt.png';
 import Image4 from '../assets/images/pants.png';
 
 import Shop from '../assets/images/shop/shop.webp';
+import BuyModal from '../components/BuyModal';
 
 // component item
 import Item from '../components/Item';
@@ -26,23 +28,23 @@ const Cart = () => {
         { id: 2, name: "Hoodie Sweatshirt", price: 90.3, image: Image2, oldPrice: 129 },
         { id: 3, name: "Basic T-Shirt", price: 27.54, image: Image3 },
         { id: 4, name: "Baseball Cap", price: 19.2, image: Image4 },
-      ];
+    ];
 
     return (
         <>
             <section className="py-3 py-sm-5" style={styles.section}>
 
-
+                <BuyModal />
                 <div className="container">
 
-                    <p className="fw-bold fs-2">Cart</p>
+                    <p className="fw-bold fs-2"><i class="bi bi-cart-fill me-2"></i>Cart</p>
 
                     <div className="row overflow-y-scroll" style={{
                         height: '50vh',
                     }}>
 
                         {
-                            products.map((product) => 
+                            products.map((product) =>
                                 <div className="card mb-4 border-0" style={styles.featuredCard} key={product.id}>
                                     <div className="row g-0">
                                         <div className="col-md-3">
@@ -55,7 +57,7 @@ const Cart = () => {
                                         </div>
                                         <div className="col-md-9">
                                             <div className="card-body p-4">
-                                                
+
                                                 <div className="d-flex justify-content-between mb-2">
                                                     <h2 style={styles.cardTitle}>{product.name}</h2>
                                                     <h2 style={styles.cardTitle}>${product.price.toFixed(2)}</h2>
@@ -68,25 +70,33 @@ const Cart = () => {
                                                             <div>
                                                                 <img src={Shop} alt="shop image" className="rounded-circle border border-black object-fit-cover" style={{
                                                                     width: '30px',
-                                                                }}/>
+                                                                }} />
                                                                 <p className="fw-bold fs-5 d-inline ms-2 ">Loopwear</p>
                                                             </div>
                                                         </a>
                                                     </div>
 
-                                                    <div className="col">
+                                                    {/* <div className="col">
                                                         <div className="row column-gap-1">
                                                             <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-dash"></i></div>
                                                             <div className="col ammount d-flex justify-content-center align-items-center hoverable-item" style={styles.ammountPart}>{product.ammount}</div>
-                                                            {/* <input type="number" className="col ammount d-flex justify-content-center align-items-center hoverable-item text-center" min='1' style={styles.ammountPart} /> */}
+                                                            <input type="number" className="col ammount d-flex justify-content-center align-items-center hoverable-item text-center" min='1' style={styles.ammountPart} />
                                                             <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-plus-lg"></i></div>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
 
                                                 <div className="row justify-content-end p-0">
                                                     <div className="col text-end px-0 py-3">
-                                                        <button className="dark-btn px-5 py-1" >Buy</button>
+                                                        <button className="dark-btn px-5 py-1 me-2" onClick={() => {
+                                                            return toast('Product has been removed from cart!', {
+                                                                cancel: {
+                                                                    label: <i class="bi bi-x-lg"></i>,
+                                                                    onClick: () => console.log('Cancel!'),
+                                                                },
+                                                            })
+                                                        }}>Remove</button>
+                                                        <button className="dark-btn px-5 py-1" type="button" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,11 +108,11 @@ const Cart = () => {
                     </div>
 
                     <div className="row mt-5">
-                        <div className="col"><p className="fw-bold fs-2">Wishlist</p></div>
+                        <div className="col"><p className="fw-bold fs-2"><i class="bi bi-heart-fill me-2"></i>Wishlist</p></div>
                         <div className="col">
                             <div class="row align-items-start mb-2">
                                 <div className="col d-grid justify-content-end">
-                                    <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '200px'}}>
+                                    <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '200px' }}>
                                         All
                                     </button>
                                     <ul class="dropdown-menu" >
@@ -116,26 +126,29 @@ const Cart = () => {
                         </div>
                     </div>
 
-                    <div className="row">
+                    <div className="row ">
                         <div className="col">
-                            <div className="row justify-content-between mb-4 overflow-y-scroll" style={{
-                        height: '50vh',
-                    }}>
-                            {products.map((product) => (
-              <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-            ))}
-            {products.map((product) => (
-              <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-            ))}
-            {products.map((product) => (
-              <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-            ))}
-            {products.map((product) => (
-              <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-            ))}
-            {products.map((product) => (
-              <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-            ))}
+                            <div className="row row-cols-2 justify-content-between mb-4 overflow-y-scroll" style={{
+                                height: '50vh',
+                            }}>
+                                {products.map((product) => (
+                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                                ))}
+                                {products.map((product) => (
+                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                                ))}
+                                {products.map((product) => (
+                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                                ))}
+                                {products.map((product) => (
+                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                                ))}
+                                {products.map((product) => (
+                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                                ))}
+                                {products.map((product) => (
+                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -159,7 +172,7 @@ const styles = {
         padding: '0'
     },
     featuredImage: {
-        height: "200px",
+        height: "210px",
         width: "100%",
         objectFit: "cover"
     },
