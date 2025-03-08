@@ -3,7 +3,7 @@ import React from 'react';
 const Item = ({ picture, name, oldPrice, price }) => {
     return (
         <>
-            <a href="/detailproduct" className="detail-product-link col-md-2 text-start mx-1 my-2">
+            <a href="/detailproduct" className="detail-product-link col-md-2 text-start my-2">
                 <div className="item-container">
                     <div className="p-0" style={styles.card}>
                         <div className="image-container" style={styles.imageContainer}>

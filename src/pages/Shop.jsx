@@ -49,7 +49,7 @@ const Shop = ({ isUser }) => {
                             <div className="text-start d-flex flex-column">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <i class="bi bi-patch-check-fill fs-4" style={styles.tierStore}></i>
-                                    <h3 className="m-0 me-3" style={styles.storeName}>LoopWearer</h3>
+                                    <h3 className="m-0 me-3" style={styles.storeName}>{isUser ? 'Atma Wear' : 'LoopWearer'}</h3>
                                     <span style={styles.storeStatus}>● Online</span>
                                 </div>
 
@@ -58,7 +58,14 @@ const Shop = ({ isUser }) => {
 
                                 {
                                     isUser ?
-                                        <button className="btn btn-outline-success" >
+                                        <button className="btn btn-outline-success" onClick={() => {
+                                            return toast('Link has been copied to clipboard!', {
+                                                cancel: {
+                                                    label: <i class="bi bi-x-lg"></i>,
+                                                    onClick: () => console.log('Cancel!'),
+                                                },
+                                            })
+                                        }}>
                                             <i className="bi bi-share"></i>
                                         </button>
                                         :
@@ -220,7 +227,7 @@ const Shop = ({ isUser }) => {
 
                             </div>
                         </div>
-                        <div className="col-md-5 p-0 px-3 px-md-0 ps-md-5 justify-content-center justify-content-md-end d-flex">
+                        <div className="col-md-5 mt-3 mt-md-0 p-0 px-3 px-md-0 ps-md-5 justify-content-center justify-content-md-end d-flex align-items-center">
                             {
                                 isUser ?
                                     <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2">
@@ -253,7 +260,7 @@ const Shop = ({ isUser }) => {
 
                 {/* Product List */}
                 <section className="container p-0">
-                    <div className="row justify-content-between p-0">
+                    <div className="row row-cols-2 px-2 justify-content-between p-0">
                         {products
                             .filter((product) => {
                                 if (category !== "All Categories") {

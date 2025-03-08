@@ -4,8 +4,9 @@ import 'aos/dist/aos.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Item from '../components/Item';
 import Toast from '../components/Toast';
-import { toast } from "sonner"
+import { toast } from "sonner";
 import BuyModal from '../components/BuyModal';
+import PictureModal from '../components/PictureModal';
 
 // Import images
 import Image1 from "../assets/images/cap.png";
@@ -158,6 +159,7 @@ const DetailProduct = () => {
   return (
     <div style={{ backgroundColor: '#FCFBF0', color: '#1A1816', minHeight: '100vh', padding: '20px' }}>
       <BuyModal />
+      <PictureModal picture={selectedPhoto}/>
       <div className="container">
         <div className="row mb-5">
           {/* Left side - Product Images */}
@@ -172,6 +174,7 @@ const DetailProduct = () => {
                     style={styles.mainImage}
                     data-aos="zoom-in"
                     data-aos-delay="200"
+                    type="button" data-bs-toggle="modal" data-bs-target="#pictureModal"
                   />
                 </div>
               </div>
