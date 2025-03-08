@@ -7,7 +7,7 @@ const LoginRegister = () => {
   
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/store");
   };
   
   return (

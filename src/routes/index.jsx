@@ -113,7 +113,7 @@ const router = createBrowserRouter([
 const AppRouter = () => {
   return (
     <>
-      <Toaster position="top-center" richColors />
+      <Toaster position="top-center" richColors style={{ backgroundColor: '#39754B', color: '#FCFBF0'}}/>
       <RouterProvider router={router} />
     </>
   );

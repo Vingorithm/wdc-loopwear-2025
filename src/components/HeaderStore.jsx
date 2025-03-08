@@ -146,11 +146,11 @@ const HeaderStore = () => {
                     <i class="bi bi-cart me-2"></i>Cart & Wishlist
                   </a>
                 </li>
-                <li style={styles.dropdownProfileItem} className='hoverable-item'>
+                {/* <li style={styles.dropdownProfileItem} className='hoverable-item'>
                   <a href="/cart" style={styles.dropdownProfileLink}>
                     <i class="bi bi-ticket-detailed me-2"></i>Discount
                   </a>
-                </li>
+                </li> */}
                 <li style={styles.dropdownProfileItem} className='hoverable-item'>
                   <a href="/historyorder" style={styles.dropdownProfileLink}>
                     <i class="bi bi-clock-history me-2"></i>History
