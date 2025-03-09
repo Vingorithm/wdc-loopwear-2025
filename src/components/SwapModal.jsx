@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 // asset product
-import Image1 from '../assets/images/cap.png';
-import Image2 from '../assets/images/jeans.png';
-import Image3 from '../assets/images/tshirt.png';
-import Image4 from '../assets/images/pants.png';
+import Image1 from '../assets/images/product/cap.png';
+import Image2 from '../assets/images/product/jeans.png';
+import Image3 from '../assets/images/product/tshirt.png';
+import Image4 from '../assets/images/product/pants.png';
 
 import SimpleItem from '../components/SimpleItem';
 

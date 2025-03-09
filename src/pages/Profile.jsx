@@ -6,6 +6,7 @@ import languagePicture from "../assets/images/flag/english.webp"
 import paypal from '../assets/images/payment/paypal.png';
 import gopay from '../assets/images/payment/gopay.jpg';
 import dana from '../assets/images/payment/dana.png';
+import shopeepay from '../assets/images/payment/shopeepay.png';
 
 const Profile = () => {
   return (
@@ -120,7 +121,7 @@ const Profile = () => {
         </h3>
         <Card className="mb-5 rounded-1 shadow" style={styles.bgColor}>
           <Card.Body className="p-4">
-            {[{ img: gopay, name: 'Gopay' }, { img: paypal, name: 'Paypal' }, { img: dana, name: 'Dana' }].map((payment, index) => (
+            {[{ img: gopay, name: 'Gopay' }, { img: paypal, name: 'Paypal' }, { img: dana, name: 'Dana' }, { img: shopeepay, name: 'Shopeepay' }].map((payment, index) => (
               <Row className="align-items-center mb-4 payment-method-row" key={index} style={styles.paymentRow}>
                 <Col md={2} className="d-flex justify-content-center">
                   <div style={styles.paymentLogoContainer}>

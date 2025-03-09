@@ -15,13 +15,13 @@ import Card3 from '../assets/images/homepage/card3.jpg';
 
 import StatsBackground from '../assets/images/carousel/carousel4.jpg';
 
-import TeamMember1 from '../assets/images/cap.png';
-import TeamMember2 from '../assets/images/cap.png';
+import TeamMember1 from '../assets/images/product/cap.png';
+import TeamMember2 from '../assets/images/product/cap.png';
 
-import Image1 from '../assets/images/cap.png';
-import Image2 from '../assets/images/jeans.png';
-import Image3 from '../assets/images/tshirt.png';
-import Image4 from '../assets/images/pants.png';
+import Image1 from '../assets/images/product/cap.png';
+import Image2 from '../assets/images/product/jeans.png';
+import Image3 from '../assets/images/product/tshirt.png';
+import Image4 from '../assets/images/product/pants.png';
 
 const products = [
     { id: 1, name: "Phone Case", price: 6.2, image: Image1 },
