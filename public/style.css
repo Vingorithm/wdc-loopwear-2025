@@ -33,26 +33,27 @@ input.search-input:focus {
     filter: brightness(0.8);
 }
 
-Button.green-light-btn {
-    background-color: #FCFBF0;
+Button.green-light-btn, a.green-light-btn {
+    background-color: rgba(0,0,0,0);
     color: #39754B;
     border: 1px solid #39754B;
 }
 
-Button.green-light-btn:hover {
+Button.green-light-btn:hover, a.green-light-btn:hover {
     background-color: #39754B;
     color: #FCFBF0;
 }
 
-Button.green-dark-btn {
+Button.green-dark-btn, a.green-dark-btn {
     background-color: #39754B;
     color: #FCFBF0;
+    border: 1px solid #39754B;
 }
 
-Button.green-dark-btn:hover {
-    background-color: #39754B;
-    color: #FCFBF0;
-    filter: brightness(0.8);
+Button.green-dark-btn:hover, a.green-dark-btn:hover {
+    border: 1px solid #39754B;
+    background-color: rgba(0,0,0,0);
+    color: #39754B;
 }
 
 p.darkGreenText {
@@ -176,4 +177,14 @@ ul.dropdown-search li a:active {
 
 .hoverable-item:hover {
     filter: brightness(0.95);
+}
+
+.black-dropdown {
+    background-color: #FCFBF0;
+    color: #1A1816;
+    border: 1px solid #1A1816;
+}
+
+.black-dropdown:hover {
+    filter: brightness(0.8);
 }

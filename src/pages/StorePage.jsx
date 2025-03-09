@@ -35,13 +35,13 @@ const StorePage = () => {
           <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active" data-bs-interval="1000">
-                <img src={ Carousel1 } className="d-block w-100" alt="advertisement" />
+                <img src={ Carousel1 } className="d-block w-100 rounded-1" alt="advertisement" />
               </div>
               <div className="carousel-item" data-bs-interval="1000">
-                <img src={ Carousel2 } className="d-block w-100" alt="advertisement" />
+                <img src={ Carousel2 } className="d-block w-100 rounded-1" alt="advertisement" />
               </div>
               <div className="carousel-item" data-bs-interval="1000">
-                <img src={ Carousel3 } className="d-block w-100" alt="advertisement" />
+                <img src={ Carousel3 } className="d-block w-100 rounded-1" alt="advertisement" />
               </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -82,16 +82,16 @@ const StorePage = () => {
           <div className="row">
             <div class="container my-4">
               <div class="row align-items-start ms-2">
-                <a href="#" className="text-decoration-none item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
+                <a href="#" className="text-decoration-none rounded-1 item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
                   Chlotes
                 </a>
-                <a href="#" className="text-decoration-none item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
+                <a href="#" className="text-decoration-none rounded-1 item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
                   Jacket
                 </a>
-                <a href="#" className="text-decoration-none item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
+                <a href="#" className="text-decoration-none rounded-1 item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
                   Jeans
                 </a>
-                <a href="#" className="text-decoration-none item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
+                <a href="#" className="text-decoration-none rounded-1 item-category col my-1 p-2 text-center border border-dark me-3 fs-5 fw-light">
                   T-shirt
                 </a>
               </div>

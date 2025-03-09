@@ -61,7 +61,7 @@ const Shop = ({ isUser }) => {
 
                                 {
                                     isUser ?
-                                        <button className="btn btn-outline-success" onClick={() => {
+                                        <button className="btn green-light-btn rounded-1" onClick={() => {
                                             return toast('Link has been copied to clipboard!', {
                                                 cancel: {
                                                     label: <i class="bi bi-x-lg"></i>,
@@ -74,18 +74,18 @@ const Shop = ({ isUser }) => {
                                         :
                                         <div className="row">
                                             <div className="col">
-                                                <button className="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#chatModal" >
+                                                <button className="btn green-light-btn rounded-1" type="button" data-bs-toggle="modal" data-bs-target="#chatModal" >
                                                     <p className="fw-bold m-0">Chat</p>
                                                 </button>
                                             </div>
                                             <ChatModal />
                                             <div className="col">
-                                                <button className="btn btn-outline-success" onClick={() => setIsFollow(!isFollow)}>
+                                                <button className="btn green-light-btn rounded-1" onClick={() => setIsFollow(!isFollow)}>
                                                     <p className="fw-bold m-0">{isFollow ? 'Unfollow' : 'Follow'}</p>
                                                 </button>
                                             </div>
                                             <div className="col">
-                                                <button className="btn btn-outline-success" onClick={() => {
+                                                <button className="btn green-light-btn rounded-1" onClick={() => {
                                                     return toast('Link has been copied to clipboard!', {
                                                         cancel: {
                                                             label: <i class="bi bi-x-lg"></i>,
@@ -142,7 +142,7 @@ const Shop = ({ isUser }) => {
                                 {/* Category Dropdown */}
                                 <div className="dropdown w-100 w-md-auto">
                                     <button
-                                        className="btn btn-outline-success dropdown-toggle py-2 w-100 w-md-auto"
+                                        className="btn green-light-btn rounded-1 dropdown-toggle py-2 w-100 w-md-auto"
                                         type="button"
                                         id="categoryDropdown"
                                         data-bs-toggle="dropdown"
@@ -187,7 +187,7 @@ const Shop = ({ isUser }) => {
                                 {/* Filter Dropdown */}
                                 <div className="dropdown w-100 w-md-auto">
                                     <button
-                                        className="btn btn-outline-success dropdown-toggle py-2 w-100 w-md-auto"
+                                        className="btn green-light-btn rounded-1 dropdown-toggle py-2 w-100 w-md-auto"
                                         type="button"
                                         id="filterDropdown"
                                         data-bs-toggle="dropdown"
@@ -224,7 +224,7 @@ const Shop = ({ isUser }) => {
                                         <></>
                                         :
                                         <>
-                                            <button className="btn btn-outline-success py-2 w-100 w-md-auto"
+                                            <button className="btn green-light-btn rounded-1 py-2 w-100 w-md-auto"
                                                 type="button" data-bs-toggle="modal" data-bs-target="#orderServiceModal"
                                             >
                                                 Order Service
@@ -239,7 +239,7 @@ const Shop = ({ isUser }) => {
                             {
                                 isUser ?
                                     <>
-                                        <button className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2" type="button" data-bs-toggle="modal" data-bs-target="#checkOrderModal">
+                                        <button className="btn green-light-btn rounded-1 d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2" type="button" data-bs-toggle="modal" data-bs-target="#checkOrderModal">
                                             <span>Check Order</span>
                                         </button>
                                         <OrderModal />
@@ -250,7 +250,7 @@ const Shop = ({ isUser }) => {
 
                             {
                                 isUser ?
-                                    <a className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2" href="/checkswap">
+                                    <a className="btn green-light-btn rounded-1 d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto me-2" href="/checkswap">
                                         <span>Check Swap</span>
                                     </a>
                                     :
@@ -261,7 +261,7 @@ const Shop = ({ isUser }) => {
                                 isUser ?
                                     <>
                                         <button
-                                            className="btn btn-outline-success d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto"
+                                            className="btn green-light-btn rounded-1 d-flex justify-content-center align-items-center gap-2 py-2 w-100 w-md-auto"
                                             type="button" data-bs-toggle="modal" data-bs-target="#addModal">
                                             <span>Add Item</span>
                                         </button>
@@ -316,7 +316,7 @@ const styles = {
         padding: "15px",
         border: "0.8px solid rgba(46, 49, 55, 0.12)",
         borderRadius: "8px",
-        backgroundColor: '#ffffff'
+        backgroundColor: '#FCFBF0',
     },
     storeName: {
         fontSize: "25px",

@@ -68,7 +68,8 @@ const HeaderStore = () => {
                 style={{
                   ...styles.searchInput,
                   boxShadow: isFocused ? '0 0 0 0.25rem rgba(13, 110, 253, 0.25)' : 'none',
-                  borderColor: isFocused ? '#86b7fe' : '#ced4da'
+                  borderColor: isFocused ? '#86b7fe' : '#ced4da',
+                  border: '1px solid #cecece',
                 }}
               />
               <div className="position-absolute top-0 end-0">
@@ -109,7 +110,7 @@ const HeaderStore = () => {
               </div>
             </div>
             <button
-              className="btn btn-search ms-2 hoverable-item"
+              className="btn dark-btn ms-2 hoverable-item"
               type="submit"
               style={styles.searchButton}
             >
@@ -245,11 +246,9 @@ const styles = {
     height: "46px",
     borderRadius: "3px",
     padding: "0 20px",
-    backgroundColor: "#212529",
-    color: "#fff",
     fontWeight: "500",
     transition: "all 0.2s ease",
-    border: "none",
+    border: '1px solid #1A1816'
   },
   searchToggler: {
     border: "none",
