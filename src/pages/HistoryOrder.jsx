@@ -128,12 +128,14 @@ const HistoryOrder = () => {
                                                 <div className="card mb-4 border-0" style={styles.featuredCard} data-aos="fade-up">
                                                     <div className="row g-0">
                                                         <div className="col-md-3">
+                                                            <a href="/detailproduct">
                                                             <img
                                                                 src={product.image}
                                                                 alt="Sustainable clothing care"
                                                                 className="img-fluid rounded-start"
                                                                 style={styles.featuredImage}
                                                             />
+                                                            </a>
                                                         </div>
                                                         <div className="col-md-9">
                                                             <div className="card-body p-4">

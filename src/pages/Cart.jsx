@@ -48,12 +48,14 @@ const Cart = () => {
                                 <div className="card mb-4 border-0" style={styles.featuredCard} key={product.id}>
                                     <div className="row g-0">
                                         <div className="col-md-3">
+                                            <a href="/detailproduct">
                                             <img
                                                 src={product.image}
                                                 alt="Sustainable clothing care"
                                                 className="img-fluid rounded-start"
                                                 style={styles.featuredImage}
                                             />
+                                            </a>
                                         </div>
                                         <div className="col-md-9">
                                             <div className="card-body p-4">
@@ -165,7 +167,7 @@ const styles = {
         minHeight: '90vh'
     },
     featuredCard: {
-        backgroundColor: "#FCFBF0",
+        backgroundColor: "#FFFFFF",
         boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
         borderRadius: "12px",
         overflow: "hidden",

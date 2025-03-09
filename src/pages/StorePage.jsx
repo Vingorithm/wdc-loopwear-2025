@@ -54,7 +54,7 @@ const StorePage = () => {
             </button>
           </div>
 
-          <h2 className="mt-5 text-uppercase">Related Products</h2>
+          <h2 className="mt-5">Related Products</h2>
           <div className="row row-cols-4 mt-3">
             {/* {products.map((product) => (
               <div key={product.id} className="col-md-3 text-center">
