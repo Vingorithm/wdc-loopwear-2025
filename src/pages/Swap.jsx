@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 // asset product
-import Image1 from '../assets/images/cap.png';
-import Image2 from '../assets/images/jeans.png';
-import Image3 from '../assets/images/tshirt.png';
-import Image4 from '../assets/images/pants.png';
+import Image1 from '../assets/images/product/cap.png';
+import Image2 from '../assets/images/product/jeans.png';
+import Image3 from '../assets/images/product/tshirt.png';
+import Image4 from '../assets/images/product/pants.png';
 
-import Image0 from '../assets/images/product/2.webp';
+import Image0 from '../assets/images/detail_product/2.webp';
 
 import ProfilePicture from '../assets/images/shop/shop.webp';
 

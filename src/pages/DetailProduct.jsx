@@ -6,17 +6,23 @@ import BuyModal from '../components/BuyModal';
 import PictureModal from '../components/PictureModal';
 
 // Import images
-import Image1 from "../assets/images/cap.png";
+import Image1 from "../assets/images/product/jacket2.jpg";
+import Image2 from "../assets/images/product/pants3.jpg";
+import Image3 from "../assets/images/product/tshirt4.jpg";
+import Image4 from "../assets/images/product/dress2.jpg";
+import Avatar1 from "../assets/images/profpic/alex.jpg";
+import Avatar2 from "../assets/images/profpic/sarah.webp";
+import Avatar3 from "../assets/images/profpic/michael.jpg";
 import shop from '../assets/images/shop/shop.webp';
 
 // Product images
-import Img1 from '../assets/images/product/1.jpeg';
-import Img2 from '../assets/images/product/2.webp';
-import Img3 from '../assets/images/product/3.webp';
-import Img4 from '../assets/images/product/4.webp';
-import Img5 from '../assets/images/product/5.jpeg';
-import Img6 from '../assets/images/product/6.jpg';
-import Img7 from '../assets/images/product/7.jpg';
+import Img1 from '../assets/images/detail_product/1.jpeg';
+import Img2 from '../assets/images/detail_product/2.webp';
+import Img3 from '../assets/images/detail_product/3.webp';
+import Img4 from '../assets/images/detail_product/4.webp';
+import Img5 from '../assets/images/detail_product/5.jpeg';
+import Img6 from '../assets/images/detail_product/6.jpg';
+import Img7 from '../assets/images/detail_product/7.jpg';
 
 // Styles object
 const styles = {
@@ -206,7 +212,7 @@ const DetailProduct = () => {
       {
         id: 1,
         user: "Alex Johnson",
-        avatar: "/api/placeholder/40/40", // Using placeholder for avatar
+        avatar: Avatar1, // Using placeholder for avatar
         date: "February 15, 2025",
         rating: 5,
         verified: true,
@@ -218,7 +224,7 @@ const DetailProduct = () => {
       {
         id: 2,
         user: "Sarah Miller",
-        avatar: "/api/placeholder/40/40", // Using placeholder for avatar
+        avatar: Avatar2, // Using placeholder for avatar
         date: "January 29, 2025",
         rating: 4,
         verified: true,
@@ -230,7 +236,7 @@ const DetailProduct = () => {
       {
         id: 3,
         user: "Michael Chen",
-        avatar: "/api/placeholder/40/40", // Using placeholder for avatar
+        avatar: Avatar3, // Using placeholder for avatar
         date: "January 12, 2025",
         rating: 5,
         verified: true,
@@ -244,10 +250,10 @@ const DetailProduct = () => {
 
   // Related products data
   const relatedProducts = [
-    { id: 1, name: "iPhone Case", price: 8.29, image: Image1 },
-    { id: 2, name: "Hoodie Sweatshirt", price: 90.30, originalPrice: 129.00, image: Image1 },
-    { id: 3, name: "Basic T-Shirt", price: 27.54, image: Image1 },
-    { id: 4, name: "Baseball Cap", price: 19.29, image: Image1 }
+    { id: 1, name: "Milano Hoodie", price: 18.29, image: Image1 },
+    { id: 2, name: "Striped Pants", price: 9.30, originalPrice: 29.00, image: Image2 },
+    { id: 3, name: "Basic Grey T-Shirt", price: 3.54, image: Image3 },
+    { id: 4, name: "Sky Blue Dress", price: 19.29, image: Image4 }
   ];
 
   // Thumbnail images array

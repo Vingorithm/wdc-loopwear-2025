@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ImageProduct from '../assets/images/product/2.webp';
+import ImageProduct from '../assets/images/detail_product/2.webp';
 
 const buyModal = () => {
 

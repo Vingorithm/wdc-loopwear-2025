@@ -12,10 +12,12 @@ import OrderServiceModal from '../components/ServiceModal';
 import OrderModal from '../components/OrderModal';
 
 // assets
-import Image1 from '../assets/images/cap.png';
-import Image2 from '../assets/images/jeans.png';
-import Image3 from '../assets/images/tshirt.png';
-import Image4 from '../assets/images/pants.png';
+import Image1 from '../assets/images/product/beanie.jpg';
+import Image2 from '../assets/images/product/beanie2.jpg';
+import Image3 from '../assets/images/product/dress2.jpg';
+import Image4 from '../assets/images/product/pants3.jpg';
+import Image5 from '../assets/images/product/tshirt3.jpg';
+import Image6 from '../assets/images/product/tshirt5.jpg';
 
 const Shop = ({ isUser }) => {
     // status follow
@@ -23,10 +25,12 @@ const Shop = ({ isUser }) => {
 
     // data product
     const [products, setProducts] = useState([
-        { id: 1, name: "MLB Cap", price: 6.2, image: Image1, category: "Accessories", sold: 120, uploadedAt: "2024-02-20" },
-        { id: 2, name: "Men's Jeans", price: 90.3, image: Image2, category: "Jeans", sold: 45, uploadedAt: "2024-02-22" },
-        { id: 3, name: "Basic T-Shirt", price: 27.54, image: Image3, category: "T-Shirt", sold: 87, uploadedAt: "2024-02-18" },
-        { id: 4, name: "Pants", price: 19.2, image: Image4, category: "Clothing", sold: 65, uploadedAt: "2024-02-25" },
+        { id: 1, name: "Grey Aape Beanie", price: 6.2, image: Image1, category: "Accessories", sold: 120, uploadedAt: "2024-02-20" },
+        { id: 2, name: "Dark Blue Aape Beanie", price: 90.3, image: Image2, category: "Accessories", sold: 45, uploadedAt: "2024-02-22" },
+        { id: 3, name: "Sky Blue Dress", price: 27.54, image: Image3, category: "Clothing", sold: 87, uploadedAt: "2024-02-18" },
+        { id: 4, name: "Striped Pants", price: 19.2, image: Image4, category: "Clothing", sold: 65, uploadedAt: "2024-03-25" },
+        { id: 5, name: "Racoon Tee", price: 19.2, image: Image5, category: "T-Shirt", sold: 65, uploadedAt: "2024-01-23" },
+        { id: 6, name: "Whale T-Shirt", price: 19.2, image: Image6, category: "T-Shirt", sold: 65, uploadedAt: "2024-01-11" },
     ]);
 
     const [category, setCategory] = useState("All Categories");

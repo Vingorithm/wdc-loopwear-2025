@@ -7,24 +7,38 @@ import Item from '../components/Item';
 import BiggerItem from '../components/BiggerItem';
 
 // asset product
-import Image1 from '../assets/images/cap.png';
-import Image2 from '../assets/images/jeans.png';
-import Image3 from '../assets/images/tshirt.png';
-import Image4 from '../assets/images/pants.png';
+import Image1 from '../assets/images/product/cap.png';
+import Image2 from '../assets/images/product/jeans.png';
+import Image3 from '../assets/images/product/tshirt.png';
+import Image4 from '../assets/images/product/pants.png';
+import Image5 from '../assets/images/product/sweater2.jpg';
+import Image6 from '../assets/images/product/tshirt3.jpg';
+import Image7 from '../assets/images/product/jeans2.jpg';
+import Image8 from '../assets/images/product/jacket.jpg';
+import Image9 from '../assets/images/product/tshirt2.jpg';
+import Image10 from '../assets/images/product/dress.jpeg';
+import Image11 from '../assets/images/product/beanie.jpg';
 
 // asset carousel
-import Carousel1 from '../assets/images/ad/ad10.webp';
-import Carousel2 from '../assets/images/ad/ad11.webp';
-import Carousel3 from '../assets/images/ad/ad5.webp';
+import Carousel1 from '../assets/images/ad/ad10.jpg';
+import Carousel2 from '../assets/images/ad/ad11.png';
+import Carousel3 from '../assets/images/ad/ad5.png';
 
 const StorePage = () => {
 
   // data product
   const products = [
-    { id: 1, name: "Phone Case", price: 6.2, image: Image1 },
-    { id: 2, name: "Hoodie Sweatshirt", price: 90.3, image: Image2, oldPrice: 129 },
-    { id: 3, name: "Basic T-Shirt", price: 27.54, image: Image3 },
-    { id: 4, name: "Baseball Cap", price: 19.2, image: Image4 },
+    { id: 1, name: "MLB Cap", price: 6.2, image: Image1 },
+    { id: 2, name: "Levi's Jeans", price: 90.3, image: Image2, oldPrice: 129 },
+    { id: 3, name: "Light Choco T-Shirt", price: 27.54, image: Image3 },
+    { id: 4, name: "Satin Jogger Pants", price: 19.2, image: Image4 },
+    { id: 5, name: "Winter Sweater", price: 90.3, image: Image5, oldPrice: 129 },
+    { id: 6, name: "Racoon Tee", price: 27.54, image: Image6 },
+    { id: 7, name: "Nevada Jeans", price: 19.2, image: Image7 },
+    { id: 8, name: "Cafe Bomber", price: 19.2, image: Image8 },
+    { id: 9, name: "Japanese Cat T-Shirt", price: 27.54, image: Image9 },
+    { id: 10, name: "Mini Dress", price: 19.2, image: Image10 },
+    { id: 11, name: "Grey Aape Beanie", price: 19.2, image: Image11 },
   ];
 
   return (
@@ -74,7 +88,7 @@ const StorePage = () => {
                 </div>
               </div>
             ))} */}
-            {products.map((product) => (
+            {products.slice(0, 4).map((product) => (
               <BiggerItem key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
             ))}
           </div>
@@ -108,13 +122,7 @@ const StorePage = () => {
             {products.map((product) => (
               <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
             ))}
-            {products.map((product) => (
-              <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-            ))}
-            {products.map((product) => (
-              <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-            ))}
-            {products.map((product) => (
+            {products.slice(0, 9).map((product) => (
               <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
             ))}
           </div>

@@ -12,18 +12,18 @@ import ReviewModal from "../components/ReviewModal";
 import Shop from '../assets/images/shop/shop.webp';
 
 // asset product
-import Image1 from '../assets/images/cap.png';
-import Image2 from '../assets/images/jeans.png';
-import Image3 from '../assets/images/tshirt.png';
-import Image4 from '../assets/images/pants.png';
+import Image1 from '../assets/images/product/cap.png';
+import Image2 from '../assets/images/product/jeans.png';
+import Image3 from '../assets/images/product/tshirt.png';
+import Image4 from '../assets/images/product/pants.png';
 
 const HistoryOrder = () => {
     // data product
     const [products, setProducts] = useState([
         { id: 1, name: "MLB Cap", price: 45, image: Image1, category: "Accessories", sold: 120, boughtAt: "2024-02-20", trackingNumber: "ILW/XII/031456789", shop: 'Loop Wear' },
-        { id: 2, name: "Men's Jeans", price: 90.30, image: Image2, category: "Jeans", sold: 45, boughtAt: "2024-02-22", trackingNumber: "ILW/TLL/987654321", shop: 'Loop Wear' },
+        { id: 2, name: "Levi's Jeans", price: 90.30, image: Image2, category: "Jeans", sold: 45, boughtAt: "2024-02-22", trackingNumber: "ILW/TLL/987654321", shop: 'Loop Wear' },
         { id: 3, name: "Basic T-Shirt", price: 27.50, image: Image3, category: "T-Shirt", sold: 87, boughtAt: "2024-02-18", trackingNumber: "ILW/TLL/567891234", shop: 'Loop Wear' },
-        { id: 4, name: "Pants", price: 19.20, image: Image4, category: "Clothing", sold: 65, boughtAt: "2024-02-25", trackingNumber: "ILW/XCV/345678912", shop: 'Loop Wear' },
+        { id: 4, name: "Jogger Pants", price: 19.20, image: Image4, category: "Clothing", sold: 65, boughtAt: "2024-02-25", trackingNumber: "ILW/XCV/345678912", shop: 'Loop Wear' },
     ]);
 
     const [filter, setFilter] = useState("Newest First");
