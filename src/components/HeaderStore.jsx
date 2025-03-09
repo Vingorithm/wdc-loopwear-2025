@@ -238,8 +238,8 @@ const styles = {
     padding: "8px 0",
   },
   activeDropdownItem: {
-    backgroundColor: "#f8f9fa",
-    color: "#0d6efd",
+    backgroundColor: "#bee4c0",
+    color: "#155724",
     fontWeight: "500",
   },
   searchButton: {
