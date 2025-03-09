@@ -3,12 +3,18 @@ import { toast } from "sonner"
 import { useState, useEffect } from "react";
 
 // asset product
-import Image1 from '../assets/images/product/cap.png';
-import Image2 from '../assets/images/product/jeans.png';
+import Image1 from '../assets/images/product/pants2.jpg';
+import Image2 from '../assets/images/product/dress.jpeg';
 import Image3 from '../assets/images/product/tshirt.png';
-import Image4 from '../assets/images/product/pants.png';
+import Image4 from '../assets/images/product/tshirt2.jpg';
+import Image5 from '../assets/images/product/sweater.jpg';
+import Image6 from '../assets/images/product/jeans2.jpg';
+import Image7 from '../assets/images/product/tshirt6.jpg';
 
-import Shop from '../assets/images/shop/shop.webp';
+import Shop2 from '../assets/images/shop/shop2.png';
+import Shop3 from '../assets/images/shop/shop3.png';
+import Shop4 from '../assets/images/shop/shop4.png';
+import Shop5 from '../assets/images/shop/shop5.png';
 import BuyModal from '../components/BuyModal';
 
 // component item
@@ -17,18 +23,17 @@ import Item from '../components/Item';
 const Cart = () => {
 
     const [products, setProducts] = useState([
-        { id: 1, name: "MLB Cap", price: 45, image: Image1, shopName: "Loop Wear", ammount: 1 },
-        { id: 2, name: "Men's Jeans", price: 90.30, image: Image2, shopName: "Loop Wear", ammount: 2 },
-        { id: 3, name: "Basic T-Shirt", price: 27.50, image: Image3, shopName: "Loop Wear", ammount: 1 },
-        { id: 4, name: "Pants", price: 19.20, image: Image4, shopName: "Loop Wear", ammount: 3 },
+        { id: 1, name: "Giordano Hotpants", price: 45, image: Image1, shop: Shop2, shopName: "Liceria", ammount: 1 },
+        { id: 2, name: "Mini Dress", price: 90.30, image: Image2, shop: Shop3, shopName: "Larana Official Store", ammount: 2 },
+        { id: 3, name: "Basic T-Shirt", price: 27.50, image: Image3, shop: Shop4, shopName: "Borcelle Streetwear", ammount: 1 },
+        { id: 4, name: "Japanese Cat T-Shirt", price: 19.20, image: Image4, shop: Shop5, shopName: "Hanover", ammount: 3 },
     ]);
 
-    const items = [
-        { id: 1, name: "Phone Case", price: 6.2, image: Image1 },
-        { id: 2, name: "Hoodie Sweatshirt", price: 90.3, image: Image2, oldPrice: 129 },
-        { id: 3, name: "Basic T-Shirt", price: 27.54, image: Image3 },
-        { id: 4, name: "Baseball Cap", price: 19.2, image: Image4 },
-    ];
+    const [otherProducts, setOtherProducts] = useState([
+        { id: 5, name: "Maevy Sweater", price: 45, image: Image5, ammount: 1 },
+        { id: 6, name: "Nevada Jeans", price: 90.30, image: Image6, ammount: 2 },
+        { id: 7, name: "Light Blue T-Shirt", price: 27.50, image: Image7, ammount: 1 },
+    ]);
 
     return (
         <>
@@ -70,10 +75,10 @@ const Cart = () => {
                                                             color: '#1A1816'
                                                         }}>
                                                             <div>
-                                                                <img src={Shop} alt="shop image" className="rounded-circle border border-black object-fit-cover" style={{
+                                                                <img src={product.shop} alt="shop image" className="rounded-circle border border-black object-fit-cover" style={{
                                                                     width: '30px',
                                                                 }} />
-                                                                <p className="fw-bold fs-5 d-inline ms-2 ">Loopwear</p>
+                                                                <p className="fw-bold fs-5 d-inline ms-2 ">{product.shopName}</p>
                                                             </div>
                                                         </a>
                                                     </div>
@@ -136,16 +141,7 @@ const Cart = () => {
                                 {products.map((product) => (
                                     <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
                                 ))}
-                                {products.map((product) => (
-                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-                                ))}
-                                {products.map((product) => (
-                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-                                ))}
-                                {products.map((product) => (
-                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
-                                ))}
-                                {products.map((product) => (
+                                {otherProducts.map((product) => (
                                     <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
                                 ))}
                                 {products.map((product) => (

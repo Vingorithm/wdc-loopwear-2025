@@ -29,7 +29,7 @@ const StorePage = () => {
   // data product
   const products = [
     { id: 1, name: "MLB Cap", price: 6.2, image: Image1 },
-    { id: 2, name: "Levi Jeans", price: 90.3, image: Image2, oldPrice: 129 },
+    { id: 2, name: "Levi's Jeans", price: 90.3, image: Image2, oldPrice: 129 },
     { id: 3, name: "Light Choco T-Shirt", price: 27.54, image: Image3 },
     { id: 4, name: "Satin Jogger Pants", price: 19.2, image: Image4 },
     { id: 5, name: "Winter Sweater", price: 90.3, image: Image5, oldPrice: 129 },
