@@ -13,9 +13,9 @@ import Image3 from '../assets/images/product/tshirt.png';
 import Image4 from '../assets/images/product/pants.png';
 
 // asset carousel
-import Carousel1 from '../assets/images/ad/ad10.webp';
-import Carousel2 from '../assets/images/ad/ad11.webp';
-import Carousel3 from '../assets/images/ad/ad5.webp';
+import Carousel1 from '../assets/images/ad/ad10.jpg';
+import Carousel2 from '../assets/images/ad/ad11.png';
+import Carousel3 from '../assets/images/ad/ad5.png';
 
 const StorePage = () => {
 
