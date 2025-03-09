@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// Removed AOS imports
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 
 // component item
 import Item from '../components/Item';
@@ -30,12 +31,12 @@ const HistoryOrder = () => {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 800);
 
     useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-        });
-
-        AOS.refresh();
+        // Removed AOS initialization
+        // AOS.init({
+        //     duration: 1000,
+        //     once: true,
+        // });
+        // AOS.refresh();
 
         const handleResize = () => {
             setIsLargeScreen(window.innerWidth > 800);
@@ -125,7 +126,8 @@ const HistoryOrder = () => {
                                         })
                                         .map((product) => (
                                             <>
-                                                <div className="card mb-4 border-0" style={styles.featuredCard} data-aos="fade-up">
+                                                {/* Removed data-aos attributes */}
+                                                <div className="card mb-4 border-0" style={styles.featuredCard}>
                                                     <div className="row g-0">
                                                         <div className="col-md-3">
                                                             <a href="/detailproduct">
@@ -139,7 +141,8 @@ const HistoryOrder = () => {
                                                         </div>
                                                         <div className="col-md-9">
                                                             <div className="card-body p-4">
-                                                                <p className="text-muted m-0" data-aos="fade-right" data-aos-delay="400">
+                                                                {/* Removed data-aos attributes */}
+                                                                <p className="text-muted m-0">
                                                                     {new Date(product.boughtAt).toLocaleDateString("id-ID", {
                                                                         day: "2-digit",
                                                                         month: "short",
@@ -147,8 +150,9 @@ const HistoryOrder = () => {
                                                                     })} - {product.trackingNumber}
                                                                 </p>
                                                                 <div className="d-flex justify-content-between mb-2">
-                                                                    <h2 style={styles.cardTitle} data-aos="fade-right" data-aos-delay="300">{product.name}</h2>
-                                                                    <h2 style={styles.cardTitle} data-aos="fade-right" data-aos-delay="300">${product.price.toFixed(2)}</h2>
+                                                                    {/* Removed data-aos attributes */}
+                                                                    <h2 style={styles.cardTitle}>{product.name}</h2>
+                                                                    <h2 style={styles.cardTitle}>${product.price.toFixed(2)}</h2>
                                                                 </div>
                                                                 <div className="row">
                                                                     <div className="col-7 ms-1">
@@ -163,15 +167,6 @@ const HistoryOrder = () => {
                                                                             </div>
                                                                         </a>
                                                                     </div>
-
-                                                                    {/* <div className="col">
-                                                                                                                        <div className="row column-gap-1">
-                                                                                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-dash"></i></div>
-                                                                                                                            <div className="col ammount d-flex justify-content-center align-items-center hoverable-item" style={styles.ammountPart}>{product.ammount}</div>
-                                                                                                                            <input type="number" className="col ammount d-flex justify-content-center align-items-center hoverable-item text-center" min='1' style={styles.ammountPart} />
-                                                                                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-plus-lg"></i></div>
-                                                                                                                        </div>
-                                                                                                                    </div> */}
                                                                 </div>
                                                                 <div className="row">
                                                                     <div className="col-12 align-items-center justify-content-end d-flex gap-2">
@@ -240,7 +235,6 @@ const styles = {
     cardTitle: {
         color: "#1A1816",
         fontWeight: "600",
-        // marginTop: "8px",
         marginBottom: "8px"
     },
     cardText: {
@@ -257,6 +251,5 @@ const styles = {
         transition: "all 0.2s ease"
     },
 }
-
 
 export default HistoryOrder;
