@@ -33,16 +33,21 @@ const orderModal = () => {
                                     {
                                         products.map((product) =>
                                             <div className="card mb-4 border-0" style={styles.featuredCard} key={product.id}>
-                                                <div className="row g-0">
-                                                    <div className="col-md-3">
+                                                
+                                                <div className="row">
+                                                <div className="col">
+                                                    <a href="/detailproduct">
                                                         <img
                                                             src={product.image}
                                                             alt="Sustainable clothing care"
                                                             className="img-fluid rounded-start"
                                                             style={styles.featuredImage}
                                                         />
+                                                    </a>
                                                     </div>
-                                                    <div className="col-md-9">
+                                                </div>
+                                                <div className="row g-0">
+                                                    <div className="col">
                                                         <div className="card-body p-4">
 
                                                             <div className="d-flex justify-content-between mb-2">
@@ -100,7 +105,7 @@ const orderModal = () => {
 
                                                             <div className="row justify-content-end p-0">
                                                                 <div className="col text-end px-0 py-3">
-                                                                    <button className="dark-btn px-5 py-1 me-2" onClick={() => {
+                                                                    <button className="btn btn-dark px-5 py-1 me-2" onClick={() => {
                                                                         return toast('Request has been rejected!', {
                                                                             cancel: {
                                                                                 label: <i class="bi bi-x-lg"></i>,
@@ -108,7 +113,7 @@ const orderModal = () => {
                                                                             },
                                                                         })
                                                                     }}>Decline</button>
-                                                                    <button className="dark-btn px-5 py-1"  onClick={() => {
+                                                                    <button className="btn btn-success px-5 py-1"  onClick={() => {
                                                                         return toast('Request has been accepted!', {
                                                                             cancel: {
                                                                                 label: <i class="bi bi-x-lg"></i>,
@@ -140,7 +145,7 @@ const styles = {
         minHeight: '90vh'
     },
     featuredCard: {
-        backgroundColor: "#FCFBF0",
+        backgroundColor: "#FFFFFF",
         boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
         borderRadius: "12px",
         overflow: "hidden",

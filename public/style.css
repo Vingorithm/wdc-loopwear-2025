@@ -121,7 +121,7 @@ button.dark-btn {
 button.dark-btn:hover {
     border: 1px solid #1A1816;
     color: #1A1816;
-    background-color: #FCFBF0;
+    background-color: rgba(0,0,0,0);
 }
 
 button.light-btn , .light-btn {

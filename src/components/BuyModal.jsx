@@ -11,6 +11,8 @@ const buyModal = () => {
         price: 1.9,
     });
 
+    const [bill, setBill] = useState(product.price*product.quantity);
+
     return (
         <>
             <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -24,7 +26,7 @@ const buyModal = () => {
                             <div className="container">
                                 <div className="row">
                                     <div className="col">
-                                        <img src={ImageProduct} alt="product image" style={styles.imageProduct} />
+                                        <img className='rounded-1' src={ImageProduct} alt="product image" style={styles.imageProduct} />
                                     </div>
                                     <p className="fw-bold fs-4">Product: {product.name}</p>
 
@@ -42,16 +44,16 @@ const buyModal = () => {
 
                                     <p className="fw-bold">Quantity</p>
 
-                                    <div class="input-group mb-3 w-25">
-                                        <button className='input-group-text' onClick={() => setProduct({
+                                    <div class="input-group mb-3 w-50">
+                                        <button className='input-group-text' onClick={() => {setProduct({
                                             quantity: product.quantity == 1 ? product.quantity : product.quantity-1
-                                        })}>
+                                        }); setBill(product.quantity*product.price); }}>
                                             <span><i class="bi bi-dash-lg"></i></span>
                                         </button>
                                         <input type="number" class="form-control text-center" aria-label="Amount (to the nearest dollar)" min='0' value={product.quantity} />
-                                        <button className='input-group-text' onClick={() => setProduct({
-                                            quantity: product.quantity+1
-                                        })}>
+                                        <button className='input-group-text' onClick={() => {setProduct({
+                                            quantity: product.quantity+1 
+                                        }); setBill(product.quantity*product.price); }}>
                                             <span><i class="bi bi-plus-lg"></i></span>
                                         </button>
                                         
@@ -85,11 +87,11 @@ const buyModal = () => {
                         <div class="modal-footer w-100">
                             <div className="row w-100 align-items-center">
                                 <div className="col-7">
-                                    <p className="fs-4 fw-bold m-0">Price: ${product.quantity*product.price}</p>
+                                    <p className="fs-4 fw-bold m-0">Price: ${bill}</p>
                                 </div>
                                 <div className="col d-flex justify-content-end">
                                 <button type="button" class="btn btn-dark me-2" data-bs-dismiss="modal">Cancel</button>
-                                <a href="/historyorder"><button type="button" class="btn btn-dark">Buy</button></a>
+                                <a href="/historyorder"><button type="button" class="btn btn-success">Buy</button></a>
                                 </div>
                             </div>
                         </div>

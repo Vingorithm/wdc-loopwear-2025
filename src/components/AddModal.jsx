@@ -70,7 +70,7 @@ const addModal = () => {
                         </div>
                         <div class="modal-footer w-100">
                             <button type="button" class="btn btn-dark me-2" data-bs-dismiss="modal">Cancel</button>
-                            <a href="/myshop"><button type="button" class="btn btn-dark">Save Changes</button></a>
+                            <a href="/myshop"><button type="button" class="btn btn-success">Save Changes</button></a>
                         </div>
                     </div>
                 </div>

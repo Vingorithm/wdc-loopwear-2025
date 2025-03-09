@@ -10,12 +10,12 @@ const chatModal = () => {
                         </div>
                         <div class="modal-body">
                             <div className="row w-100 my-2">
-                                <div className="col rounded text-bg-dark py-2 px-3 ms-5" >
+                                <div className="col rounded text-bg-success py-2 px-3 ms-5" >
                                     <p className="m-0">Hi</p>
                                 </div>
                             </div>
                             <div className="row w-100 my-2 ms-2">
-                                <div className="col rounded text-bg-success py-2 px-3 me-5" >
+                                <div className="col rounded text-bg-dark py-2 px-3 me-5" >
                                     <p className="m-0">Hi, welcome to loop wear. Is there anything i can help for you?</p>
                                 </div>
                             </div>

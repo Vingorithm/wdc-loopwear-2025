@@ -56,7 +56,7 @@ const swapModal = () => {
                                 </div>
                                 <div class="modal-footer w-100">
                                 <button type="button" class="btn btn-dark me-2" data-bs-dismiss="modal">Cancel</button>
-                                <a href="/swap"><button type="button" class="btn btn-dark">Select</button></a>
+                                <a href="/swap"><button type="button" class="btn btn-success">Select</button></a>
                                 
                                 </div>
                             </div>

@@ -64,7 +64,7 @@ const serviceModal = () => {
                                 </div>
                                 <div className="col d-flex justify-content-end">
                                 <button type="button" class="btn btn-dark me-2" data-bs-dismiss="modal">Cancel</button>
-                                <a href="/historyorder"><button type="button" class="btn btn-dark">Buy</button></a>
+                                <a href="/historyorder"><button type="button" class="btn btn-success">Buy</button></a>
                                 </div>
                             </div>
                         </div>
