@@ -147,7 +147,7 @@ const HomePage = () => {
                                 style={{ 
                                     backgroundColor: '#39754B',
                                     color: '#FCFBF0',
-                                    borderRadius: '30px',
+                                    borderRadius: '6px',
                                     padding: '12px 30px',
                                     transform: index === activeSlide ? 'scale(1)' : 'scale(0.8)',
                                     opacity: index === activeSlide ? 1 : 0,
