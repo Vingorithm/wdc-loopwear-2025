@@ -12,15 +12,15 @@ const Profile = () => {
     <section style={styles.bgColor}>
       <Container className="py-5" style={{ minHeight: '100vh' }}>
         {/* Profile Section */}
-        <h3 className="mb-4 text-uppercase fw-bold" style={styles.sectionTitle}>
+        <h3 className="mb-4 fw-bold" style={styles.sectionTitle}>
           <i className="bi bi-person-circle me-2"></i>Profile
         </h3>
 
-        <Card className="mb-5 rounded-0 shadow" style={styles.bgColor}>
+        <Card className="mb-5 rounded-11 shadow" style={styles.bgColor}>
           <Card.Body className="p-4">
             <Row>
               <Col md={3} className="d-flex flex-column align-items-center">
-                <Form.Label className="fw-bold text-uppercase text-secondary mb-3" style={styles.labelText}>
+                <Form.Label className="fw-bold mb-3" style={styles.labelText}>
                   Profile Picture
                 </Form.Label>
                 <div style={styles.profileImageContainer}>
@@ -28,10 +28,10 @@ const Profile = () => {
                 </div>
                 <Button 
                   variant="outline-dark" 
-                  className="rounded-0 mt-3 transition-hover"
+                  className="green-light-btn rounded-1 mt-3 transition-hover"
                   style={styles.editButton}
                 >
-                  <i className="bi bi-pencil-square me-2"></i> Edit
+                  <i className="bi bi-pencil-square me-2 "></i> Edit
                 </Button>
               </Col>
               
@@ -39,11 +39,11 @@ const Profile = () => {
                 <Form>
                   <Row>
                     <Col md={6} className="mb-4">
-                      <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                      <Form.Label className="fw-bold" style={styles.labelText}>
                         <i className="bi bi-person me-2"></i>Username
                       </Form.Label>
                       <Form.Control 
-                        className="rounded-0 border-2 shadow-sm" 
+                        className="rounded-1 border-1 shadow-sm" 
                         style={styles.form}
                         type="text" 
                         placeholder="Enter your username"
@@ -51,11 +51,11 @@ const Profile = () => {
                     </Col>
                     
                     <Col md={6} className="mb-4">
-                      <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                      <Form.Label className="fw-bold" style={styles.labelText}>
                         <i className="bi bi-envelope me-2"></i>Email Address
                       </Form.Label>
                       <Form.Control 
-                        className="rounded-0 border-2 shadow-sm" 
+                        className="rounded-1 border-1 shadow-sm" 
                         style={styles.form}
                         type="email" 
                         placeholder="Enter your email"
@@ -65,11 +65,11 @@ const Profile = () => {
 
                   <Row>
                     <Col md={6} className="mb-4">
-                      <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                      <Form.Label className="fw-bold" style={styles.labelText}>
                         <i className="bi bi-telephone me-2"></i>Phone Number
                       </Form.Label>
                       <Form.Control 
-                        className="rounded-0 border-2 shadow-sm" 
+                        className="rounded-1 border-1 shadow-sm" 
                         style={styles.form}
                         type="tel" 
                         placeholder="Enter your phone number"
@@ -77,11 +77,11 @@ const Profile = () => {
                     </Col>
                     
                     <Col md={6} className="mb-4">
-                      <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                      <Form.Label className="fw-bold" style={styles.labelText}>
                         <i className="bi bi-geo-alt me-2"></i>City
                       </Form.Label>
                       <Form.Control 
-                        className="rounded-0 border-2 shadow-sm" 
+                        className="rounded-1 border-1 shadow-sm" 
                         style={styles.form}
                         type="text" 
                         placeholder="Enter your city"
@@ -90,20 +90,20 @@ const Profile = () => {
                   </Row>
 
                   <Form.Group className="mb-4">
-                    <Form.Label className="fw-bold text-uppercase text-secondary" style={styles.labelText}>
+                    <Form.Label className="fw-bold" style={styles.labelText}>
                       <i className="bi bi-house me-2"></i>Full Address
                     </Form.Label>
                     <Form.Control 
                       as="textarea" 
                       rows={3} 
-                      className="rounded-0 border-2 shadow-sm" 
+                      className="rounded-1 border-1 shadow-sm" 
                       style={styles.form}
                       placeholder="Enter your complete address"
                     />
                   </Form.Group>
 
                   <Button 
-                    className="w-100 rounded-0 py-3 text-uppercase fw-bold transition-hover" 
+                    className="w-100 rounded-1 green-dark-btn py-3 fw-bold transition-hover" 
                     style={styles.saveButton}
                   >
                     <i className="bi bi-check-circle me-2"></i> Save Profile Changes
@@ -115,10 +115,10 @@ const Profile = () => {
         </Card>
 
         {/* Payment Methods Card */}
-        <h3 className="mb-4 text-uppercase fw-bold" style={styles.sectionTitle}>
+        <h3 className="mb-4 fw-bold" style={styles.sectionTitle}>
           <i className="bi bi-credit-card me-2"></i>Payment Methods
         </h3>
-        <Card className="mb-5 rounded-0 shadow" style={styles.bgColor}>
+        <Card className="mb-5 rounded-1 shadow" style={styles.bgColor}>
           <Card.Body className="p-4">
             {[{ img: gopay, name: 'Gopay' }, { img: paypal, name: 'Paypal' }, { img: dana, name: 'Dana' }].map((payment, index) => (
               <Row className="align-items-center mb-4 payment-method-row" key={index} style={styles.paymentRow}>
@@ -133,7 +133,7 @@ const Profile = () => {
                 <Col md={2} className="d-flex justify-content-end">
                   <Button 
                     variant="outline-dark" 
-                    className="rounded-0 text-uppercase transition-hover green-light-btn"
+                    className="rounded-1 transition-hover green-light-btn"
                     style={styles.connectButton}
                   >
                     <i className="bi bi-link-45deg me-2"></i>Connect
@@ -145,10 +145,10 @@ const Profile = () => {
         </Card>
 
         {/* Language Settings Card */}
-        <h3 className="mb-4 text-uppercase fw-bold" style={styles.sectionTitle}>
+        <h3 className="mb-4 fw-bold" style={styles.sectionTitle}>
           <i className="bi bi-translate me-2"></i>Language Preferences
         </h3>
-        <Card className="mb-5 rounded-0 shadow" style={styles.bgColor}>
+        <Card className="mb-5 rounded-1 shadow" style={styles.bgColor}>
           <Card.Body className="p-4">
             <Row className="align-items-center">
               <Col md={2} className="d-flex justify-content-center mb-4 mb-md-0">
@@ -158,7 +158,7 @@ const Profile = () => {
               </Col>
               <Col md={10}>
                 <Form.Select 
-                  className="rounded-0 border-2 shadow-sm" 
+                  className="rounded-1 border-1 shadow-sm" 
                   style={styles.form}
                   aria-label="Language selector"
                 >
@@ -189,7 +189,8 @@ const styles = {
   
   labelText: {
     fontSize: '0.8rem',
-    letterSpacing: "0.5px"
+    letterSpacing: "0.5px",
+    color: '#1A1816'
   },
 
   profileImageContainer: {
@@ -204,7 +205,7 @@ const styles = {
     objectPosition: "center",
     width: '140px',
     height: '140px',
-    border: '3px solid #39754B',
+    border: '2px solid #39754B',
     transition: "all 0.3s ease",
   },
 
@@ -218,7 +219,7 @@ const styles = {
     width: '60px', 
     height: '60px', 
     backgroundColor: '#eee', 
-    border: '3px solid #39754B',
+    border: '2px solid #39754B',
     transition: "transform 0.3s ease",
   },
 
@@ -266,8 +267,6 @@ const styles = {
   editButton: { 
     width: '80%',
     borderColor: "#39754B",
-    color: "#39754B",
-    backgroundColor: "transparent",
     transition: "all 0.3s ease",
     ":hover": {
       backgroundColor: "#39754B",
@@ -278,7 +277,7 @@ const styles = {
   saveButton: { 
     border: 'none',
     fontSize: '0.9rem',
-    backgroundColor: "#39754B",
+    border: '1px solid #39754B',
     transition: "all 0.3s ease",
     ":hover": {
       backgroundColor: "#2c5a3a",

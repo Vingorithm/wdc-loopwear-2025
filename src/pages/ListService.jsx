@@ -20,7 +20,7 @@ const ListService = () => {
                             <h2>Sort By</h2>
                             <div class="row align-items-start mb-2">
                                 <div className="col d-grid">
-                                    <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="black-dropdown rounded-1 dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
                                         Location
                                     </button>
                                     <ul class="dropdown-menu">
@@ -31,7 +31,7 @@ const ListService = () => {
                                 </div>
 
                                 <div className="col d-grid">
-                                    <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="black-dropdown rounded-1 dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
                                         Shop Status
                                     </button>
                                     <ul class="dropdown-menu">
@@ -42,7 +42,7 @@ const ListService = () => {
                                 </div>
 
                                 <div className="col d-grid">
-                                    <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="black-dropdown rounded-1 dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
                                         Discount
                                     </button>
                                     <ul class="dropdown-menu">
@@ -53,7 +53,7 @@ const ListService = () => {
                                 </div>
 
                                 <div className="col d-grid">
-                                    <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="black-dropdown rounded-1 dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
                                         Rating
                                     </button>
                                     <ul class="dropdown-menu">

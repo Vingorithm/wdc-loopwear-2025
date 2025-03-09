@@ -39,7 +39,7 @@ const Cart = () => {
 
                     <p className="fw-bold fs-2"><i class="bi bi-cart-fill me-2"></i>Cart</p>
 
-                    <div className="row overflow-y-scroll" style={{
+                    <div className="row overflow-y-scroll px-2" style={{
                         height: '50vh',
                     }}>
 
@@ -88,7 +88,7 @@ const Cart = () => {
 
                                                 <div className="row justify-content-end p-0">
                                                     <div className="col text-end px-0 py-3">
-                                                        <button className="dark-btn px-5 py-1 me-2" onClick={() => {
+                                                        <button className="dark-btn px-5 py-1 me-2 rounded-1" onClick={() => {
                                                             return toast('Product has been removed from cart!', {
                                                                 cancel: {
                                                                     label: <i class="bi bi-x-lg"></i>,
@@ -96,7 +96,7 @@ const Cart = () => {
                                                                 },
                                                             })
                                                         }}>Remove</button>
-                                                        <button className="dark-btn px-5 py-1" type="button" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+                                                        <button className="px-5 py-1 rounded-1 green-dark-btn" type="button" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -112,7 +112,7 @@ const Cart = () => {
                         <div className="col">
                             <div class="row align-items-start mb-2">
                                 <div className="col d-grid justify-content-end">
-                                    <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '200px' }}>
+                                    <button class="black-dropdown rounded-1 dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '200px' }}>
                                         All
                                     </button>
                                     <ul class="dropdown-menu" >

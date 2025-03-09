@@ -170,7 +170,7 @@ const DetailProduct = () => {
   
   // Product data
   const product = {
-    name: "HOODIE SWEATSHIRT",
+    name: "Black T-Shirt",
     description: "Relaxed fit hoodie sweatshirt made of dense cotton with standard closure. Hooded collar and long sleeves. Front pouch pocket.",
     originalPrice: 129.00,
     discountPrice: 90.30,
@@ -245,9 +245,9 @@ const DetailProduct = () => {
   // Related products data
   const relatedProducts = [
     { id: 1, name: "iPhone Case", price: 8.29, image: Image1 },
-    { id: 2, name: "HOODIE SWEATSHIRT", price: 90.30, originalPrice: 129.00, image: Image1 },
-    { id: 3, name: "BASIC T-SHIRT", price: 27.54, image: Image1 },
-    { id: 4, name: "BASEBALL CAP", price: 19.29, image: Image1 }
+    { id: 2, name: "Hoodie Sweatshirt", price: 90.30, originalPrice: 129.00, image: Image1 },
+    { id: 3, name: "Basic T-Shirt", price: 27.54, image: Image1 },
+    { id: 4, name: "Baseball Cap", price: 19.29, image: Image1 }
   ];
 
   // Thumbnail images array
@@ -382,7 +382,7 @@ const DetailProduct = () => {
 
               <div className="d-flex my-3">
                 <button 
-                  className="light-btn"
+                  className="light-btn rounded-1"
                   style={{ 
                     width: '50px',
                     height: '50px',
@@ -404,7 +404,7 @@ const DetailProduct = () => {
                 </button>
                 <button 
                   type="button"
-                  className="btn dark-btn"
+                  className="btn dark-btn rounded-1"
                   style={{ 
                     ...styles.actionButton,
                     padding: '0 30px',
@@ -426,7 +426,7 @@ const DetailProduct = () => {
 
               <div className="d-flex my-3">
                 <button 
-                  className="dark-btn"
+                  className="dark-btn rounded-1"
                   style={{ 
                     ...styles.actionButton,
                     padding: '0 30px',
@@ -441,7 +441,7 @@ const DetailProduct = () => {
               <div className="d-flex my-3">
                 <a href="/swap" className='d-flex w-100 text-decoration-none'>
                 <button 
-                  className="dark-btn"
+                  className="dark-btn rounded-1"
                   style={{ 
                     ...styles.actionButton,
                     padding: '0 30px',
@@ -546,7 +546,7 @@ const DetailProduct = () => {
 
         {/* Buyer Reviews Section */}
         <div className="mt-5 mb-5">
-          <h2 style={{ fontWeight: 'bold', marginBottom: '30px' }}>CUSTOMER REVIEWS</h2>
+          <h2 style={{ fontWeight: 'bold', marginBottom: '30px' }}>Customer Reviews</h2>
           
           <div className="row">
             {/* Rating Summary */}
@@ -605,7 +605,7 @@ const DetailProduct = () => {
             <div className="col-md-8">
               {/* Review Tabs */}
               <div className="mb-4 d-flex">
-                {['all', 'positive', 'critical'].map(tab => (
+                {['all', 'positive', 'critical', 'star'].map(tab => (
                   <button
                     key={tab}
                     className="me-3"
@@ -707,7 +707,7 @@ const DetailProduct = () => {
 
         {/* Related Products Section */}
         <div className="mt-5">
-          <h2 style={{ fontWeight: 'bold', marginBottom: '30px' }}>RELATED PRODUCTS</h2>
+          <h2 style={{ fontWeight: 'bold', marginBottom: '30px' }}>Related Products</h2>
           <div className="row row-cols-2">
             {relatedProducts.map((item) => (
               <div key={item.id} className="col-md-3 mb-4">

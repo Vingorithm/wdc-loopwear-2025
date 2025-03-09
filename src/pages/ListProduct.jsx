@@ -28,10 +28,10 @@ const ListProduct = () => {
           <div className="row">
             <div class="container">
 
-              <h2>Sort By</h2>
+              <h2><i class="bi bi-funnel-fill me-2"></i>Sort By</h2>
               <div class="row align-items-start mb-2">
                 <div className="col d-grid">
-                  <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="black-dropdown rounded-1 dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
                     Location
                   </button>
                   <ul class="dropdown-menu">
@@ -42,7 +42,7 @@ const ListProduct = () => {
                 </div>
 
                 <div className="col d-grid">
-                  <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="black-dropdown rounded-1 dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
                     Shop Status
                   </button>
                   <ul class="dropdown-menu">
@@ -53,7 +53,7 @@ const ListProduct = () => {
                 </div>
 
                 <div className="col d-grid">
-                  <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="black-dropdown rounded-1 dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
                     Discount
                   </button>
                   <ul class="dropdown-menu">
@@ -64,7 +64,7 @@ const ListProduct = () => {
                 </div>
 
                 <div className="col d-grid">
-                  <button class="btn dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="black-dropdown rounded-1 dropdown-toggle item-category my-1 p-2 text-center border border-dark me-3 fs-5 fw-light" data-bs-toggle="dropdown" aria-expanded="false">
                     Rating
                   </button>
                   <ul class="dropdown-menu">
@@ -79,7 +79,7 @@ const ListProduct = () => {
             </div>
           </div>
 
-          <h2>Search Result </h2>
+          <h2><i class="bi bi-search me-2"></i>Search Result </h2>
           <div className="row row-cols-2 justify-content-between mb-4">
             {products.map((product) => (
               <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
