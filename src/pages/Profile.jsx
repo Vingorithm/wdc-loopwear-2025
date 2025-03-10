@@ -311,7 +311,6 @@ const styles = {
   },
   
   saveButton: { 
-    border: 'none',
     fontSize: '0.9rem',
     border: '1px solid #39754B',
     transition: "all 0.3s ease",
