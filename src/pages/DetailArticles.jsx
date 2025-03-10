@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Image1 from "../assets/images/carousel/carousel6.webp";
+import Image1 from "../assets/images/carousel/carousel6.jpg";
 import Image2 from "../assets/images/carousel/carousel2.jpg";
 import Image3 from "../assets/images/carousel/carousel3.jpg";
-import ImageHero from "../assets/images/detailArticles.jpg";
 
 const DetailArticles = () => {
   const [article, setArticle] = useState({

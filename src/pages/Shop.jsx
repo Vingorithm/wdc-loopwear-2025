@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ShopProfile from '../assets/images/shop/shop.webp';
+import ShopProfile from '../assets/images/shop/shop.jpg';
 import { toast } from "sonner"
 
 // component item

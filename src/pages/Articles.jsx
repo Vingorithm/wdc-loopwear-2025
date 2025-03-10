@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import Image1 from "../assets/images/carousel/carousel6.webp";
+import Image1 from "../assets/images/carousel/carousel6.jpg";
 import Image2 from "../assets/images/carousel/carousel2.jpg";
 import Image3 from "../assets/images/carousel/carousel3.jpg";
 
