@@ -7,7 +7,7 @@ import Item from '../components/Item';
 import DetailModal from "../components/DetailModal";
 import ReviewModal from "../components/ReviewModal";
 
-import Shop from '../assets/images/shop/shop.webp';
+import Shop from '../assets/images/shop/shop.jpg';
 
 // asset product
 import Image1 from '../assets/images/product/cap.png';
