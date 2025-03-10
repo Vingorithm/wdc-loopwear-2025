@@ -11,7 +11,6 @@ const routes = [
 const AuthLayout = () => {
   return (
     <div>
-      {/* <Header routes={routes} /> */}
       <Outlet />
       <Footer />
     </div>

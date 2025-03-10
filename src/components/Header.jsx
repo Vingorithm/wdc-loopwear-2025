@@ -1,13 +1,12 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 // asset logo
-import Logo from "../assets/images/logo.svg";
-
-// inline style
-import style from '../inline-styles/style.js';
+import Logo from "../assets/images/logo.png";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const location = useLocation();
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -16,11 +15,11 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg" style={styles.navbar}>
+    <nav className="navbar navbar-expand-lg ps-0" style={styles.navbar}>
       <div className="container-fluid">
-        <a className="navbar-brand" href="/" style={styles.logoContainer}>
+        <Link className="navbar-brand" to="/" style={styles.logoContainer}>
           <img src={Logo} alt="Loop Wear Logo" style={styles.logo} />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -32,16 +31,16 @@ const Header = () => {
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link fs-4 mx-3" href="/">Home</a>
+              <Link className={`nav-link fs-4 mx-sm-3 w-100 mx-auto ${location.pathname === '/' ? 'fw-bold' : ''}`} to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link fs-4 mx-3" href="/aboutus">About Us</a>
+              <Link className={`nav-link fs-4 mx-sm-3 w-100 mx-auto ${location.pathname === '/aboutus' ? 'fw-bold' : ''}`} to="/aboutus">About Us</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link fs-4 mx-3" href="/store">Store</a>
+              <Link className={`nav-link fs-4 mx-sm-3 w-100 mx-auto ${location.pathname.startsWith('/store') ? 'fw-bold' : ''}`} to="/store">Store</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link fs-4 mx-3" href="/articles">Articles</a>
+              <Link className={`nav-link fs-4 mx-sm-3 w-100 mx-auto ${location.pathname === '/articles' ||  location.pathname === '/detailarticles' ? 'fw-bold' : ''}`} to="/articles">Articles</Link>
             </li>
           </ul>
         </div>
@@ -62,10 +61,7 @@ const styles = {
   },
   logo: {
     height: "50px",
-    transform: "scale(5)",
     transformOrigin: "center", 
-    marginLeft: "30px",
-    marginTop: "3px",
   },
 };
 

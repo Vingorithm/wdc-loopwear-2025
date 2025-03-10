@@ -4,11 +4,11 @@ import Shop from '../assets/images/shop/shop.webp';
 const ListService = () => {
 
     const shops = [
-        { id: 1, name: 'Loop Wear', desc: 'we are providing clothing repair and modification services', image: Shop, status: 'Verified' },
-        { id: 2, name: 'Fix Wear', desc: 'damaged clothes? contact us', image: Shop, status: 'Verified'},
-        { id: 3, name: 'Mod Wear', desc: 'we are experts in modifying clothes', image: Shop, status: 'Good Reviews' },
-        { id: 4, name: 'New Wear', desc: 'make your old clothes look like new clothes', image: Shop, status: 'Normal' },
-        { id: 5, name: 'Repair Wear', desc: 'No matter how damaged the clothes are, we will repair them', image: Shop, status: 'Good Reviews' }
+        { id: 1, name: 'Loop Wear', desc: 'We are providing clothing repair and modification services', image: Shop, status: 'Verified' },
+        { id: 2, name: 'Fix Wear', desc: 'Damaged clothes? contact us', image: Shop, status: 'Verified'},
+        { id: 3, name: 'Mod Wear', desc: 'We are experts in modifying clothes', image: Shop, status: 'Top' },
+        { id: 4, name: 'New Wear', desc: 'Make your old clothes look like new clothes', image: Shop, status: 'Normal' },
+        { id: 5, name: 'Repair Wear', desc: 'No matter how damaged the clothes are, we will repair them', image: Shop, status: 'Top' }
     ];
     return (
         <>
@@ -48,7 +48,6 @@ const ListService = () => {
                                     <ul class="dropdown-menu">
                                         <li className='hoverable-item'><a class="dropdown-item" href="#">Free Delivery</a></li>
                                         <li className='hoverable-item'><a class="dropdown-item" href="#">Cashback</a></li>
-                                        <li className='hoverable-item'><a class="dropdown-item" href="#">Big Sale</a></li>
                                     </ul>
                                 </div>
 
@@ -72,7 +71,7 @@ const ListService = () => {
                     <div className="row justify-content-between mb-4">
                         {
                             shops.map((shop) => {
-                                return <a className="text-decoration-none" href="/shop">
+                                return <a className="text-decoration-none hoverable-item" href="/shop">
                                     <div className="card mb-4 border-0" style={styles.featuredCard} key={shop.id}>
                                         <div className="row g-0">
                                             <div className="col-md-1 me-4">
@@ -93,7 +92,7 @@ const ListService = () => {
                                                                 shop.status == 'Verified' ? <i class="bi bi-patch-check-fill fs-4 me-2" style={styles.tierStore}></i> : <></>
                                                             } 
                                                             {
-                                                                shop.status == 'Good Reviews' ? <i class="bi bi-hand-thumbs-up-fill fs-4 me-2" style={styles.tierStore}></i> : <></>
+                                                                shop.status == 'Top' ? <i class="bi bi-hand-thumbs-up-fill fs-4 me-2" style={styles.tierStore}></i> : <></>
                                                             }
                                                             {shop.name}</h2>
                                                     </div>
@@ -131,12 +130,9 @@ const ListService = () => {
 const styles = {
     featuredCard: {
         backgroundColor: "#ffffff",
-        // boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-        // padding: '0',
         borderRadius: "12px",
         overflow: "hidden",
         padding: "15px",
-        // background: "linear-gradient(90deg, #ffffff, #f8f7ed)",
         boxShadow: "0 6px 12px rgba(0,0,0,0.05)",
     },
     featuredImage: {
@@ -148,7 +144,6 @@ const styles = {
     cardTitle: {
         color: "#1A1816",
         fontWeight: "600",
-        // marginTop: "8px",
         marginBottom: "8px"
     },
     cardText: {

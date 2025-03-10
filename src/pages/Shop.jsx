@@ -61,7 +61,6 @@ const Shop = ({ isUser }) => {
                                 </div>
 
                                 <span className="mb-2" style={styles.storeLocation}>Yogyakarta</span>
-                                {/* <span className="mb-2" style={styles.storeDescription}>Senantiasa hadir memenuhi kebutuhan Anda!</span> */}
 
                                 {
                                     isUser ?
@@ -111,14 +110,10 @@ const Shop = ({ isUser }) => {
                                 <p className="m-0" style={styles.storeInfoDetails}>Rating & Reviews</p>
                             </div>
 
-                            {/* <div className="vertical-divider"></div> */}
-
                             <div className="text-center mr-4">
                                 <p className="m-0" style={styles.storeInfoStatus}>± 3 hours</p>
                                 <p className="m-0" style={styles.storeInfoDetails}>Seller Response Time</p>
                             </div>
-
-                            {/* <div className="vertical-divider"></div> */}
 
                             <div className="text-center">
                                 <p className="m-0" style={styles.storeInfoStatus}>24/7</p>
@@ -282,7 +277,7 @@ const Shop = ({ isUser }) => {
 
                 {/* Product List */}
                 <section className="container p-0">
-                    <div className="row row-cols-2 px-2 justify-content-between p-0">
+                    <div className="row row-cols-2 px-2 justify-content-start p-0">
                         {products
                             .filter((product) => {
                                 if (category !== "All Categories") {
@@ -342,9 +337,6 @@ const styles = {
     },
     storeInfoStatus: {
         fontWeight: "bold",
-    },
-    storeInfoDetails: {
-        // color: "#6c757d",
     },
     profilePicture: {
         borderRadius: "100%",

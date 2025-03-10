@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import profilePicture from "../assets/images/profpic/profile-picture.jpg";
-import Logo from "../assets/images/logo.svg";
+import Logo from "../assets/images/logo.png";
 
 const HeaderStore = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -19,7 +19,7 @@ const HeaderStore = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg" style={styles.navbar}>
+    <nav className="navbar navbar-expand-lg ps-0" style={styles.navbar}>
       <div className="container-fluid">
 
         {/* Logo */}
@@ -120,10 +120,6 @@ const HeaderStore = () => {
         </div>
 
         {/* Profile Picture */}
-        {/* <a className="order-2 order-lg-2" href="/profile" style={styles.profileLink}>
-          <img id="userProfile" src={profilePicture} alt="Profile" style={styles.profilePicture} />
-        </a> */}
-
         <div
           className="order-2 order-lg-2 position-relative"
           onMouseEnter={() => setIsProfileHovered(true)}
@@ -147,11 +143,6 @@ const HeaderStore = () => {
                     <i class="bi bi-cart me-2"></i>Cart & Wishlist
                   </a>
                 </li>
-                {/* <li style={styles.dropdownProfileItem} className='hoverable-item'>
-                  <a href="/cart" style={styles.dropdownProfileLink}>
-                    <i class="bi bi-ticket-detailed me-2"></i>Discount
-                  </a>
-                </li> */}
                 <li style={styles.dropdownProfileItem} className='hoverable-item'>
                   <a href="/historyorder" style={styles.dropdownProfileLink}>
                     <i class="bi bi-clock-history me-2"></i>History
@@ -190,10 +181,7 @@ const styles = {
   },
   logo: {
     height: "50px",
-    transform: "scale(5)",
-    transformOrigin: "center",
-    marginLeft: "30px",
-    marginTop: "3px",
+    transformOrigin: "center", 
   },
   searchForm: {
     transition: "all 0.3s ease",
@@ -238,8 +226,8 @@ const styles = {
     padding: "8px 0",
   },
   activeDropdownItem: {
-    backgroundColor: "#bee4c0",
-    color: "#155724",
+    backgroundColor: "#39754B",
+    color: "#FCFBF0",
     fontWeight: "500",
   },
   searchButton: {
@@ -255,27 +243,9 @@ const styles = {
     borderRadius: "50%",
     width: "40px",
     height: "40px",
-    // display: "flex",
-    // alignItems: "center",
-    // justifyContent: "center",
     backgroundColor: "#f8f9fa",
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
   },
-  // profileLink: {
-  //   transition: "transform 0.2s ease",
-  //   display: "inline-block",
-  // },
-  // profilePicture: {
-  //   borderRadius: "100%",
-  //   width: "45px",
-  //   height: "45px",
-  //   border: "2px solid #212529",
-  //   objectFit: "cover",
-  //   objectPosition: "center",
-  //   boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-  //   transition: "all 0.2s ease",
-  // },
-
   profileContainer: {
     position: "relative",
   },

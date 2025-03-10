@@ -142,7 +142,7 @@ const HomePage = () => {
                                 {item.subtitle}
                             </p>
                             <button 
-                                className="btn btn-lg animation-zoom-in"
+                                className="btn btn-lg animation-zoom-in hoverable-item"
                                 style={{ 
                                     backgroundColor: '#39754B',
                                     color: '#FCFBF0',

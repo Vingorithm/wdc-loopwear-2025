@@ -1,9 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// Removed AOS imports
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
 
 // component item
 import Item from '../components/Item';
@@ -31,12 +28,6 @@ const HistoryOrder = () => {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 800);
 
     useEffect(() => {
-        // Removed AOS initialization
-        // AOS.init({
-        //     duration: 1000,
-        //     once: true,
-        // });
-        // AOS.refresh();
 
         const handleResize = () => {
             setIsLargeScreen(window.innerWidth > 800);
@@ -130,13 +121,13 @@ const HistoryOrder = () => {
                                                 <div className="card mb-4 border-0" style={styles.featuredCard}>
                                                     <div className="row g-0">
                                                         <div className="col-md-3">
-                                                            <a href="/detailproduct">
-                                                            <img
-                                                                src={product.image}
-                                                                alt="Sustainable clothing care"
-                                                                className="img-fluid rounded-start"
-                                                                style={styles.featuredImage}
-                                                            />
+                                                            <a href="/detailproduct" className="hoverable-item">
+                                                                <img
+                                                                    src={product.image}
+                                                                    alt="Sustainable clothing care"
+                                                                    className="img-fluid rounded-start"
+                                                                    style={styles.featuredImage}
+                                                                />
                                                             </a>
                                                         </div>
                                                         <div className="col-md-9">
@@ -156,12 +147,13 @@ const HistoryOrder = () => {
                                                                 </div>
                                                                 <div className="row">
                                                                     <div className="col-7 ms-1">
-                                                                        <a href="/shop" className="text-decoration-none" style={{
+                                                                        <a href="/shop" className="text-decoration-none hoverable-item" style={{
                                                                             color: '#1A1816'
                                                                         }}>
                                                                             <div>
                                                                                 <img src={Shop} alt="shop image" className="rounded-circle border border-black object-fit-cover" style={{
                                                                                     width: '30px',
+                                                                                    height: '30px',
                                                                                 }} />
                                                                                 <p className="fw-bold fs-5 d-inline ms-2 ">{product.shop}</p>
                                                                             </div>
