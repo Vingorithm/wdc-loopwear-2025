@@ -1,6 +1,6 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import CarouselImage from "../assets/images/carousel/carousel5.webp";
+import CarouselImage from "../assets/images/carousel/carousel5.jpg";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
@@ -9,7 +9,7 @@ import TeamImage1 from "../assets/images/team/Kevin.jpg";
 import TeamImage2 from "../assets/images/team/Ivan.jpg";
 import TeamImage3 from "../assets/images/team/Pieter.jpg";
 
-import TestiImage1 from "../assets/images/profpic/sarah.webp";
+import TestiImage1 from "../assets/images/profpic/sarah.jpg";
 import TestiImage2 from "../assets/images/profpic/alex.jpg";
 import TestiImage3 from "../assets/images/profpic/michael.jpg";
 

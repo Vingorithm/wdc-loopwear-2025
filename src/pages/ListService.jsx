@@ -1,5 +1,5 @@
 import React from "react";
-import Shop from '../assets/images/shop/shop.webp';
+import Shop from '../assets/images/shop/shop.jpg';
 
 const ListService = () => {
 

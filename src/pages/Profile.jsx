@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 
 import profilePicture from "../assets/images/profpic/profile-picture.jpg";
-import languagePicture from "../assets/images/flag/english.webp"
+import languagePicture from "../assets/images/flag/english.jpg"
 import paypal from '../assets/images/payment/paypal.png';
 import gopay from '../assets/images/payment/gopay.jpg';
 import dana from '../assets/images/payment/dana.png';

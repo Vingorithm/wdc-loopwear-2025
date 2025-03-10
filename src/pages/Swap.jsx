@@ -7,9 +7,9 @@ import Image2 from '../assets/images/product/jeans.png';
 import Image3 from '../assets/images/product/tshirt.png';
 import Image4 from '../assets/images/product/pants.png';
 
-import Image0 from '../assets/images/detail_product/2.webp';
+import Image0 from '../assets/images/detail_product/2.jpg';
 
-import ProfilePicture from '../assets/images/shop/shop.webp';
+import ProfilePicture from '../assets/images/shop/shop.jpg';
 
 import SwapModal from '../components/SwapModal';
 

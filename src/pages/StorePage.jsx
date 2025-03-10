@@ -1,6 +1,5 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Carousel } from "react-bootstrap";
 
 // component item
 import Item from '../components/Item';
@@ -21,8 +20,8 @@ import Image11 from '../assets/images/product/beanie.jpg';
 
 // asset carousel
 import Carousel1 from '../assets/images/ad/ad10.jpg';
-import Carousel2 from '../assets/images/ad/ad11.png';
-import Carousel3 from '../assets/images/ad/ad5.png';
+import Carousel2 from '../assets/images/ad/ad11.jpg';
+import Carousel3 from '../assets/images/ad/ad5.jpg';
 
 const StorePage = () => {
 

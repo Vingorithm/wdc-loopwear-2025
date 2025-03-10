@@ -11,15 +11,15 @@ import Image2 from "../assets/images/product/pants3.jpg";
 import Image3 from "../assets/images/product/tshirt4.jpg";
 import Image4 from "../assets/images/product/dress2.jpg";
 import Avatar1 from "../assets/images/profpic/alex.jpg";
-import Avatar2 from "../assets/images/profpic/sarah.webp";
+import Avatar2 from "../assets/images/profpic/sarah.jpg";
 import Avatar3 from "../assets/images/profpic/michael.jpg";
-import shop from '../assets/images/shop/shop.webp';
+import shop from '../assets/images/shop/shop.jpg';
 
 // Product images
 import Img1 from '../assets/images/detail_product/1.jpeg';
-import Img2 from '../assets/images/detail_product/2.webp';
-import Img3 from '../assets/images/detail_product/3.webp';
-import Img4 from '../assets/images/detail_product/4.webp';
+import Img2 from '../assets/images/detail_product/2.jpg';
+import Img3 from '../assets/images/detail_product/3.jpg';
+import Img4 from '../assets/images/detail_product/4.jpg';
 import Img5 from '../assets/images/detail_product/5.jpeg';
 import Img6 from '../assets/images/detail_product/6.jpg';
 import Img7 from '../assets/images/detail_product/7.jpg';
