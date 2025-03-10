@@ -32,8 +32,8 @@ const BiggerItem = ({ picture, name, oldPrice, price }) => {
 
 const styles = {
     imageContainer: {
-        position: "relative", // Tambahkan ini agar overlay bisa menyesuaikan
-        overflow: "hidden", // Pastikan overlay tidak keluar dari batas gambar
+        position: "relative",
+        overflow: "hidden",
     },
     image: {
         aspectRatio: "1/1.5",

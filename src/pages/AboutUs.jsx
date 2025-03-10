@@ -5,6 +5,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
+import TeamImage1 from "../assets/images/team/Kevin.png";
+import TeamImage2 from "../assets/images/team/Ivan.jpg";
+import TeamImage3 from "../assets/images/team/Pieter.jpg";
+
+import TestiImage1 from "../assets/images/profpic/sarah.webp";
+import TestiImage2 from "../assets/images/profpic/alex.jpg";
+import TestiImage3 from "../assets/images/profpic/michael.jpg";
+
 const AboutUs = () => {
     useEffect(() => {
         AOS.init({
@@ -70,12 +78,11 @@ const AboutUs = () => {
                         {/* Right Column */}
                         <div className="col-md-6" data-aos="fade-left">
                             <h4 style={styles.subHeading}>OUR VISION</h4>
-                            <h3 style={styles.columnHeading}>We Ensure Educational Impact That Drives Change</h3>
+                            <h3 style={styles.columnHeading}>Empowering Indonesia's Youth for Sustainable Change</h3>
                             <p style={styles.text}>
-                                Loop Wear aims to educate consumers about the environmental impact of fashion choices 
-                                and empower them with sustainable alternatives. Through workshops, content, and community 
-                                engagement, we're building awareness about circular fashion and inspiring individuals to 
-                                make more conscious decisions about their clothing.
+                                Loop Wear aims to educate Indonesian consumers about the environmental impact of fast fashion choices 
+                                and empower them with technological solutions for sustainable alternatives. We're building awareness about circular fashion and inspiring young Indonesians to 
+                                make more conscious decisions about their clothing and create creative solutions for a greener future.
                             </p>
                         </div>
                     </div>
@@ -246,9 +253,11 @@ const AboutUs = () => {
                                     "Loop Wear has changed how I think about my clothing purchases. Their workshops opened my eyes to the impact of fast fashion."
                                 </p>
                                 <div className="d-flex align-items-center mt-3">
-                                    <div style={styles.testimonialAvatar}></div>
+                                    <div style={styles.testimonialImageWrapper}>
+                                        <img src={TestiImage1} alt="Sarah Miller" style={styles.testimonialImage} />
+                                    </div>
                                     <div className="ms-3">
-                                        <h5 style={styles.testimonialName}>Amelia Wijaya</h5>
+                                        <h5 style={styles.testimonialName}>Sarah Miller</h5>
                                         <p style={styles.testimonialPosition}>Fashion Student</p>
                                     </div>
                                 </div>
@@ -264,9 +273,11 @@ const AboutUs = () => {
                                     "Partnering with Loop Wear has helped our brand reduce waste and connect with environmentally conscious consumers."
                                 </p>
                                 <div className="d-flex align-items-center mt-3">
-                                    <div style={styles.testimonialAvatar}></div>
+                                    <div style={styles.testimonialImageWrapper}>
+                                        <img src={TestiImage2} alt="Alex Johnson" style={styles.testimonialImage} />
+                                    </div>
                                     <div className="ms-3">
-                                        <h5 style={styles.testimonialName}>Budi Santoso</h5>
+                                        <h5 style={styles.testimonialName}>Alex Johnson</h5>
                                         <p style={styles.testimonialPosition}>Clothing Brand Owner</p>
                                     </div>
                                 </div>
@@ -282,9 +293,11 @@ const AboutUs = () => {
                                     "The upcycling workshop I attended gave me practical skills to extend the life of my clothes and reduce my environmental footprint."
                                 </p>
                                 <div className="d-flex align-items-center mt-3">
-                                    <div style={styles.testimonialAvatar}></div>
+                                    <div style={styles.testimonialImageWrapper}>
+                                        <img src={TestiImage3} alt="Michael Lim" style={styles.testimonialImage} />
+                                    </div>
                                     <div className="ms-3">
-                                        <h5 style={styles.testimonialName}>Dewi Lestari</h5>
+                                        <h5 style={styles.testimonialName}>Michael Lim</h5>
                                         <p style={styles.testimonialPosition}>Community Member</p>
                                     </div>
                                 </div>
@@ -311,7 +324,7 @@ const AboutUs = () => {
                             <div className="card border-0" style={styles.teamCard}>
                                 <div className="text-center p-3">
                                     <div style={styles.memberImageWrapper}>
-                                        <div style={styles.memberImage} className="mb-3"></div>
+                                        <img src={TeamImage1} alt="Kevin Philips Tanamas" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover'}} className="mb-3" />
                                     </div>
                                     <h4 style={styles.memberName}>Kevin Philips Tanamas</h4>
                                     <h5 style={styles.memberPosition}>Founder & CEO</h5>
@@ -338,7 +351,7 @@ const AboutUs = () => {
                             <div className="card border-0" style={styles.teamCard}>
                                 <div className="text-center p-3">
                                     <div style={styles.memberImageWrapper}>
-                                        <div style={styles.memberImage} className="mb-3"></div>
+                                        <img src={TeamImage2} alt="Ivan Tjandra" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover'}} className="mb-3" />
                                     </div>
                                     <h4 style={styles.memberName}>Ivan Tjandra</h4>
                                     <h5 style={styles.memberPosition}>Head of Operations</h5>
@@ -365,7 +378,7 @@ const AboutUs = () => {
                             <div className="card border-0" style={styles.teamCard}>
                                 <div className="text-center p-3">
                                     <div style={styles.memberImageWrapper}>
-                                        <div style={styles.memberImage} className="mb-3"></div>
+                                        <img src={TeamImage3} alt="Pieter Leviano" style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover'}} className="mb-3" />
                                     </div>
                                     <h4 style={styles.memberName}>Pieter Leviano</h4>
                                     <h5 style={styles.memberPosition}>Education Director</h5>
@@ -485,7 +498,7 @@ const styles = {
     },
     iconCircle: {
         backgroundColor: "#93A588",
-        opacity: 0.3,
+        opacity: 0.7,
         width: "80px",
         height: "80px",
         borderRadius: "50%"
@@ -512,7 +525,7 @@ const styles = {
         margin: "0 auto",
         borderRadius: "50%",
         backgroundColor: "#93A588",
-        opacity: 0.3,
+        opacity: 0.8,
         padding: "5px"
     },
     memberImage: {
@@ -606,12 +619,18 @@ const styles = {
         fontStyle: "italic",
         marginBottom: "20px"
     },
-    testimonialAvatar: {
+    testimonialImageWrapper: {
         width: "50px",
         height: "50px",
         borderRadius: "50%",
-        backgroundColor: "#93A588",
-        opacity: 0.5
+        overflow: "hidden",
+        marginRight: "15px"
+      },
+    testimonialImage: {
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "50%"
     },
     testimonialName: {
         color: "#39754B",
@@ -625,7 +644,6 @@ const styles = {
         margin: 0
     },
     
-    // STAT SECTION STYLES (these were missing from your code)
     statCircle: {
         width: "120px",
         height: "120px",

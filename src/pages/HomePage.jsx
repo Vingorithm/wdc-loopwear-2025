@@ -14,14 +14,13 @@ import Card2 from '../assets/images/homepage/card2.jpg';
 import Card3 from '../assets/images/homepage/card3.jpg';
 
 import StatsBackground from '../assets/images/carousel/carousel4.jpg';
-
-import TeamMember1 from '../assets/images/product/cap.png';
-import TeamMember2 from '../assets/images/product/cap.png';
-
 import Image1 from '../assets/images/product/cap.png';
 import Image2 from '../assets/images/product/jeans.png';
 import Image3 from '../assets/images/product/tshirt.png';
 import Image4 from '../assets/images/product/pants.png';
+
+import Team1 from '../assets/images/team/team1.jpg';
+import Team2 from '../assets/images/team/team2.jpg';
 
 const products = [
     { id: 1, name: "Phone Case", price: 6.2, image: Image1 },
@@ -333,7 +332,6 @@ const HomePage = () => {
                 backgroundAttachment: 'fixed',
                 position: 'relative'
             }}>
-                {/* Overlay to ensure text is readable */}
                 <div style={{
                     position: 'absolute',
                     top: 0,
@@ -398,18 +396,18 @@ const HomePage = () => {
                             <div className="row g-4 mt-2 mt-lg-0">
                                 <div className="col-6">
                                     <div className="team-preview" style={styles.teamPreview}>
-                                        <img src={TeamMember1} alt="Team member" className="img-fluid rounded shadow" />
+                                        <img src={Team1} alt="Team member" className="img-fluid rounded shadow" />
                                         <div style={styles.teamOverlay}>
-                                            <h5 className="mb-0">Sarah Johnson</h5>
+                                            <h5 className="mb-0">Kevin</h5>
                                             <p className="small mb-0">Founder & CEO</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="team-preview mt-4" style={styles.teamPreview}>
-                                        <img src={TeamMember2} alt="Team member" className="img-fluid rounded shadow" />
+                                        <img src={Team2} alt="Team member" className="img-fluid rounded shadow" />
                                         <div style={styles.teamOverlay}>
-                                            <h5 className="mb-0">David Garcia</h5>
+                                            <h5 className="mb-0">Ivan</h5>
                                             <p className="small mb-0">Sustainability Director</p>
                                         </div>
                                     </div>
