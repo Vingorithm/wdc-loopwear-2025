@@ -83,7 +83,7 @@ const Articles = () => {
                       <p style={styles.cardText} data-aos="fade-right" data-aos-delay="500">
                         Discover essential techniques to extend your garments' lifespan. From washing methods to storage solutions, learn how proper care can reduce your fashion footprint while preserving your favorite pieces for years to come.
                       </p>
-                      <button style={styles.button} className="btn mt-3" onClick={() => window.location.href = "/detailarticles"} data-aos="fade-up" data-aos-delay="600">Read More</button>
+                      <button style={styles.button} className="btn mt-3 hoverable-item" onClick={() => window.location.href = "/detailarticles"} data-aos="fade-up" data-aos-delay="600">Read More</button>
                     </div>
                   </div>
                 </div>
@@ -191,7 +191,7 @@ const Articles = () => {
                   style={styles.input}
                 />
                 <button 
-                  className="btn" 
+                  className="btn hoverable-item" 
                   type="button" 
                   style={styles.button}
                 >

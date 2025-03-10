@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
-import TeamImage1 from "../assets/images/team/Kevin.png";
+import TeamImage1 from "../assets/images/team/Kevin.jpg";
 import TeamImage2 from "../assets/images/team/Ivan.jpg";
 import TeamImage3 from "../assets/images/team/Pieter.jpg";
 
@@ -43,7 +43,7 @@ const AboutUs = () => {
                                                 choices easier, empowering individuals to minimize their environmental impact and embrace 
                                                 a more eco-friendly future.
                                             </p>
-                                            <button style={styles.carouselButton} className="btn mt-4" onClick={() => window.location.href = "/articles"}>LEARN MORE</button>
+                                            <button style={styles.carouselButton} className="btn mt-4 hoverable-item" onClick={() => window.location.href = "/articles"}>LEARN MORE</button>
                                         </div>
                                     </div>
                                 </div>
@@ -333,13 +333,13 @@ const AboutUs = () => {
                                         vision to transform how we think about clothing consumption and waste.
                                     </p>
                                     <div className="mt-3">
-                                        <a href="#" className="me-2" style={styles.socialIcon}>
+                                        <a href="#" className="me-2 hoverable-item" style={styles.socialIcon}>
                                             <i className="fab fa-linkedin"></i>
                                         </a>
-                                        <a href="#" className="me-2" style={styles.socialIcon}>
+                                        <a href="#" className="me-2 hoverable-item" style={styles.socialIcon}>
                                             <i className="fab fa-instagram"></i>
                                         </a>
-                                        <a href="#" style={styles.socialIcon}>
+                                        <a href="#" className='hoverable-item' style={styles.socialIcon}>
                                             <i className="fas fa-envelope"></i>
                                         </a>
                                     </div>
@@ -360,13 +360,13 @@ const AboutUs = () => {
                                         that our circular system runs efficiently and effectively.
                                     </p>
                                     <div className="mt-3">
-                                        <a href="#" className="me-2" style={styles.socialIcon}>
+                                        <a href="#" className="me-2 hoverable-item" style={styles.socialIcon}>
                                             <i className="fab fa-linkedin"></i>
                                         </a>
-                                        <a href="#" className="me-2" style={styles.socialIcon}>
+                                        <a href="#" className="me-2 hoverable-item" style={styles.socialIcon}>
                                             <i className="fab fa-instagram"></i>
                                         </a>
-                                        <a href="#" style={styles.socialIcon}>
+                                        <a href="#" className='hoverable-item' style={styles.socialIcon}>
                                             <i className="fas fa-envelope"></i>
                                         </a>
                                     </div>
@@ -387,13 +387,13 @@ const AboutUs = () => {
                                         content to promote sustainable fashion practices in our community.
                                     </p>
                                     <div className="mt-3">
-                                        <a href="#" className="me-2" style={styles.socialIcon}>
+                                        <a href="#" className="me-2 hoverable-item" style={styles.socialIcon}>
                                             <i className="fab fa-linkedin"></i>
                                         </a>
-                                        <a href="#" className="me-2" style={styles.socialIcon}>
+                                        <a href="#" className="me-2 hoverable-item" style={styles.socialIcon}>
                                             <i className="fab fa-instagram"></i>
                                         </a>
-                                        <a href="#" style={styles.socialIcon}>
+                                        <a href="#" className='hoverable-item' style={styles.socialIcon}>
                                             <i className="fas fa-envelope"></i>
                                         </a>
                                     </div>

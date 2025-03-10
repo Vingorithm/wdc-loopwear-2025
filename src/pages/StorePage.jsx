@@ -48,13 +48,13 @@ const StorePage = () => {
           
           <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
-              <div className="carousel-item active" data-bs-interval="1000">
+              <div className="carousel-item active" data-bs-interval="2500">
                 <img src={ Carousel1 } className="d-block w-100 rounded-1" alt="advertisement" />
               </div>
-              <div className="carousel-item" data-bs-interval="1000">
+              <div className="carousel-item" data-bs-interval="2500">
                 <img src={ Carousel2 } className="d-block w-100 rounded-1" alt="advertisement" />
               </div>
-              <div className="carousel-item" data-bs-interval="1000">
+              <div className="carousel-item" data-bs-interval="2500">
                 <img src={ Carousel3 } className="d-block w-100 rounded-1" alt="advertisement" />
               </div>
             </div>
@@ -70,24 +70,6 @@ const StorePage = () => {
 
           <h2 className="mt-5">Related Products</h2>
           <div className="row row-cols-4 mt-3">
-            {/* {products.map((product) => (
-              <div key={product.id} className="col-md-3 text-center">
-                <div className="product-card">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="img-fluid"
-                  />
-                  <h5 className="mt-2">{product.name}</h5>
-                  {product.oldPrice && (
-                    <span className="text-muted text-decoration-line-through me-2">
-                      ${product.oldPrice.toFixed(2)}
-                    </span>
-                  )}
-                  <span className="fw-bold">${product.price.toFixed(2)}</span>
-                </div>
-              </div>
-            ))} */}
             {products.slice(0, 4).map((product) => (
               <BiggerItem key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
             ))}

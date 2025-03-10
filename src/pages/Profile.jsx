@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 
 import profilePicture from "../assets/images/profpic/profile-picture.jpg";
@@ -9,6 +9,15 @@ import dana from '../assets/images/payment/dana.png';
 import shopeepay from '../assets/images/payment/shopeepay.png';
 
 const Profile = () => {
+
+  const [profile, setProfile] = useState({
+    name: 'Ivan',
+    email: 'ivantjandra@gmail.com',
+    phoneNumber: '082723923849',
+    city: 'Yogyakarta',
+    address: 'Jl. Babarsasi KM 71'
+  });
+
   return (
     <section style={styles.bgColor}>
       <Container className="py-5" style={{ minHeight: '100vh' }}>
@@ -28,8 +37,8 @@ const Profile = () => {
                   <img src={profilePicture} alt="profile-picture" style={styles.profilePicture} />
                 </div>
                 <Button 
-                  variant="outline-dark" 
-                  className="green-light-btn rounded-1 mt-3 transition-hover"
+                  variant="success" 
+                  className="green-light-btn py-1 rounded-1 mt-3 transition-hover"
                   style={styles.editButton}
                 >
                   <i className="bi bi-pencil-square me-2 "></i> Edit
@@ -48,6 +57,11 @@ const Profile = () => {
                         style={styles.form}
                         type="text" 
                         placeholder="Enter your username"
+                        value={profile.name}
+                        onChange={(e) => setProfile({
+                          ...profile, 
+                          name: e.target.value
+                        })}
                       />
                     </Col>
                     
@@ -60,6 +74,11 @@ const Profile = () => {
                         style={styles.form}
                         type="email" 
                         placeholder="Enter your email"
+                        value={profile.email}
+                        onChange={(e) => setProfile({
+                          ...profile, 
+                          email: e.target.value
+                        })}
                       />
                     </Col>
                   </Row>
@@ -74,6 +93,11 @@ const Profile = () => {
                         style={styles.form}
                         type="tel" 
                         placeholder="Enter your phone number"
+                        value={profile.phoneNumber}
+                        onChange={(e) => setProfile({
+                          ...profile, 
+                          phoneNumber: e.target.value
+                        })}
                       />
                     </Col>
                     
@@ -86,6 +110,11 @@ const Profile = () => {
                         style={styles.form}
                         type="text" 
                         placeholder="Enter your city"
+                        value={profile.city}
+                        onChange={(e) => setProfile({
+                          ...profile, 
+                          city: e.target.value
+                        })}
                       />
                     </Col>
                   </Row>
@@ -100,10 +129,16 @@ const Profile = () => {
                       className="rounded-1 border-1 shadow-sm" 
                       style={styles.form}
                       placeholder="Enter your complete address"
+                      value={profile.address}
+                        onChange={(e) => setProfile({
+                          ...profile, 
+                          address: e.target.value
+                        })}
                     />
                   </Form.Group>
 
                   <Button 
+                    variant="success" 
                     className="w-100 rounded-1 green-dark-btn py-3 fw-bold transition-hover" 
                     style={styles.saveButton}
                   >
@@ -133,7 +168,7 @@ const Profile = () => {
                 </Col>
                 <Col md={2} className="d-flex justify-content-end">
                   <Button 
-                    variant="outline-dark" 
+                    variant="success"  
                     className="rounded-1 transition-hover green-light-btn"
                     style={styles.connectButton}
                   >
@@ -163,10 +198,10 @@ const Profile = () => {
                   style={styles.form}
                   aria-label="Language selector"
                 >
-                  <option>Select Language</option>
-                  <option value="English" selected>English</option>
-                  <option value="Indonesia">Indonesia</option>
-                  <option value="Chinese">Chinese</option>
+                  <option className='green-active'>Select Language</option>
+                  <option className='green-active' value="English" selected>English</option>
+                  <option className='green-active' value="Indonesia">Indonesia</option>
+                  <option className='green-active' value="Chinese">Chinese</option>
                 </Form.Select>
               </Col>
             </Row>

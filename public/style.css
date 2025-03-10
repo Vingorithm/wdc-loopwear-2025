@@ -1,11 +1,9 @@
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
 }
@@ -26,7 +24,6 @@ input.search-input:focus {
 
 .nav-item a:hover {
     font-weight: bold;
-    box-shadow: 0px 1px black;
 }
 
 #userProfile:hover {
@@ -176,7 +173,11 @@ ul.dropdown-search li a:active {
 }
 
 .hoverable-item:hover {
-    filter: brightness(0.95);
+    filter: brightness(0.9);
+}
+
+.hoverable-item:active {
+    filter: brightness(0.85);
 }
 
 .black-dropdown {
@@ -187,4 +188,26 @@ ul.dropdown-search li a:active {
 
 .black-dropdown:hover {
     filter: brightness(0.8);
+}
+
+li *.dropdown-item:hover {
+    filter: brightness(0.9);
+}
+
+li *.dropdown-item:active {
+    background-color: #39754B;
+}
+
+input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+}
+
+input[type='checkbox']:checked {
+    accent-color: #39754B;
+}
+
+input[type='radio']:checked {
+    accent-color: #39754B;
 }

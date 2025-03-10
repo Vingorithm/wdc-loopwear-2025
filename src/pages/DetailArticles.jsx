@@ -98,17 +98,6 @@ const DetailArticles = () => {
     ]
   });
 
-  // Simulating article fetch
-  useEffect(() => {
-    // In a real app, you would fetch article data here
-    // const fetchArticle = async () => {
-    //   const response = await fetch(`/api/articles/${articleId}`);
-    //   const data = await response.json();
-    //   setArticle(data);
-    // };
-    // fetchArticle();
-  }, []);
-
   return (
     <div style={styles.body}>
       {/* Hero Section */}

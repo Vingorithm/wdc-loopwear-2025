@@ -47,7 +47,6 @@ const styles = {
     },
 };
 
-// Add the CSS styles to the document head
 const hoverStyles = `
     .item-container {
         transition: transform 0.3s ease;

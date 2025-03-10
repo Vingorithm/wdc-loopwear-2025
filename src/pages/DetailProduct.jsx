@@ -164,8 +164,9 @@ const styles = {
   reviewAction: {
     fontSize: "0.8rem",
     color: "#39754B",
+    backgroundColor: '#FCFBF0',
     cursor: "pointer",
-    marginRight: "15px"
+    marginRight: "15px",
   }
 };
 
@@ -589,21 +590,6 @@ const DetailProduct = () => {
                       </div>
                     ))}
                 </div>
-                
-                <div className="text-center mt-4">
-                  <button 
-                    className="btn"
-                    style={{ 
-                      backgroundColor: '#39754B',
-                      color: 'white',
-                      borderRadius: '3px',
-                      fontWeight: 'bold',
-                      padding: '8px 20px'
-                    }}
-                  >
-                    Write a Review
-                  </button>
-                </div>
               </div>
             </div>
             
@@ -611,12 +597,12 @@ const DetailProduct = () => {
             <div className="col-md-8">
               {/* Review Tabs */}
               <div className="mb-4 d-flex">
-                {['all', 'positive', 'critical', 'star'].map(tab => (
+                {['all', 'positive', 'critical'].map(tab => (
                   <button
                     key={tab}
-                    className="me-3"
+                    className="me-3 hoverable-item"
                     style={{
-                      backgroundColor: activeTab === tab ? '#39754B' : 'transparent',
+                      backgroundColor: activeTab === tab ? '#39754B' : '#FCFBF0',
                       color: activeTab === tab ? 'white' : '#1A1816',
                       border: activeTab === tab ? 'none' : '1px solid #1A1816',
                       padding: '5px 15px',
@@ -677,13 +663,14 @@ const DetailProduct = () => {
                     </div>
                     <div className="d-flex">
                       <div 
+                        className='hoverable-item p-1 rounded-1'
                         style={styles.reviewAction}
                         onClick={() => handleMarkHelpful(review.id)}
                       >
                         <i className="bi bi-hand-thumbs-up me-1"></i>
                         Helpful ({review.helpfulCount})
                       </div>
-                      <div style={styles.reviewAction}>
+                      <div className='hoverable-item p-1 rounded-1' style={styles.reviewAction}>
                         <i className="bi bi-flag me-1"></i>
                         Report
                       </div>
@@ -693,15 +680,13 @@ const DetailProduct = () => {
               ))}
               
               {/* Load More Button */}
-              <div className="text-center mt-4">
+              <div className="text-center mt-4 hoverable-item">
                 <button 
-                  className="btn"
+                  className="green-light-btn rounded-1"
                   style={{ 
-                    border: '1px solid #1A1816',
-                    color: '#39754B',
+                    border: '1px solid #39754B',
                     fontWeight: 'bold',
                     padding: '8px 30px',
-                    borderRadius: '3px'
                   }}
                 >
                   Load More Reviews

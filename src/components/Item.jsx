@@ -48,12 +48,10 @@ const styles = {
         position: "relative"
     },
     card: {
-        // border: "1px solid black",
         transition: "transform 0.3s ease, box-shadow 0.3s ease",
     }
 }
 
-// Add the CSS styles to the document head
 const hoverStyles = `
     .item-container {
         transition: transform 0.3s ease;
@@ -117,7 +115,6 @@ const hoverStyles = `
     }
 `;
 
-// Only add the styles once when the component is first used
 if (typeof document !== 'undefined' && !document.getElementById('item-hover-styles')) {
     const styleElement = document.createElement('style');
     styleElement.id = 'item-hover-styles';

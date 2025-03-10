@@ -57,7 +57,7 @@ const Cart = () => {
                                             <img
                                                 src={product.image}
                                                 alt="Sustainable clothing care"
-                                                className="img-fluid rounded-start"
+                                                className="hoverable-item img-fluid rounded-start"
                                                 style={styles.featuredImage}
                                             />
                                             </a>
@@ -71,26 +71,18 @@ const Cart = () => {
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-7 ms-1">
-                                                        <a href="/shop" className="text-decoration-none" style={{
+                                                        <a href="/shop" className="hoverable-item text-decoration-none" style={{
                                                             color: '#1A1816'
                                                         }}>
                                                             <div>
                                                                 <img src={product.shop} alt="shop image" className="rounded-circle border border-black object-fit-cover" style={{
                                                                     width: '30px',
+                                                                    height: '30px'
                                                                 }} />
                                                                 <p className="fw-bold fs-5 d-inline ms-2 ">{product.shopName}</p>
                                                             </div>
                                                         </a>
                                                     </div>
-
-                                                    {/* <div className="col">
-                                                        <div className="row column-gap-1">
-                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-dash"></i></div>
-                                                            <div className="col ammount d-flex justify-content-center align-items-center hoverable-item" style={styles.ammountPart}>{product.ammount}</div>
-                                                            <input type="number" className="col ammount d-flex justify-content-center align-items-center hoverable-item text-center" min='1' style={styles.ammountPart} />
-                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-plus-lg"></i></div>
-                                                        </div>
-                                                    </div> */}
                                                 </div>
 
                                                 <div className="row justify-content-end p-0">
@@ -147,6 +139,12 @@ const Cart = () => {
                                 {products.map((product) => (
                                     <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
                                 ))}
+                                {otherProducts.map((product) => (
+                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                                ))}
+                                {products.map((product) => (
+                                    <Item key={product.id} picture={product.image} name={product.name} oldPrice={product.oldPrice} price={product.price} />
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -177,7 +175,6 @@ const styles = {
     cardTitle: {
         color: "#1A1816",
         fontWeight: "600",
-        // marginTop: "8px",
         marginBottom: "8px"
     },
     cardText: {

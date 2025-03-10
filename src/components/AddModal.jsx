@@ -16,12 +16,27 @@ const addModal = () => {
                                     <div className="col">
                                         <label htmlFor="productName" className='fw-bold fs-6'>Product's Name</label>
                                         <div class="input-group mb-3">
-                                            <input id="productName" type="text" class="form-control" placeholder="Product's Name" aria-label="Product Name" aria-describedby="basic-addon1" />
+                                            <input required id="productName" type="text" class="form-control" placeholder="Product's Name" aria-label="Product Name" aria-describedby="basic-addon1" />
                                         </div>
 
                                         <label htmlFor="productDescription" className='fw-bold fs-6'>Product's Description</label>
                                         <div class="input-group mb-3">
                                             <textarea class="form-control" aria-label="With textarea" name="productDescription" id="productDescription" placeholder="Product's Description"></textarea>
+                                        </div>
+
+                                        <p className='fw-bold fs-6'>Product's Color</p>
+                                        <div class="input-group mb-3">
+                                            <input id="Color" type="text" class="form-control" placeholder="Product's Color" aria-label="Color" aria-describedby="basic-addon1" />
+                                        </div>
+
+                                        <p className='fw-bold fs-6'>Product's SKU</p>
+                                        <div class="input-group mb-3">
+                                            <input id="SKU" type="text" class="form-control" placeholder="Product's SKU" aria-label="SKU" aria-describedby="basic-addon1" />
+                                        </div>
+
+                                        <p className='fw-bold fs-6'>Product's Material</p>
+                                        <div class="input-group mb-3">
+                                            <input id="Material" type="text" class="form-control" placeholder="Product's Material" aria-label="Material" aria-describedby="basic-addon1" />
                                         </div>
 
                                         <label htmlFor="productPicture" className='fw-bold fs-6'>Upload Picture</label>
@@ -36,11 +51,14 @@ const addModal = () => {
                                         </div>
 
                                         <p className='fw-bold fs-6'>Sell Option</p>
-                                        <input id="Sell" name="Sell" value="Sell" type="checkbox" className='me-2' />
+                                        <input id="Sell" name="Sell-Option" value="Sell" type="radio" className='me-2' />
                                         <label htmlFor="Sell">Sell</label>
                                         <br />
-                                        <input id="Swap" name="Swap" value="Swap" type="checkbox" className='me-2' />
+                                        <input id="Swap" name="Sell-Option" value="Swap" type="radio" className='me-2' />
                                         <label htmlFor="Swap">Swap</label>
+                                        <br />
+                                        <input id="Both" name="Sell-Option" value="Both" type="radio" className='me-2' />
+                                        <label htmlFor="Both">Both</label>
                                         <br />
                                         <br />
 
@@ -63,7 +81,6 @@ const addModal = () => {
                                         <input id="XXXL" name="XXXL" value="XXXL" type="checkbox" className='me-2' />
                                         <label htmlFor="XXXL">XXXL</label>
                                         <br />
-
                                     </div>
                                 </div>
                             </div>

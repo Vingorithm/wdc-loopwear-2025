@@ -15,7 +15,7 @@ const orderModal = () => {
         { id: 1, name: "MLB Cap", type: 'Product', price: 45, image: Image1, accountName: "Loop Wear", ammount: 1, address: 'Yogyakarta', methodPayment: 'Paypal', notes: 'Safety packing plz', size: 'S' },
         { id: 2, name: "Men's Jeans", type: 'Product', price: 90.30, image: Image2, accountName: "Loop Wear", ammount: 2, address: 'Jakarta', methodPayment: 'Paypal', notes: 'Safety packing plz', size: 'L' },
         { id: 3, name: "Basic T-Shirt", type: 'Product', price: 27.50, image: Image3, accountName: "Loop Wear", ammount: 1, address: 'Solo', methodPayment: 'Paypal', notes: 'Safety packing plz', size: 'M' },
-        { id: 4, name: "Pants", type: 'Service', price: 50, image: Image4, accountName: "Loop Wear", description: 'Fix the hole', address: 'California', methodPayment: 'Paypal'},
+        { id: 4, name: "Pants", type: 'Service', price: 50, image: Image4, accountName: "Loop Wear", description: 'Fix the hole', address: 'California', methodPayment: 'Paypal' },
     ]);
 
     return (
@@ -33,17 +33,18 @@ const orderModal = () => {
                                     {
                                         products.map((product) =>
                                             <div className="card mb-4 border-0" style={styles.featuredCard} key={product.id}>
-                                                
+
                                                 <div className="row">
-                                                <div className="col">
-                                                    <a href="/detailproduct">
-                                                        <img
-                                                            src={product.image}
-                                                            alt="Sustainable clothing care"
-                                                            className="img-fluid rounded-start"
-                                                            style={styles.featuredImage}
-                                                        />
-                                                    </a>
+                                                    <div className="col">
+                                                        <a className='hoverable-item'
+                                                            href="/detailproduct">
+                                                            <img
+                                                                src={product.image}
+                                                                alt="Sustainable clothing care"
+                                                                className="img-fluid rounded-start"
+                                                                style={styles.featuredImage}
+                                                            />
+                                                        </a>
                                                     </div>
                                                 </div>
                                                 <div className="row g-0">
@@ -56,7 +57,7 @@ const orderModal = () => {
                                                             </div>
                                                             <div className="row">
                                                                 <div className="col-7 ms-1">
-                                                                    <a href="/shop" className="text-decoration-none" style={{
+                                                                    <a href="/shop" className="text-decoration-none hoverable-item" style={{
                                                                         color: '#1A1816'
                                                                     }}>
                                                                         <div>
@@ -68,38 +69,29 @@ const orderModal = () => {
                                                                         </div>
                                                                     </a>
                                                                 </div>
-
-                                                                {/* <div className="col">
-                                                        <div className="row column-gap-1">
-                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-dash"></i></div>
-                                                            <div className="col ammount d-flex justify-content-center align-items-center hoverable-item" style={styles.ammountPart}>{product.ammount}</div>
-                                                            <input type="number" className="col ammount d-flex justify-content-center align-items-center hoverable-item text-center" min='1' style={styles.ammountPart} />
-                                                            <div className="col d-flex justify-content-center align-items-center hoverable-item light-btn" style={styles.ammountPart}><i class="bi bi-plus-lg"></i></div>
-                                                        </div>
-                                                    </div> */}
                                                             </div>
 
                                                             <div className="row">
                                                                 <p className='mt-3 fw-bold'>Details: </p>
                                                                 {
-                                                                    product.type == 'Product' ? 
-                                                                    <>  
-                                                                        <p>Order type: {product.type}</p>
-                                                                        <p>Product id: {product.id}</p>
-                                                                        <p>Ammount: {product.ammount}</p>
-                                                                        <p>Address: {product.address}</p>
-                                                                        <p>Method Payment: {product.methodPayment}</p>
-                                                                        <p>Notes: {product.notes}</p>
-                                                                        <p>Size: {product.size}</p>
-                                                                    </>
-                                                                    :
-                                                                    <>
-                                                                        <p>Order type: {product.type}</p>
-                                                                        <p>Product id: {product.id}</p>
-                                                                        <p>Address: {product.address}</p>
-                                                                        <p>Method Payment: {product.methodPayment}</p>
-                                                                        <p>Description: {product.description}</p>
-                                                                    </>
+                                                                    product.type == 'Product' ?
+                                                                        <>
+                                                                            <p>Order type: {product.type}</p>
+                                                                            <p>Product id: {product.id}</p>
+                                                                            <p>Ammount: {product.ammount}</p>
+                                                                            <p>Address: {product.address}</p>
+                                                                            <p>Method Payment: {product.methodPayment}</p>
+                                                                            <p>Notes: {product.notes}</p>
+                                                                            <p>Size: {product.size}</p>
+                                                                        </>
+                                                                        :
+                                                                        <>
+                                                                            <p>Order type: {product.type}</p>
+                                                                            <p>Product id: {product.id}</p>
+                                                                            <p>Address: {product.address}</p>
+                                                                            <p>Method Payment: {product.methodPayment}</p>
+                                                                            <p>Description: {product.description}</p>
+                                                                        </>
                                                                 }
                                                             </div>
 
@@ -113,7 +105,7 @@ const orderModal = () => {
                                                                             },
                                                                         })
                                                                     }}>Decline</button>
-                                                                    <button className="btn btn-success px-5 py-1"  onClick={() => {
+                                                                    <button className="btn btn-success px-5 py-1" onClick={() => {
                                                                         return toast('Request has been accepted!', {
                                                                             cancel: {
                                                                                 label: <i class="bi bi-x-lg"></i>,

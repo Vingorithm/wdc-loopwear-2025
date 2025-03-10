@@ -41,7 +41,7 @@ const Swap = ({ isUser }) => {
                             <div className="card mb-4 border-0" style={styles.featuredCard} key={mainProduct.id}>
                                 <div className="row g-0">
                                     <div className="col-md-3">
-                                        <a href="/detailproduct">
+                                        <a className='hoverable-item' href="/detailproduct">
                                             <img
                                                 src={mainProduct.image}
                                                 alt="Sustainable clothing care"
@@ -63,8 +63,9 @@ const Swap = ({ isUser }) => {
                                                         color: '#1A1816'
                                                     }}>
                                                         <div>
-                                                            <img src={ProfilePicture} alt="account image" className="rounded-circle border border-black object-fit-cover" style={{
+                                                            <img src={ProfilePicture} alt="account image" className="rounded-circle border border-black object-fit-cover hoverable-item" style={{
                                                                 width: '30px',
+                                                                height: '30px'
                                                             }} />
                                                             <p className="fw-bold fs-5 d-inline ms-2 ">{mainProduct.shopName}</p>
                                                         </div>
@@ -101,7 +102,7 @@ const Swap = ({ isUser }) => {
                                 <div className="card mb-4 border-0" style={styles.featuredCard} key={product.id}>
                                     <div className="row g-0">
                                         <div className="col-md-3">
-                                            <a href="/detailproduct">
+                                            <a className="hoverable-item" href="/detailproduct">
                                                 <img
                                                     src={product.image}
                                                     alt="Sustainable clothing care"
@@ -122,8 +123,9 @@ const Swap = ({ isUser }) => {
                                                             color: '#1A1816'
                                                         }}>
                                                             <div>
-                                                                <img src={ProfilePicture} alt="account image" className="rounded-circle border border-black object-fit-cover" style={{
+                                                                <img src={ProfilePicture} alt="account image" className="rounded-circle border border-black object-fit-cover hoverable-item" style={{
                                                                     width: '30px',
+                                                                    height: '30px'
                                                                 }} />
                                                                 <p className="fw-bold fs-5 d-inline ms-2 ">{product.shopName}</p>
                                                             </div>
